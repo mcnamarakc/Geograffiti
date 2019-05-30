@@ -1,0 +1,4 @@
+server/models/index.js
+server/node_modules
+
+client/node_modules
