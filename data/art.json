@@ -1,0 +1,112 @@
+[
+    {
+        "type": "mural",
+        "neighborhood": "NODA",
+        "image": "https://charlotteagenda-charlotteagenda.netdna-ssl.com/wp-content/uploads/2019/01/noda-2.jpg",
+        "artistName": "#nodacanjam",
+        "title": "Drag Flamingo",
+        "description": "Works from several artists are featured on one building that played host to the third installment of the local spray paint fest spearheaded by Osiris Rain.",
+        "artistBio": "Artists include Osiris Rain, Darion Fleming, Jen Hill, and Matt Moore.",
+        "address": "3224 Benard Avenue",
+        "zipCode": 28206
+    },
+    {
+        "type": "mural",
+        "neighborhood": "NODA",
+        "image": "https://charlotteagenda-charlotteagenda.netdna-ssl.com/wp-content/uploads/2019/01/noda-4.jpg",
+        "artistName": ["Matt Hooker", "Matt Moore"],
+        "title": "Chicken Thief",
+        "description": "Black and white mural at NoDa company store",
+        "artistBio": "",
+        "address": "3221 Yadkin Avenue",
+        "zipCode": 28205
+    },
+    {
+        "type": "mural",
+        "neighborhood": "NODA",
+        "image": "https://charlotteagenda-charlotteagenda.netdna-ssl.com/wp-content/uploads/2019/01/noda7.jpg",
+        "artistName": ["Nick Napoletano", "Osiris Rain"],
+        "title": "Former Stella Mural",
+        "description": "This piece was comissioned by Stella Artois as part of a 2017 campaign. The clinking Stella glasses have since been painted over by a Lotus flower.",
+        "artistBio": "",
+        "address": "N Davidison St & E 35th St.",
+        "zipCode": 28205 
+    },
+    {
+        "type": "mural",
+        "neighborhood": "NODA",
+        "image": "https://charlotteagenda-charlotteagenda.netdna-ssl.com/wp-content/uploads/2019/01/noda-5a.jpg",
+        "artistName": "William Puckett",
+        "title": "Crowd of People",
+        "description": "You'll find something new every time you look at this iconic Where's Waldo-esque wall at a popular neighborhood bar.",
+        "artistBio": "",
+        "address": "3213 N. Davidson Street",
+        "zipCode": 28205 
+    },
+    {
+        "type": "mural",
+        "neighborhood": "Plaza-Midwood",
+        "image": "https://charlotteagenda-charlotteagenda.netdna-ssl.com/wp-content/uploads/2019/01/plaza-midwood-7.jpg",
+        "artistName": "",
+        "title": "Superheroes Mural",
+        "description": "Find it behind the Midwood Smokehouse",
+        "artistBio": "",
+        "address": "1401 Central Avenue",
+        "zipCode": 28205 
+    },
+    {
+        "type": "mural",
+        "neighborhood": "Plaza Midwood",
+        "image": "https://charlotteagenda-charlotteagenda.netdna-ssl.com/wp-content/uploads/2018/08/IMG_1940-e1534533457167.jpg",
+        "artistName": "",
+        "title": "Greetings from Plaza Midwood",
+        "description": "PBR inspired design welcoming newcomers to Plaza Midwood",
+        "artistBio": "",
+        "address": "2131 Central Avenue",
+        "zipCode": 28205 
+    },
+    {
+        "type": "mural",
+        "neighborhood": "Plaza Midwood",
+        "image": "https://charlotteagenda-charlotteagenda.netdna-ssl.com/wp-content/uploads/2019/01/plaza-midwood-2.jpg",
+        "artistName": ["JEKS", "Jack of the Dust"],
+        "title": "Golden Skull",
+        "description": "Part of the 2018 Talking Walls Festival.",
+        "artistBio": "",
+        "address": "927 Central Avenue",
+        "zipCode": 28204
+    },
+    {
+        "type": "mural",
+        "neighborhood": "Plaza Midwood",
+        "image": "https://charlotteagenda-charlotteagenda.netdna-ssl.com/wp-content/uploads/2019/01/plaza-midwood-1a.jpg",
+        "artistName": "Gil Croy",
+        "title": "Pride",
+        "description": "The rainbow tribute to equality is a neighborhood landmark.",
+        "artistBio": "",
+        "address": "920 Central Avenue",
+        "zipCode": 28204
+    },
+    {
+        "type": "mural",
+        "neighborhood": "Plaza Midwood",
+        "image": "https://charlotteagenda-charlotteagenda.netdna-ssl.com/wp-content/uploads/2019/01/plaza-midwood-8.jpg",
+        "artistName": "@gardenofjourney",
+        "title": "Womanhood",
+        "description": "A visual homage to all that is strength, resilience, and womanhood.",
+        "artistBio": "",
+        "address": "1226 Central Avenue",
+        "zipCode": 28204
+    },
+    {
+        "type": "mural",
+        "neighborhood": "Plaza Midwood",
+        "image": "https://charlotteagenda-charlotteagenda.netdna-ssl.com/wp-content/uploads/2019/01/plaza-midwood-5.jpg",
+        "artistName": ["Matt Hooker", "Matt Moore", "Tucker Sward"],
+        "title": "Neptune",
+        "description": "It's meant as a politcal statement on the rapidly changing face of the neighborhood.",
+        "artistBio": "",
+        "address": "1421 Central Avenue",
+        "zipCode": 28205
+    }
+]
