@@ -15,6 +15,14 @@
   },
   "scripts": {
     "start": "node server",
-    "start:dev": "nodemon"
+    "start:dev": "nodemon",
+    "lint": "eslint --quiet .",
+    "fix": "eslint --fix ."
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "prettier": "^1.17.1"
   }
 }
