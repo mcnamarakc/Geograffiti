@@ -1,0 +1,20 @@
+.homebox {
+    border-radius: 2px;
+    box-shadow: 0 3px 6px #999, 0 3px 6px #999;
+}
+
+.homebox > p {
+    margin: 10px;
+    text-align: center;
+}
+
+.homeContainer {
+    background-image: url("../../images/title-a-dripping-marker.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 75vw;
+}
+
+.jumbotron {
+    height: 45vh;
+}

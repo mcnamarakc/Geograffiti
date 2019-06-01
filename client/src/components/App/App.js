@@ -10,6 +10,9 @@ import Login from '../../pages/Login/Login';
 import Secret from '../../pages/Secret/Secret';
 import Home from '../../pages/Home/Home';
 import NotFound from '../../pages/NotFound/NotFound';
+import MapPage from "../../pages/MapPage/MapPage";
+import Art from "../../pages/Art/Art";
+import Bio from "../../pages/Bio/Bio";
 
 import './App.css';
 
@@ -57,6 +60,9 @@ class App extends Component {
               <Route path='/login' component={Login} />
               <PrivateRoute path='/secret' component={Secret} />
               <Route exact path='/' component={Home} />
+              <Route exact path="/map" component={MapPage} />
+              <Route exact path="/art" component={Art} />
+              <Route path="/bio" component={Bio} />
               <Route component={NotFound} />
             </Switch>
           </div>
