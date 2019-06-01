@@ -12,6 +12,8 @@ require('dotenv').config({
 //-- Dependencies ------------------------------------------------------------
 const express = require('express');
 const logger = require('morgan');
+const db = require("./models");
+
 
 const { passport } = require('./lib/passport');
 
@@ -36,9 +38,21 @@ if (process.env.NODE_ENV === 'production') {
 //-- Controller Routes -------------------------------------------------------
 app.use(require('./controllers'));
 
+var syncOptions = { force: false };
+
+// If running a test, set syncOptions.force to true
+// clearing the `testdb`
+if (process.env.NODE_ENV === "test") {
+  syncOptions.force = true;
+}
+
+
 //-- Main --------------------------------------------------------------------
-app.listen(PORT, () => {
-  console.log(`🚀 Server listening on port ${PORT}...`);
+db.sequelize.sync(syncOptions).then(function() {
+
+  app.listen(PORT, () => {
+    console.log(`🚀 Server listening on port ${PORT}...`);
+  });
 });
 
 //-- Export to Tests ---------------------------------------------------------
