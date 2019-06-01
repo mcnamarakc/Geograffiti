@@ -1,0 +1,28 @@
+.navLinks {
+    position: fixed;
+    right: 0;
+    top: 20vh;
+    width: 3vw;
+    height: 45vh;
+    background-color: gray;
+    opacity: .5;
+    z-index: 2;
+
+}
+
+/* .nav-tabs {
+    display: none;
+} */
+
+/* .navLinks:hover + .navHidden {
+    display: block;
+    width: 20vw;
+} */
+
+.navLinks:hover {
+    width: 20vw;
+}
+
+.nav-tabs:hover {
+    display: block;
+}
