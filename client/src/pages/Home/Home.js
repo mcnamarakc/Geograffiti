@@ -1,25 +1,24 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
+import "./Home.css"
 
-import logo from './logo.svg';
 
 class HomePage extends Component {
   render() {
     return (
-      <div className='Home'>
-        <div className='row'>
-          <div className='col'>
-            <img src={logo} className='App-logo' alt='logo' />
-            <p>
-              Edit <code>src/pages/Home.js</code> and save to reload.
-            </p>
-            <a
-              className='App-link'
-              href='https://reactjs.org'
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn React
-            </a>
+      <div className="container-fluid">
+        <div className="jumbotron homeContainer homebox mt-5">
+          <p>GEOGRAFFITI</p>
+        </div>
+        <div className="row justify-content-around mt-5">
+          <div className="col-3 mt-1 p-5 homebox">
+            <Link to="/map"><p>Map</p></Link>
+          </div>
+          <div className="col-3 mt-1 p-5 homebox">
+            <Link to="/art"><p>Art</p></Link>
+          </div>
+          <div className="col-3 mt-1 p-5 homebox">
+            <Link to="/bio"><p>Bio</p></Link>
           </div>
         </div>
       </div>
