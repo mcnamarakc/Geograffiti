@@ -9,7 +9,7 @@
         "ecmaVersion": 8,
         "ecmaFeatures": {
             "arrowFunctions": true,
-            "spread": true,
+            "experimentalObjectRestSpread": true,
             "modules": true
         }
     },
