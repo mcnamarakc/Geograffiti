@@ -1,6 +1,14 @@
 .homebox {
     border-radius: 2px;
     box-shadow: 0 3px 6px #999, 0 3px 6px #999;
+    background-image: url("../../images/testhome.jpeg");
+    background-size: 100%;
+    filter: grayscale(100%);
+    transition: filter 0.6s linear;
+}
+
+.homebox:hover {
+    filter: grayscale(0%);
 }
 
 .homebox > p {
