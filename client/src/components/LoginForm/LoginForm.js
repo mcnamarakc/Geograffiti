@@ -27,6 +27,13 @@ class LoginForm extends Component {
     return (
       <div className='LoginForm'>
         <div className='card'>
+          <div class="card-header">
+            <ul class="nav nav-pills card-header-pills">
+              <li class="nav-item">
+                <a class="nav-link active" href="/register">Register</a>
+              </li>
+            </ul>
+          </div>
           <div className='card-body'>
             <form className='LoginForm' onSubmit={this.handleSubmit}>
               <div className='input-group mb-3'>
@@ -60,6 +67,7 @@ class LoginForm extends Component {
               </div>
 
               <button className='btn btn-primary' type='submit'>Login</button>
+      
             </form>
           </div>
         </div>
