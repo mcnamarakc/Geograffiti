@@ -31,4 +31,7 @@ usersController.post('/register', (req, res) => {
     .catch(err => res.json(err));
 });
 
+// TODO: change password
+// usersController.post('/me', (req, res) => {});
+
 module.exports = usersController;
