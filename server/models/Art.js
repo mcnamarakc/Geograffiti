@@ -1,12 +1,12 @@
 module.exports = function(sequelize, DataTypes) {
   var Art = sequelize.define('Art', {
     latitude: {
-      type: DataTypes.DECIMAL,
+      type: DataTypes.DECIMAL(9, 6),
       allowNull: false,
       validate: { min: -90, max: 90 }
     },
     longitude: {
-      type: DataTypes.DECIMAL,
+      type: DataTypes.DECIMAL(9, 6),
       allowNull: false,
       validate: { min: -180, max: 180 }
     },
@@ -38,10 +38,10 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING
     },
     description: {
-      type: DataTypes.STRING
+      type: DataTypes.TEXT
     },
     artistBio: {
-      type: DataTypes.STRING
+      type: DataTypes.TEXT
     },
     stillExists: {
       type: DataTypes.BOOLEAN,

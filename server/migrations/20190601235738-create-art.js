@@ -10,11 +10,11 @@ module.exports = {
       },
       latitude: {
         allowNull: false,
-        type: Sequelize.DECIMAL
+        type: Sequelize.DECIMAL(9, 6)
       },
       longitude: {
         allowNull: false,
-        type: Sequelize.DECIMAL
+        type: Sequelize.DECIMAL(9, 6)
       },
       type: {
         allowNull: false,
@@ -35,10 +35,10 @@ module.exports = {
         type: Sequelize.STRING
       },
       description: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       artistBio: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       stillExists: {
         type: Sequelize.BOOLEAN
