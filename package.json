@@ -14,5 +14,10 @@
   "devDependencies": {
     "concurrently": "^4.1.0",
     "nodemon": "^1.18.10"
+  },
+  "dependencies": {
+    "dotenv": "^8.0.0",
+    "passport": "^0.4.0",
+    "sequelize": "^5.8.7"
   }
 }
