@@ -12,13 +12,14 @@
     "mysql2": "^1.6.5",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
-    "sequelize": "^4.42.0"
+    "sequelize": "^5.8.7"
   },
   "scripts": {
     "start": "node server",
     "start:dev": "nodemon",
     "lint": "eslint --quiet .",
-    "fix": "eslint --fix ."
+    "fix": "eslint --fix .",
+    "db:setup": "sequelize db:migrate && sequelize db:seed:all"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
