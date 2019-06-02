@@ -44,6 +44,7 @@ artworkController.get('/:id', (req, res) => {
 });
 
 artworkController.post('/', (req, res) => {
+  console.log('body', req.body);
   const {
     image,
     title,
@@ -55,7 +56,6 @@ artworkController.post('/', (req, res) => {
     artistName,
     artistBio
   } = req.body;
-
   // will skip create if image / title / type / neighborhood can be found in db
   db.Art.findOrCreate({
     where: {
