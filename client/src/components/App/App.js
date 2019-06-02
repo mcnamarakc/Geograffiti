@@ -55,7 +55,6 @@ class App extends Component {
       <AuthContext.Provider value={this.state.auth}>
         <div className='App'>
           <Navigation />
-          <div className='container'>
             <Switch>
               <Route path='/login' component={Login} />
               <PrivateRoute path='/secret' component={Secret} />
@@ -65,7 +64,6 @@ class App extends Component {
               <Route path="/bio" component={Bio} />
               <Route component={NotFound} />
             </Switch>
-          </div>
         </div>
       </AuthContext.Provider>
     );

@@ -11,14 +11,14 @@ class HomePage extends Component {
           <p>GEOGRAFFITI</p>
         </div>
         <div className="row justify-content-around mt-5">
-          <div className="col-3 mt-1 p-5 homebox">
-            <Link to="/map"><p>Map</p></Link>
+          <div className="col-3 mt-1 p-3 homebox">
+            <Link to="/map"><h1>Map</h1></Link>
           </div>
-          <div className="col-3 mt-1 p-5 homebox">
-            <Link to="/art"><p>Art</p></Link>
+          <div className="col-3 mt-1 p-3 homebox">
+            <Link to="/art"><h1>Art</h1></Link>
           </div>
-          <div className="col-3 mt-1 p-5 homebox">
-            <Link to="/bio"><p>Bio</p></Link>
+          <div className="col-3 mt-1 p-3 homebox">
+            <Link to="/bio"><h1>Bio</h1></Link>
           </div>
         </div>
       </div>
