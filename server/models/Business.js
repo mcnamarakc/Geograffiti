@@ -1,12 +1,12 @@
 module.exports = function(sequelize, DataTypes) {
   var Business = sequelize.define('Business', {
     latitude: {
-      type: DataTypes.DECIMAL,
+      type: DataTypes.DECIMAL(9, 6),
       allowNull: false,
       validate: { min: -90, max: 90 }
     },
     longitude: {
-      type: DataTypes.DECIMAL,
+      type: DataTypes.DECIMAL(9, 6),
       allowNull: false,
       validate: { min: -180, max: 180 }
     },
@@ -32,7 +32,7 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     description: {
-      type: DataTypes.STRING
+      type: DataTypes.TEXT
     },
     stillExists: {
       type: DataTypes.BOOLEAN,
