@@ -1,12 +1,26 @@
 import React from "react";
 import friends from "../../friends.json";
+import API from "../../lib/API";
 import ArtCard from "../../components/App/ArtCard";
 import NavTabs from "../../components/App/NavTabs";
 
 
 class Art extends React.Component {
   state = {
-    friends
+    art: []
+  };
+
+  // loadArt = () => {
+  //   API.ArtPage.getArt()
+  //   .then(res => this.setState({ art: res.data }))
+  //   .catch(err => console.log(err));
+  // };
+
+  handleSubmit = event => {
+    event.preventDefault();
+    API.ArtPage.getArt()
+    .then(res => this.setState({ art: res.data }))
+    .catch(err => console.log(err));
   };
 
   render() {
@@ -14,14 +28,15 @@ class Art extends React.Component {
       <div>
         <NavTabs />
         <h1>Art</h1>
-        {this.state.friends.map(friend => (
+        <button className="btn btn-info" onClick={this.handleSubmit}>GO ART!</button>
+        {this.state.art.map(art => (
           <ArtCard
-            id={friend.id}
-            key={friend.id}
-            name={friend.name}
-            image={friend.image}
-            occupation={friend.occupation}
-            location={friend.location}
+            id={art.id}
+            key={art.id}
+            name={art.title}
+            image={art.image}
+            occupation={art.artistName}
+            location={art.neighborhood}
             />
         ))}
       </div>

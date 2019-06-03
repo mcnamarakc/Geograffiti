@@ -1,6 +1,12 @@
 import axios from 'axios';
 
 export default {
+  ArtPage: {
+    getArt: function() {
+      return axios.get("/all");
+    }
+  },
+
   Users: {
     login: function (email, password) {
       return axios.post('/api/users/login', { email, password });
