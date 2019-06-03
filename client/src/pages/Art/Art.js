@@ -3,12 +3,16 @@ import friends from "../../friends.json";
 import API from "../../lib/API";
 import ArtCard from "../../components/App/ArtCard";
 import NavTabs from "../../components/App/NavTabs";
-
+import AOS from "aos";
 
 class Art extends React.Component {
   state = {
     art: []
   };
+
+  componentDidMount() {
+    AOS.init();
+  }
 
   // loadArt = () => {
   //   API.ArtPage.getArt()
@@ -30,14 +34,17 @@ class Art extends React.Component {
         <h1>Art</h1>
         <button className="btn btn-info" onClick={this.handleSubmit}>GO ART!</button>
         {this.state.art.map(art => (
+          <div data-aos="fade-left">
           <ArtCard
             id={art.id}
             key={art.id}
-            name={art.title}
+            title={art.title}
             image={art.image}
-            occupation={art.artistName}
+            artist={art.artistName}
+            description={art.description}
             location={art.neighborhood}
             />
+            </div>
         ))}
       </div>
     );

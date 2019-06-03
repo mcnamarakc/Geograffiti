@@ -3,7 +3,7 @@ import axios from 'axios';
 export default {
   ArtPage: {
     getArt: function() {
-      return axios.get("/all");
+      return axios.get("/api/art/all");
     }
   },
 
