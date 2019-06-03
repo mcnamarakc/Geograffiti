@@ -16,6 +16,10 @@ export default {
 
     register: function (email, password) {
       return axios.post('/api/users/register', { email, password });
+    },
+
+    requestKey: function() {
+      return axios.post('/api/users/apiKey');
     }
   },
 
