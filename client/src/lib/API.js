@@ -22,10 +22,30 @@ export default {
 
     register: function (email, password) {
       return axios.post('/api/users/register', { email, password });
-    },
+    }
+  },
 
-    requestKey: function() {
-      return axios.post('/api/users/apiKey');
+  ApiKey: {
+    requestKey: function (authToken) {
+      return axios.post('/api/keys/', {
+        headers: {
+          'Authorization': `Bearer ${authToken}`
+        }
+      });
+    },
+    revokeKey: function (authToken) {
+      return axios.post('/api/keys/', {
+        headers: {
+          'Authorization': `Bearer ${authToken}`
+        }
+      });
+    },
+    getKey: function (authToken) {
+      return axios.get('/api/keys/', {
+        headers: {
+          'Authorization': `Bearer ${authToken}`
+        }
+      });
     }
   },
 
