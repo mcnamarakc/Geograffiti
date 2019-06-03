@@ -17,6 +17,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  z-index: 0;
 }
 
 .App-link {
@@ -30,4 +31,8 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.app {
+  background-color: #343A40;
 }
