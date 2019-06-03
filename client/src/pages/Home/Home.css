@@ -60,10 +60,14 @@ h1 {
     color: black;
 }
 
-
+.mt-5 .my-5 {
+	margin-top: 0;
+}
 
 .jumbotron {
-    height: 45vh;
+	height: 45vh;
+	background-color: #262B2F;
+	
 }
 
 #page {
@@ -113,7 +117,7 @@ h1 {
     
 }
 .cb-slideshow li div {
-    z-index: 1000;
+    z-index: 50;
     position: absolute;
     bottom: 30px;
     left: 0px;
