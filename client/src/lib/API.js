@@ -34,7 +34,7 @@ export default {
       });
     },
     revokeKey: function (authToken) {
-      return axios.post('/api/keys/', {
+      return axios.delete('/api/keys/', {
         headers: {
           'Authorization': `Bearer ${authToken}`
         }
