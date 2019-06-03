@@ -7,8 +7,11 @@
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9977b4', endColorstr='#87b8e1',GradientType=1 ); /* IE6-9 */
 	-webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    font-size: 150%;
 }
 
 .navbar {
     z-index: 10000;
+    /* border-bottom:1px solid #81d2e3; */
+    /* background-color: #81d2e3 */
 }
