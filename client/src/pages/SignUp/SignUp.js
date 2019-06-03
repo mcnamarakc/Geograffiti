@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
+import "./SignUp.css"
 
 import API from '../../lib/API';
 import AuthContext from '../../contexts/AuthContext';
@@ -56,7 +57,7 @@ class SignUp extends Component {
     render() {
         return (
             <div>
-                <h2>Geograffeti API </h2>
+                <h2>Geograffeti</h2>
                 <div class="card h-100 text-center">
                     <div class="card-header">
                         <ul class="nav nav-pills card-header-pills">
@@ -66,7 +67,7 @@ class SignUp extends Component {
                         </ul>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">Register  to get your API Key</h5>
+                        <h5 class="card-title">Register  at Geograffiti</h5>
                         <form>
                             <div class="form-group">
                                 <label for="firstName">First Name</label>
