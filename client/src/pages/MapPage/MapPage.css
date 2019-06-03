@@ -8,14 +8,14 @@ h1 {
 }
 
 #map {
-    position: absolute;
+    /* position: absolute; */
     top: 0;
     bottom: 0;
     width: 100%;
 }
 
 .info-box {
-    position: absolute;
+    /* position: absolute; */
     margin: 20px;
     width: 25%;
     top: 0;
