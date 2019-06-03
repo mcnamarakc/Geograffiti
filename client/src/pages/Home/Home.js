@@ -6,17 +6,17 @@ import "./Home.css"
 class HomePage extends Component {
   render() {
     return (
-      <div className="container-fluid">
+      <div className="container-fluid home">
         <div className = "header1"></div>
         <div className="jumbotron homeContainer homebox mt-5">
           <div id="page">
           <ul class="cb-slideshow">
-            <li><span></span><div><h3>Plaza·Midwood</h3></div></li>
-            <li><span></span><div><h3>South·End</h3></div></li>
-            <li><span></span><div><h3>Uptown</h3></div></li>
-            <li><span></span><div><h3>Noda</h3></div></li>
-            <li><span></span><div><h3>Dilworth</h3></div></li>
-            <li><span></span><div><h3>SoDoSoPa</h3></div></li>
+            <li><span></span><div><h3></h3></div></li>
+            <li><span></span><div><h3></h3></div></li>
+            <li><span></span><div><h3></h3></div></li>
+            <li><span></span><div><h3></h3></div></li>
+            <li><span></span><div><h3></h3></div></li>
+            <li><span></span><div><h3></h3></div></li>
           </ul>  
           </div>
         </div>
