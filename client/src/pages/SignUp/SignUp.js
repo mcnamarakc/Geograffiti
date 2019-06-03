@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
+import "./SignUp.css"
 
 import API from '../../lib/API';
 import AuthContext from '../../contexts/AuthContext';
@@ -15,7 +16,12 @@ class SignUp extends Component {
         firstName: "",
         lastName: "",
         email: "",
-        password: ""
+        password: "",
+        redirectToLogin: false,
+        error: {
+            message: "",
+            email: false
+        }
     };
 
     
@@ -37,13 +43,33 @@ class SignUp extends Component {
     handleFormSubmit = event => {
         event.preventDefault();
 
-        let userEmail = this.state.email;
+        const { email, password } = this.state;
 
-        if (!emailIsValid(userEmail)) {
+        if (!emailIsValid(email)) {
             alert("Please enter a valid email address")
-        } else if (this.state.password.length < 6) {
+        } else if (password < 6) {
             alert("Enter a password longer than 6 characters")
         } else {
+            API.Users.register(email, password)
+                .then(response => response.data)
+                .then(response => {
+                    console.log(response)
+                    if (!response.created) {
+                        this.setState({
+                            error: { 
+                                message: "Email already exists",
+                                email: true
+                            }
+                        })
+                    } else {
+                        this.setState({
+                            redirectToLogin: true
+                        })
+                    }
+                })
+                .catch(err => {
+                    console.log(err)
+                });
             this.setState({
                 firstName: "",
                 lastName: "",
@@ -54,9 +80,12 @@ class SignUp extends Component {
     };
     
     render() {
+        if (this.state.redirectToLogin) {
+            return <Redirect to="/login"/>
+        }
         return (
             <div>
-                <h2>Geograffeti API </h2>
+                <h2>Geograffeti</h2>
                 <div className="card h-100 text-center">
                     <div className="card-header">
                         <ul className="nav nav-pills card-header-pills">
@@ -66,7 +95,7 @@ class SignUp extends Component {
                         </ul>
                     </div>
                     <div className="card-body">
-                        <h5 className="card-title">Register  to get your API Key</h5>
+                        <h5 className="card-title">Register  at Geograffiti</h5>
                         <form>
                             <div className="form-group">
                                 <label for="firstName">First Name</label>
@@ -74,7 +103,7 @@ class SignUp extends Component {
                                     type="text" 
                                     className="form-control" 
                                     id="firstName" 
-                                    placeholder="John"
+                                    placeholder="John (optional)"
                                     value = {this.state.firstName}
                                     name="firstName"
                                     onChange= {this.handleInputChange}      
@@ -86,7 +115,7 @@ class SignUp extends Component {
                                     type="text" 
                                     className="form-control" 
                                     id="lastName" 
-                                    placeholder="Doe"
+                                    placeholder="Doe (optional)"
                                     value = {this.state.lastName}
                                     name ="lastName"
                                     onChange = {this.handleInputChange}   
@@ -96,7 +125,7 @@ class SignUp extends Component {
                                 <label for="email">Email address</label>
                                 <input 
                                     type="email" 
-                                    className="form-control" 
+                                    class={`form-control ${this.state.error.email ? "is-invalid" : ""}`}
                                     id="email" 
                                     aria-describedby="emailHelp" 
                                     placeholder="Enter email"
@@ -104,7 +133,12 @@ class SignUp extends Component {
                                     name ="email"
                                     onChange = {this.handleInputChange}
                                 />
-                                    <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+                                    <small id="emailHelp" class="form-text text-muted">
+                                        { this.state.error.email 
+                                            ? this.state.error.message
+                                            : "We'll never share your email with anyone else."
+                                        }
+                                    </small>
                             </div>
                             <div className="form-group">
                                 <label for="password">Password</label>
@@ -118,11 +152,7 @@ class SignUp extends Component {
                                     onChange = {this.handleInputChange}
                                 />
                             </div>
-                            <div className="form-group form-check">
-                                <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                                <label className="form-check-label" for="exampleCheck1">I promise to be cool</label>
-                            </div>
-                            <button type="submit" className="btn btn-primary" onClick={this.handleFormSubmit}>Submit</button>
+                            <button type="submit" class="btn btn-primary" onClick={this.handleFormSubmit}>Submit</button>
                         </form>
                     </div>
                 </div>
