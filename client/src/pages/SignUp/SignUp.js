@@ -57,22 +57,22 @@ class SignUp extends Component {
         return (
             <div>
                 <h2>Geograffeti API </h2>
-                <div class="card h-100 text-center">
-                    <div class="card-header">
-                        <ul class="nav nav-pills card-header-pills">
-                            <li class="nav-item">
-                                <a class="nav-link active" href="/login">login</a>
+                <div className="card h-100 text-center">
+                    <div className="card-header">
+                        <ul className="nav nav-pills card-header-pills">
+                            <li className="nav-item">
+                                <a className="nav-link active" href="/login">login</a>
                             </li>
                         </ul>
                     </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Register  to get your API Key</h5>
+                    <div className="card-body">
+                        <h5 className="card-title">Register  to get your API Key</h5>
                         <form>
-                            <div class="form-group">
+                            <div className="form-group">
                                 <label for="firstName">First Name</label>
                                 <input 
                                     type="text" 
-                                    class="form-control" 
+                                    className="form-control" 
                                     id="firstName" 
                                     placeholder="John"
                                     value = {this.state.firstName}
@@ -80,11 +80,11 @@ class SignUp extends Component {
                                     onChange= {this.handleInputChange}      
                                 />
                             </div>
-                            <div class="form-group">
+                            <div className="form-group">
                                 <label for="lastName">Last Name</label>
                                 <input 
                                     type="text" 
-                                    class="form-control" 
+                                    className="form-control" 
                                     id="lastName" 
                                     placeholder="Doe"
                                     value = {this.state.lastName}
@@ -92,11 +92,11 @@ class SignUp extends Component {
                                     onChange = {this.handleInputChange}   
                                 />
                             </div>
-                            <div class="form-group">
+                            <div className="form-group">
                                 <label for="email">Email address</label>
                                 <input 
                                     type="email" 
-                                    class="form-control" 
+                                    className="form-control" 
                                     id="email" 
                                     aria-describedby="emailHelp" 
                                     placeholder="Enter email"
@@ -104,13 +104,13 @@ class SignUp extends Component {
                                     name ="email"
                                     onChange = {this.handleInputChange}
                                 />
-                                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                    <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
                             </div>
-                            <div class="form-group">
+                            <div className="form-group">
                                 <label for="password">Password</label>
                                 <input 
                                     type="password" 
-                                    class="form-control" 
+                                    className="form-control" 
                                     id="password" 
                                     placeholder="Password"
                                     value = {this.state.password}
@@ -118,11 +118,11 @@ class SignUp extends Component {
                                     onChange = {this.handleInputChange}
                                 />
                             </div>
-                            <div class="form-group form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-                                <label class="form-check-label" for="exampleCheck1">I promise to be cool</label>
+                            <div className="form-group form-check">
+                                <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                                <label className="form-check-label" for="exampleCheck1">I promise to be cool</label>
                             </div>
-                            <button type="submit" class="btn btn-primary" onClick={this.handleFormSubmit}>Submit</button>
+                            <button type="submit" className="btn btn-primary" onClick={this.handleFormSubmit}>Submit</button>
                         </form>
                     </div>
                 </div>
