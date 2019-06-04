@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Map as LeafletMap, Marker, Popup, TileLayer } from 'react-leaflet'
 import "./MapPage.css";
+import API from "../../lib/API";
 
 
 class Map extends React.Component {
@@ -10,20 +11,35 @@ class Map extends React.Component {
     this.state = {
       lat: 35.2271,
       lng: -80.843124,
-      zoom: 13
+      zoom: 13,
+      markers: []
     }
   }
 
-//   componentDidMount =() => {
-//       this.map
+
+
+// class Pins extends React.Component {
+//   state = {
+
 //   }
+// }
+
+renderNodaMarkers = event => {
+  event.preventDefault();
+  API.ArtPage.getNeighborhood("NODA")
+  .then(res => console.log(res.data))
+  //    this.setState({
+  //   markers: [...this.state.markers, {latitude: res.data.latitude, longitude: res.data.longitude}]
+  // }))
+  .catch(err => console.log(err));
+}
 
   render() {
     const position = [this.state.lat, this.state.lng];
-    // const { Map: LeafletMap } = window.ReactLeaflet;
+    
     return (
-        // <h1>hello</h1>
-      <LeafletMap center={position} zoom={this.state.zoom}>
+      <div>
+        <LeafletMap center={position} zoom={this.state.zoom}>
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url='https://{s}.tile.osm.org/{z}/{x}/{y}.png'
@@ -34,14 +50,12 @@ class Map extends React.Component {
           </Popup>
         </Marker>
       </LeafletMap>
+      <button onClick={this.renderNodaMarkers} type="button" className="btn btn-secondary">Noda</button>
+      <button onClick={this.renderMidwoodMarkers} type="button" className="btn btn-secondary">Plaza Midwood</button>
+      </div>
+      
     );
   }
 }
-
-// window.addEventListener ("DOMContentLoaded",(event) => {
-//     ReactDOM.render(<SimpleExample />, document.getElementById('container'))
-// })
-
-
 
 export default Map;
