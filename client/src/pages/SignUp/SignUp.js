@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
+import "./SignUp.css"
 
 import API from '../../lib/API';
 import AuthContext from '../../contexts/AuthContext';
@@ -84,23 +85,23 @@ class SignUp extends Component {
         }
         return (
             <div>
-                <h2>Geograffeti API </h2>
-                <div class="card h-100 text-center">
-                    <div class="card-header">
-                        <ul class="nav nav-pills card-header-pills">
-                            <li class="nav-item">
-                                <a class="nav-link active" href="/login">login</a>
+                <h2>Geograffeti</h2>
+                <div className="card h-100 text-center">
+                    <div className="card-header">
+                        <ul className="nav nav-pills card-header-pills">
+                            <li className="nav-item">
+                                <a className="nav-link active" href="/login">login</a>
                             </li>
                         </ul>
                     </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Register  to get your API Key</h5>
+                    <div className="card-body">
+                        <h5 className="card-title">Register  at Geograffiti</h5>
                         <form>
-                            <div class="form-group">
+                            <div className="form-group">
                                 <label for="firstName">First Name</label>
                                 <input 
                                     type="text" 
-                                    class="form-control" 
+                                    className="form-control" 
                                     id="firstName" 
                                     placeholder="John (optional)"
                                     value = {this.state.firstName}
@@ -108,11 +109,11 @@ class SignUp extends Component {
                                     onChange= {this.handleInputChange}      
                                 />
                             </div>
-                            <div class="form-group">
+                            <div className="form-group">
                                 <label for="lastName">Last Name</label>
                                 <input 
                                     type="text" 
-                                    class="form-control" 
+                                    className="form-control" 
                                     id="lastName" 
                                     placeholder="Doe (optional)"
                                     value = {this.state.lastName}
@@ -120,11 +121,11 @@ class SignUp extends Component {
                                     onChange = {this.handleInputChange}   
                                 />
                             </div>
-                            <div class="form-group">
+                            <div className="form-group">
                                 <label for="email">Email address</label>
                                 <input 
                                     type="email" 
-                                    class={`form-control ${this.state.error.email ? "is-invalid" : ""}`}
+                                    className={`form-control ${this.state.error.email ? "is-invalid" : ""}`}
                                     id="email" 
                                     aria-describedby="emailHelp" 
                                     placeholder="Enter email"
@@ -132,18 +133,18 @@ class SignUp extends Component {
                                     name ="email"
                                     onChange = {this.handleInputChange}
                                 />
-                                    <small id="emailHelp" class="form-text text-muted">
+                                    <small id="emailHelp" className="form-text text-muted">
                                         { this.state.error.email 
                                             ? this.state.error.message
                                             : "We'll never share your email with anyone else."
                                         }
                                     </small>
                             </div>
-                            <div class="form-group">
+                            <div className="form-group">
                                 <label for="password">Password</label>
                                 <input 
                                     type="password" 
-                                    class="form-control" 
+                                    className="form-control" 
                                     id="password" 
                                     placeholder="Password"
                                     value = {this.state.password}
@@ -151,7 +152,7 @@ class SignUp extends Component {
                                     onChange = {this.handleInputChange}
                                 />
                             </div>
-                            <button type="submit" class="btn btn-primary" onClick={this.handleFormSubmit}>Submit</button>
+                            <button type="submit" className="btn btn-primary" onClick={this.handleFormSubmit}>Submit</button>
                         </form>
                     </div>
                 </div>
