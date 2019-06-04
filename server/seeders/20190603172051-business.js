@@ -104,19 +104,7 @@ module.exports = {
           businessName: "Salud Cerveceria",
           description: "Salud Beer Shop’s in-house brewery. Head upstairs to enjoy a pint in their 3,100-square-foot taproom. They also have a kitchen serving up wood-fired pizza.",
           stillExists: true
-        },
-        {
-          latitude: ,
-          longitude: ,
-          type: ,
-          neighborhood: ,
-          businessName: ,
-          description: ,
-          stillExists: 
-        },
-
-
-
+        }
       ]
     )
   
