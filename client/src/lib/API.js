@@ -29,6 +29,37 @@ export default {
     }
   },
 
+  ApiKey: {
+    requestKey: function (authToken) {
+      return axios.post('/api/keys/', {}, {
+        headers: {
+          'Authorization': `Bearer ${authToken}`
+        }
+      });
+    },
+    revokeKey: function (authToken) {
+      return axios.delete('/api/keys/', {
+        headers: {
+          'Authorization': `Bearer ${authToken}`
+        }
+      });
+    },
+    getKey: function (authToken) {
+      return axios.get('/api/keys/', {
+        headers: {
+          'Authorization': `Bearer ${authToken}`
+        }
+      });
+    },
+    testKey: function (apiKey) {
+      return axios.get('/api/keys/test', {
+        headers: {
+          'Authorization': `Api-Key ${apiKey}`
+        }
+      });
+    }
+  },
+
   Secrets: {
     getAll: function (authToken) {
       return axios.get('/api/secrets', {

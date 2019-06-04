@@ -6,9 +6,35 @@ module.exports = (sequelize, DataTypes) => {
     {
       email: {
         type: DataTypes.STRING,
-        unique: true
+        allowNull: false,
+        validate: {
+          isEmail: true
+        },
+        unique: {
+          args: true,
+          msg: 'Email address is already in use.'
+        }
       },
-      password: DataTypes.STRING
+      password: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          len: [5, 20],
+          isAlphanumeric: true
+        }
+      },
+      apiKey: {
+        type: DataTypes.STRING,
+        defaultValue: null
+      },
+      requestLimit: {
+        type: DataTypes.INTEGER,
+        defaultValue: null
+      },
+      requestsRemaining: {
+        type: DataTypes.INTEGER,
+        defaultValue: null
+      }
     },
     {}
   );
