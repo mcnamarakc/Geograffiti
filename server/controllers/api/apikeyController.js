@@ -1,7 +1,8 @@
 const apikeyController = require('express').Router();
 
 const db = require('../../models');
-const { JWTVerifier } = require('../../lib/passport');
+const { JWTVerifier, ApiKeyVerifier } = require('../../lib/passport');
+const uuidAPIKey = require('uuid-apikey');
 
 apikeyController.get('/', JWTVerifier, (req, res) => {
   db.User.findByPk(req.user.id)
@@ -18,7 +19,7 @@ apikeyController.get('/', JWTVerifier, (req, res) => {
 });
 
 apikeyController.post('/', JWTVerifier, (req, res) => {
-  const apiKey = ''; // generate through an npm package
+  const apiKey = uuidAPIKey.create().apiKey;
   db.User.update(
     {
       apiKey,
@@ -33,7 +34,7 @@ apikeyController.post('/', JWTVerifier, (req, res) => {
   )
     .then(rowsAffected => {
       console.log(rowsAffected);
-      res.json(rowsAffected);
+      res.json({ apiKey: apiKey });
     })
     .catch(err => console.log(err));
 });
@@ -56,6 +57,10 @@ apikeyController.delete('/', JWTVerifier, (req, res) => {
       res.json(rowsAffected);
     })
     .catch(err => console.log(err));
+});
+
+apikeyController.get('/test', ApiKeyVerifier, (req, res) => {
+  res.json({ message: 'API Key Worked!' });
 });
 
 module.exports = apikeyController;
