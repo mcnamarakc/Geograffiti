@@ -12,8 +12,9 @@ function ArtCard(props) {
           {/* <div className="col-xs-4 col-sm-5 col-md-6 col-lg-7"> */}
           <div className="col-xs-12 col-sm-12 col-md-7 col-lg-7">
             <div className="card-body">
-              <h5 className="card-title">{props.title}</h5>
-              <p className="card-text">{props.artist}</p>
+              <h3 className="card-title">{props.title}</h3>
+              <hr></hr>
+              <h6 className="card-text">Artist: {props.artist}</h6>
               <p className="card-text">{props.description}</p>
               <p className="card-text"><small className="text-muted">{props.location}</small></p>
             </div>
