@@ -8,6 +8,10 @@ export default {
 
     getNeighborhood: function(query) {
       return axios.get("/api/art/search", {params:{neighborhood: query}});
+    },
+
+    getArtist: function(query) {
+      return axios.get("/api/art/search", {params:{artistName: query}});
     }
   },
 

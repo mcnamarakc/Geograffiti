@@ -1,5 +1,4 @@
 import React from "react";
-import friends from "../../friends.json";
 import API from "../../lib/API";
 import ArtCard from "../../components/App/ArtCard";
 import NavTabs from "../../components/App/NavTabs";
@@ -9,12 +8,15 @@ import Dropdown from "../../components/App/dropdown";
 class Art extends React.Component {
   constructor() {
     super();
-    
+
     this.state = {
       showMenu: false,
-      art: []
+      art: [],
+      neighborhoods: [],
+      artists: [],
+      search: ""
     };
-    
+
     this.showMenu = this.showMenu.bind(this);
     this.closeMenu = this.closeMenu.bind(this);
   }
@@ -22,6 +24,8 @@ class Art extends React.Component {
 
   componentDidMount() {
     AOS.init();
+    API.ArtPage.getArt()
+    .then(
   }
 
 
@@ -58,6 +62,13 @@ class Art extends React.Component {
       .catch(err => console.log(err));
   };
 
+  handleArtist = event => {
+    event.preventDefault();
+    API.ArtPage.getArtist("William Puckett")
+      .then(res => this.setState({ art: res.data }))
+      .catch(err => console.log(err));
+  };
+
   render() {
     return (
       <div>
@@ -65,10 +76,16 @@ class Art extends React.Component {
         <h1>Art</h1>
         <button className="btn btn-info" onClick={this.handleSubmit}>GO ART!</button>
         <div>
-          <button onClick={this.showMenu}>
-            GO ART AGAIN!
-        </button>
-
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dropdown button
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </div>
           {
             this.state.showMenu
               ? (
@@ -79,13 +96,13 @@ class Art extends React.Component {
                   }}
                 >
                   <button onClick={this.handleNeighborhood}> NODA </button>
-                  <button> Menu item 2 </button>
+                  <button onClick={this.handleArtist}> William Puckett </button>
                   <button> Menu item 3 </button>
                 </div>
               )
               : (
                 <button onClick={this.showMenu}>
-                GO ART AGAIN!
+                  GO ART AGAIN!
               </button>
               )
           }
