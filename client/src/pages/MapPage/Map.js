@@ -4,6 +4,19 @@ import { Map as LeafletMap, Marker, Popup, TileLayer } from 'react-leaflet'
 import "./MapPage.css";
 import API from "../../lib/API";
 
+const MyPopupMarker = ({ content, position }) => (
+  <Marker position={position}>
+    <Popup>{content}</Popup>
+  </Marker>
+)
+
+const MyMarkersList = ({ markers }) => {
+  const items = markers.map(({ key, ...props }) => (
+    <MyPopupMarker key={key} {...props} />
+  ))
+  return <>{items}</>
+}
+
 
 class Map extends React.Component {
   constructor(props) {
@@ -16,27 +29,19 @@ class Map extends React.Component {
     }
   }
 
-
-
-// class Pins extends React.Component {
-//   state = {
-
-//   }
-// }
-
-renderNodaMarkers = event => {
-  event.preventDefault();
-  API.ArtPage.getNeighborhood("NODA")
-  .then(res => {
-    this.setState({
-      markers: res.data.map(item => {
-        return {position:[item.latitude, item.longitude]}
+  renderNodaMarkers = event => {
+    event.preventDefault();
+    API.ArtPage.getNeighborhood("NODA")
+      .then(res => {
+        this.setState({
+          markers: res.data.map(item => {
+            return { position: [item.latitude, item.longitude] }
+          })
+        })
       })
-    })
-  })
-  .catch(err => console.log(err));
-    
-}
+      .catch(err => console.log(err));
+
+  }
 
   render() {
     const position = [this.state.lat, this.state.lng];
@@ -44,20 +49,16 @@ renderNodaMarkers = event => {
     return (
       <div>
         <LeafletMap center={position} zoom={this.state.zoom}>
-        <TileLayer
-          attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-          url='https://{s}.tile.osm.org/{z}/{x}/{y}.png'
-        />
-        <Marker markers={this.state.markers} >
-          <Popup>
-            A pretty CSS3 popup. <br/> Easily customizable.
-          </Popup>
-        </Marker>
-      </LeafletMap>
-      <button onClick={this.renderNodaMarkers} type="button" className="btn btn-secondary">Noda</button>
-      <button onClick={this.renderMidwoodMarkers} type="button" className="btn btn-secondary">Plaza Midwood</button>
+          <TileLayer
+            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            url='https://{s}.tile.osm.org/{z}/{x}/{y}.png'
+          />
+          <MyMarkersList markers={this.state.markers}/>
+        </LeafletMap>
+        <button onClick={this.renderNodaMarkers} type="button" className="btn btn-secondary">Noda</button>
+        <button onClick={this.renderMidwoodMarkers} type="button" className="btn btn-secondary">Plaza Midwood</button>
       </div>
-      
+
     );
   }
 }
