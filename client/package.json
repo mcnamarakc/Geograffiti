@@ -6,6 +6,8 @@
   "dependencies": {
     "aos": "^2.3.4",
     "axios": "^0.18.0",
+    "leaflet": "^1.5.1",
+    "leaflet-react": "^3.0.5",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "react-gravatar": "^2.6.3",
