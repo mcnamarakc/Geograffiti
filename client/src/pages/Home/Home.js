@@ -10,13 +10,13 @@ class HomePage extends Component {
         <div className = "header1"></div>
         <div className="jumbotron homeContainer homebox mt-5">
           <div id="page">
-          <ul class="cb-slideshow">
-            <li><span></span><div><h3></h3></div></li>
-            <li><span></span><div><h3></h3></div></li>
-            <li><span></span><div><h3></h3></div></li>
-            <li><span></span><div><h3></h3></div></li>
-            <li><span></span><div><h3></h3></div></li>
-            <li><span></span><div><h3></h3></div></li>
+          <ul className="cb-slideshow">
+            <li><span></span><div><h3> </h3></div></li>
+            <li><span></span><div><h3> </h3></div></li>
+            <li><span></span><div><h3> </h3></div></li>
+            <li><span></span><div><h3> </h3></div></li>
+            <li><span></span><div><h3> </h3></div></li>
+            <li><span></span><div><h3> </h3></div></li>
           </ul>  
           </div>
         </div>
