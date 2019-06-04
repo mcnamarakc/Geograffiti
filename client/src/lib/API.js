@@ -4,6 +4,10 @@ export default {
   ArtPage: {
     getArt: function() {
       return axios.get("/api/art/all");
+    },
+
+    getNeighborhood: function(query) {
+      return axios.get("/api/art/search", {query});
     }
   },
 
