@@ -46,7 +46,7 @@ renderNodaMarkers = event => {
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url='https://{s}.tile.osm.org/{z}/{x}/{y}.png'
         />
-        {/* <Marker position={this.state.markers}>
+        {/* <Marker position={this.state.markers.map(item => {item})}>
           <Popup>
             A pretty CSS3 popup. <br/> Easily customizable.
           </Popup>
