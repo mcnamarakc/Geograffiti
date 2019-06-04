@@ -35,7 +35,7 @@ class Map extends React.Component {
       .then(res => {
         this.setState({
           markers: res.data.map(item => {
-            return { position: [item.latitude, item.longitude] }
+            return ({ position: [item.latitude, item.longitude], key: item.id, content: <><p className="popup-title">{!item.title ? "Unknown" : item.title}</p><img className="popup-image" src={item.image} /></>})
           })
         })
       })
