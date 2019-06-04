@@ -27,16 +27,18 @@ class Map extends React.Component {
 renderNodaMarkers = event => {
   event.preventDefault();
   API.ArtPage.getNeighborhood("NODA")
-  .then(res => console.log(res.data))
-  //    this.setState({
-  //   markers: [...this.state.markers, {latitude: res.data.latitude, longitude: res.data.longitude}]
-  // }))
+  .then(res => {
+    this.setState({
+      markers: res.data.map(item => [item.latitude, item.longitude])
+    })
+  })
   .catch(err => console.log(err));
+    
 }
 
   render() {
     const position = [this.state.lat, this.state.lng];
-    
+    console.log(this.state.markers)
     return (
       <div>
         <LeafletMap center={position} zoom={this.state.zoom}>
@@ -44,11 +46,11 @@ renderNodaMarkers = event => {
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url='https://{s}.tile.osm.org/{z}/{x}/{y}.png'
         />
-        <Marker position={position}>
+        {/* <Marker position={this.state.markers}>
           <Popup>
             A pretty CSS3 popup. <br/> Easily customizable.
           </Popup>
-        </Marker>
+        </Marker> */}
       </LeafletMap>
       <button onClick={this.renderNodaMarkers} type="button" className="btn btn-secondary">Noda</button>
       <button onClick={this.renderMidwoodMarkers} type="button" className="btn btn-secondary">Plaza Midwood</button>
