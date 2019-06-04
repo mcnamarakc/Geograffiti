@@ -27,10 +27,10 @@ class LoginForm extends Component {
     return (
       <div className='LoginForm'>
         <div className='card'>
-          <div class="card-header">
-            <ul class="nav nav-pills card-header-pills">
-              <li class="nav-item">
-                <a class="nav-link active" href="/register">Register</a>
+          <div className="card-header">
+            <ul className="nav nav-pills card-header-pills">
+              <li className="nav-item">
+                <a className="nav-link active" href="/register">Register</a>
               </li>
             </ul>
           </div>
