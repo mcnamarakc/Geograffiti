@@ -130,4 +130,16 @@ artworkController.delete('/:id', (req, res) => {
     .catch(err => console.log(err));
 });
 
+artworkController.get('/all/neighborhood', (req, res) => {
+  db.Art.findAll({
+    attributes: [
+      'neighborhood',
+      [db.sequelize.fn('COUNT', db.sequelize.col('neighborhood')), 'count']
+    ],
+    group: ['neighborhood']
+  })
+    .then(results => res.json(results))
+    .catch(err => console.log(err));
+});
+
 module.exports = artworkController;
