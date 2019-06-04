@@ -44,17 +44,17 @@ import Secret from '../Secret/Secret'
 //     render() {
 //         return (
 //             <div>    
-//                 <div class="card">
-//                     <h5 class="card-header">Geograffiti Api</h5>
-//                     <div class="card-body">
-//                         <h5 class="card-title">Click below to get your Geograffiti API key!</h5>
-//                         <p class="card-text">Read our documentation below for information on Endpoints and Responses</p>
-//                         <a href="#" class="btn btn-primary">Get API Key</a>
+//                 <div className="card">
+//                     <h5 className="card-header">Geograffiti Api</h5>
+//                     <div className="card-body">
+//                         <h5 className="card-title">Click below to get your Geograffiti API key!</h5>
+//                         <p className="card-text">Read our documentation below for information on Endpoints and Responses</p>
+//                         <a href="#" className="btn btn-primary">Get API Key</a>
 //                     </div>
 //                 </div>
-//                 <div class="container" id="apiDoc">
-//                     <div class="row">
-//                         <div class="col-md-6 offset-md-3">
+//                 <div className="container" id="apiDoc">
+//                     <div className="row">
+//                         <div className="col-md-6 offset-md-3">
 //                             <h3>Geograffiti Api Documentation</h3>
 //                         </div>
 //                 </div>

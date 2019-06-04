@@ -97,7 +97,7 @@ class SignUp extends Component {
                     <div className="card-body">
                         <h5 className="card-title">Register  at Geograffiti</h5>
                         <form>
-                            <div class="form-group">
+                            <div className="form-group">
                                 <label for="firstName">First Name</label>
                                 <input 
                                     type="text" 
@@ -125,7 +125,7 @@ class SignUp extends Component {
                                 <label for="email">Email address</label>
                                 <input 
                                     type="email" 
-                                    class={`form-control ${this.state.error.email ? "is-invalid" : ""}`}
+                                    className={`form-control ${this.state.error.email ? "is-invalid" : ""}`}
                                     id="email" 
                                     aria-describedby="emailHelp" 
                                     placeholder="Enter email"
@@ -133,7 +133,7 @@ class SignUp extends Component {
                                     name ="email"
                                     onChange = {this.handleInputChange}
                                 />
-                                    <small id="emailHelp" class="form-text text-muted">
+                                    <small id="emailHelp" className="form-text text-muted">
                                         { this.state.error.email 
                                             ? this.state.error.message
                                             : "We'll never share your email with anyone else."
@@ -152,7 +152,7 @@ class SignUp extends Component {
                                     onChange = {this.handleInputChange}
                                 />
                             </div>
-                            <button type="submit" class="btn btn-primary" onClick={this.handleFormSubmit}>Submit</button>
+                            <button type="submit" className="btn btn-primary" onClick={this.handleFormSubmit}>Submit</button>
                         </form>
                     </div>
                 </div>
