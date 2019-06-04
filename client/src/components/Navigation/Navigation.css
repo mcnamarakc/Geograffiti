@@ -15,3 +15,7 @@
     /* border-bottom:1px solid #81d2e3; */
     /* background-color: #81d2e3 */
 }
+
+#navBarLinksHide {
+    visibility: hidden;
+}
