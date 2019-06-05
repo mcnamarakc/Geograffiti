@@ -4,6 +4,8 @@ import ArtCard from "../../components/App/ArtCard";
 import NavTabs from "../../components/App/NavTabs";
 import AOS from "aos";
 import Dropdown from "../../components/App/dropdown";
+import DropList from "../../components/App/DropList";
+import "./Art.css";
 
 class Art extends React.Component {
   constructor() {
@@ -16,37 +18,19 @@ class Art extends React.Component {
       artists: [],
       search: ""
     };
-
-    this.showMenu = this.showMenu.bind(this);
-    this.closeMenu = this.closeMenu.bind(this);
   }
 
 
   componentDidMount() {
     AOS.init();
-    API.ArtPage.getArt()
-    .then(
-  }
+    API.ArtPage.getAllArtists()
+    .then(res => this.setState({artists:res.data}))
+    .catch(err => console.log(err));
 
-
-  showMenu(event) {
-    event.preventDefault();
-
-    this.setState({ showMenu: true }, () => {
-      document.addEventListener('click', this.closeMenu);
-    });
-  }
-
-  closeMenu(event) {
-
-    if (!this.dropdownMenu.contains(event.target)) {
-
-      this.setState({ showMenu: false }, () => {
-        document.removeEventListener('click', this.closeMenu);
-      });
-
-    }
-  }
+    API.ArtPage.getAllNeighborhoods()
+    .then(res => this.setState({neighborhoods:res.data}))
+    .catch(err => console.log(err));
+  };
 
   handleSubmit = event => {
     event.preventDefault();
@@ -57,14 +41,14 @@ class Art extends React.Component {
 
   handleNeighborhood = event => {
     event.preventDefault();
-    API.ArtPage.getNeighborhood("NODA")
+    API.ArtPage.getNeighborhood(this.state.search)
       .then(res => this.setState({ art: res.data }))
       .catch(err => console.log(err));
   };
 
   handleArtist = event => {
     event.preventDefault();
-    API.ArtPage.getArtist("William Puckett")
+    API.ArtPage.getArtist(this.state.search)
       .then(res => this.setState({ art: res.data }))
       .catch(err => console.log(err));
   };
@@ -73,39 +57,43 @@ class Art extends React.Component {
     return (
       <div>
         <NavTabs />
-        <h1>Art</h1>
-        <button className="btn btn-info" onClick={this.handleSubmit}>GO ART!</button>
-        <div>
-          <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Dropdown button
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
+        <h1 className="arthead">Art</h1>
+        <button className="btn btn-info artbtn" onClick={this.handleSubmit}><h3>All art</h3></button>
+        <div className="row justify-content-around">
+          <div className="col-4 dropdown pt-1">
+            <h3>Search by neighborhood</h3>
+            {this.state.neighborhoods.map(neighborhoods => (
+            <DropList
+              id={neighborhoods.id}
+              key={neighborhoods.id}
+              listItem={neighborhoods.neighborhood}
+              count={neighborhoods.count}
+              handleClick={(event) => {
+                event.preventDefault();
+                API.ArtPage.getNeighborhood(neighborhoods.neighborhood)
+                .then(res => this.setState({ art: res.data}))
+                .catch(err => console.log(err))
+              }}
+              />
+              ))}
           </div>
-          {
-            this.state.showMenu
-              ? (
-                <div
-                  className="menu"
-                  ref={(element) => {
-                    this.dropdownMenu = element;
-                  }}
-                >
-                  <button onClick={this.handleNeighborhood}> NODA </button>
-                  <button onClick={this.handleArtist}> William Puckett </button>
-                  <button> Menu item 3 </button>
-                </div>
-              )
-              : (
-                <button onClick={this.showMenu}>
-                  GO ART AGAIN!
-              </button>
-              )
-          }
+          <div className="col-4 dropdown pt-1">
+            <h3>Search by artist</h3>
+            {this.state.artists.map(artists => (
+              <DropList
+                id={artists.id}
+                key={artists.id}
+                listItem={artists.artistName}
+                count={artists.count}
+                handleClick={(event) => {
+                  event.preventDefault();
+                  API.ArtPage.getArtist(artists.artistName)
+                  .then(res => this.setState({ art: res.data}))
+                  .catch(err => console.log(err))
+                }}
+                />
+            ))}
+          </div>
         </div>
         {this.state.art.map(art => (
           <div data-aos="fade-left">
