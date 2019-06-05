@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Map, Marker, Popup, TileLayer } from 'react-leaflet'
-// import "./MapPage.css";
+import "./styles/mapPopup.css";
 import API from "../../lib/API";
 
 
@@ -9,9 +9,7 @@ class PopupMap extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-    //   lat: 35.2271,
-    //   lng: -80.843124,
-      zoom: 13,
+      zoom: 16,
       markers: []
     }
   }
