@@ -4,11 +4,17 @@
     height: 325px;
     margin: 1rem;
     position: relative;
-    width: 95vw;
+    width: 90vw;
     box-shadow: 0 3px 6px #999, 0 3px 6px #999;
     text-align: left;
     overflow-y: hidden;
+    overflow-x: hidden;
 }
+
+.card::-webkit-scrollbar { 
+    display: none;
+    z-index: 1;
+} 
 
 .card-img {
     width: 100%;
@@ -56,6 +62,8 @@
 
 @media screen and (max-width: 768px) {
     .card{
+        height: 95vh;
+        width: 75vw;
         overflow-y: scroll;
     }
 }

@@ -29,3 +29,9 @@
 .nav-tabs:hover {
     opacity: 1;
 }
+
+@media screen and (max-width: 600px) {
+    .nav-tabs {
+        opacity: 1;
+    }
+}
