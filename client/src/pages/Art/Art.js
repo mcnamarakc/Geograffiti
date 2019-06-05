@@ -3,7 +3,6 @@ import API from "../../lib/API";
 import ArtCard from "../../components/App/ArtCard";
 import NavTabs from "../../components/App/NavTabs";
 import AOS from "aos";
-import Dropdown from "../../components/App/dropdown";
 import DropList from "../../components/App/DropList";
 import "./Art.css";
 
@@ -59,7 +58,7 @@ class Art extends React.Component {
         <NavTabs />
         <h1 className="arthead">Art</h1>
         <button className="btn btn-info artbtn" onClick={this.handleSubmit}><h3>All art</h3></button>
-        <div className="row justify-content-around">
+        <div className="row justify-content-around art-row">
           <div className="col-4 dropdowner pt-1">
             <h3>Search by neighborhood</h3>
             {this.state.neighborhoods.map(neighborhoods => (

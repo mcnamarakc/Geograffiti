@@ -80,5 +80,22 @@ export default {
         }
       });
     }
+  },
+
+  Submit: {
+    art: function(authToken, data) {
+      return axios.post('/api/art/', data, {
+        headers: {
+          'Authorization': `Bearer ${authToken}`
+        }
+      });
+    },
+    business: function (authToken, data) {
+      return axios.post('/api/business/', data, {
+        headers: {
+          'Authorization': `Bearer ${authToken}`
+        }
+      });
+    }
   }
 }
