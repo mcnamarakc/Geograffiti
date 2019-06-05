@@ -37,6 +37,9 @@ if (process.env.NODE_ENV === 'production') {
 app.use(require('./controllers'));
 
 var syncOptions = { force: false };
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build/index.html'));
+});
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`
