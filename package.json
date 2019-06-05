@@ -9,7 +9,8 @@
     "install:server": "cd server && npm install",
     "start": "node server/server.js",
     "start:dev": "concurrently -n client,server \"npm run client:dev\" \"nodemon server/server.js\"",
-    "client:dev": "cd client && npm start"
+    "client:dev": "cd client && npm start",
+    "heroku-postbuild": "npm build"
   },
   "devDependencies": {
     "concurrently": "^4.1.0",
