@@ -23,6 +23,16 @@ export default {
     }
   },
 
+  Business: {
+    getBrewery: function() {
+      return axios.get("/api/business/all")
+    },
+
+    getNeighborhoodBrewery: function(query) {
+      return axios.get("/api/business/search", {params: {neighborhood: query}})
+    }
+  },
+
   Users: {
     login: function (email, password) {
       return axios.post('/api/users/login', { email, password });
@@ -75,6 +85,23 @@ export default {
   Secrets: {
     getAll: function (authToken) {
       return axios.get('/api/secrets', {
+        headers: {
+          'Authorization': `Bearer ${authToken}`
+        }
+      });
+    }
+  },
+
+  Submit: {
+    art: function(authToken, data) {
+      return axios.post('/api/art/', data, {
+        headers: {
+          'Authorization': `Bearer ${authToken}`
+        }
+      });
+    },
+    business: function (authToken, data) {
+      return axios.post('/api/business/', data, {
         headers: {
           'Authorization': `Bearer ${authToken}`
         }

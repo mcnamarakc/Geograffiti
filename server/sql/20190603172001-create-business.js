@@ -9,50 +9,50 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       latitude: {
-        type: DataTypes.DECIMAL(9, 6),
+        type: Sequelize.DECIMAL(15, 12),
         allowNull: false,
-        validate: { min: -90, max: 90 }
       },
       longitude: {
-        type: DataTypes.DECIMAL(9, 6),
+        type: Sequelize.DECIMAL(15, 12),
         allowNull: false,
-        validate: { min: -180, max: 180 }
       },
       type: {
-        type: DataTypes.STRING,
+        type: Sequelize.STRING,
         allowNull: false,
         validate: {
           len: [1]
         }
       },
       neighborhood: {
-        type: DataTypes.STRING,
+        type: Sequelize.STRING,
         allowNull: false,
         validate: {
           len: [1]
         }
       },
       businessName: {
-        type: DataTypes.STRING,
+        type: Sequelize.STRING,
         allowNull: false,
         validate: {
           len: [1]
         }
       },
       description: {
-        type: DataTypes.TEXT
+        type: Sequelize.TEXT
       },
       stillExists: {
-        type: DataTypes.BOOLEAN,
+        type: Sequelize.BOOLEAN,
         defaultValue: true
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: true
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: true
       }
     });
   },
