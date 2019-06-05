@@ -60,7 +60,7 @@ class Art extends React.Component {
         <h1 className="arthead">Art</h1>
         <button className="btn btn-info artbtn" onClick={this.handleSubmit}><h3>All art</h3></button>
         <div className="row justify-content-around">
-          <div className="col-4 dropdown pt-1">
+          <div className="col-4 dropdowner pt-1">
             <h3>Search by neighborhood</h3>
             {this.state.neighborhoods.map(neighborhoods => (
             <DropList
@@ -77,7 +77,7 @@ class Art extends React.Component {
               />
               ))}
           </div>
-          <div className="col-4 dropdown pt-1">
+          <div className="col-4 dropdowner pt-1">
             <h3>Search by artist</h3>
             {this.state.artists.map(artists => (
               <DropList
