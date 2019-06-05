@@ -15,6 +15,7 @@ import Art from "../../pages/Art/Art";
 import Bio from "../../pages/Bio/Bio";
 import SignUp from "../../pages/SignUp/SignUp";
 import ApiService from "../../pages/ApiService/ApiService";
+import Artists from "../../pages/Bio/Artists";
 
 import './App.css';
 
@@ -66,6 +67,7 @@ class App extends Component {
               <Route exact path="/art" component={Art} />
               <Route path='/apiService' component={ApiService} />
               <Route path="/bio" component={Bio} />
+              <Route exact path="/bio/artists" component={Artists} />
               <Route component={NotFound} />
             </Switch>
         </div>
