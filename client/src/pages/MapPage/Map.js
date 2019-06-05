@@ -17,6 +17,20 @@ const MyMarkersList = ({ markers }) => {
   return <>{items}</>
 }
 
+const MyPopupMarkerBrew = ({ content, position }) => (
+  <Marker position={position}>
+    <Popup>{content}</Popup>
+  </Marker>
+)
+
+const MyMarkersListBrew = ({ markers }) => {
+  const items = markers.map(({ key, ...props }) => (
+    <MyPopupMarkerBrew key={key} {...props} />
+  ))
+  return <>{items}</>
+}
+
+
 
 class Map extends React.Component {
   constructor(props) {
@@ -26,6 +40,7 @@ class Map extends React.Component {
       lng: -80.843124,
       zoom: 13,
       markers: [],
+      brewMarkers: [],
       nbhood: ""
     }
   }
@@ -37,6 +52,7 @@ class Map extends React.Component {
       .then(res => {
         this.setState({
           nbhood: "NODA",
+          brewMarkers: [],
           markers: res.data.map(item => {
             return ({ position: [item.latitude, item.longitude], key: item.id, content: <><p className="popup-title">Title: {!item.title ? "Unknown" : item.title}</p><img className="popup-image" src={item.image} /></>})
           })
@@ -52,6 +68,7 @@ class Map extends React.Component {
       .then(res => {
         this.setState({
           nbhood: "Plaza-Midwood",
+          brewMarkers: [],
           markers: res.data.map(item => {
             return ({ position: [item.latitude, item.longitude], key: item.id, content: <><p className="popup-title">Title: {!item.title ? "Unknown" : item.title}</p><img className="popup-image" src={item.image} /></>})
           })
@@ -59,7 +76,56 @@ class Map extends React.Component {
         console.log(this.state.nbhood)
       })
       .catch(err => console.log(err));
+  }
 
+  removeBreweries = event => {
+    event.preventDefault();
+    this.setState({
+      brewMarkers: []
+    })
+  }
+
+  renderBreweries = event => {
+    event.preventDefault();
+    if (this.state.nbhood === "NODA") {
+      API.Business.getNeighborhoodBrewery("NODA")
+        .then(res => {
+          console.log(res.data)
+          this.setState({
+            brewMarkers: res.data.map(brew => {
+              return ({ position: [brew.latitude, brew.longitude], key: brew.id, content: <><p><b>{brew.businessName}</b></p><p>{brew.description}</p></>})
+            })
+          })
+          console.log(this.state.brewMarkers)
+        })
+        .catch(err => console.log(err));
+    }
+    else if (this.state.nbhood === "Plaza-Midwood") {
+      API.Business.getNeighborhoodBrewery("Plaza-Midwood")
+      .then(res => {
+        console.log(res.data)
+        this.setState({
+          brewMarkers: res.data.map(brew => {
+            return ({ position: [brew.latitude, brew.longitude], key: brew.id, content: <><p><b>{brew.businessName}</b></p><p>{brew.description}</p></>})
+          })
+        })
+        console.log(this.state.brewMarkers)
+      })
+      .catch(err => console.log(err));
+    }
+    else {
+      API.Business.getBrewery()
+      .then(res => {
+        console.log(res.data)
+        this.setState({
+          brewMarkers: res.data.map(brew => {
+            return ({ position: [brew.latitude, brew.longitude], key: brew.id, content: <><p><b>{brew.businessName}</b></p><p>{brew.description}</p></>})
+          })
+        })
+        console.log(this.state.brewMarkers)
+      })
+      .catch(err => console.log(err));
+    }
   }
 
   renderAllMuralMarkers = event => {
@@ -67,6 +133,7 @@ class Map extends React.Component {
     API.ArtPage.getArt()
       .then(res => {
         this.setState({
+          nbhood: "",
           markers: res.data.map(item => {
             return ({ position: [item.latitude, item.longitude], key: item.id, content: <><p className="popup-title">Title: {!item.title ? "Unknown" : item.title}</p><img className="popup-image" src={item.image} /></>})
           })
@@ -80,7 +147,6 @@ class Map extends React.Component {
   render() {
     const position = [this.state.lat, this.state.lng];
 
-    console.log(this.state.markers)
     return (
       <div>
         <LeafletMap center={position} zoom={this.state.zoom}>
@@ -89,10 +155,13 @@ class Map extends React.Component {
             url='https://{s}.tile.osm.org/{z}/{x}/{y}.png'
           />
           <MyMarkersList markers={this.state.markers}/>
+          <MyMarkersListBrew markers={this.state.brewMarkers}/>
         </LeafletMap>
         <button onClick={this.renderNodaMarkers} type="button" className="btn btn-secondary">Noda</button>
         <button onClick={this.renderMidwoodMarkers} type="button" className="btn btn-secondary">Plaza Midwood</button>
         <button onClick={this.renderAllMuralMarkers} type="button" id="allMuralMarkersMapBtn" className="btn btn-secondary">Show all</button>
+        <button onClick={this.renderBreweries} type="button" id="allBreweryMarkersMapBtn" className="btn btn-secondary">Add Breweries</button>
+        <button onClick={this.removeBreweries} type="button" id="removeBreweryMarkersMapBtn" className="btn btn-secondary">Remove Breweries</button>
       </div>
 
     );

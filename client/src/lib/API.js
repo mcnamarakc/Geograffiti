@@ -23,6 +23,16 @@ export default {
     }
   },
 
+  Business: {
+    getBrewery: function() {
+      return axios.get("/api/business/all")
+    },
+
+    getNeighborhoodBrewery: function(query) {
+      return axios.get("/api/business/search", {params: {neighborhood: query}})
+    }
+  },
+
   Users: {
     login: function (email, password) {
       return axios.post('/api/users/login', { email, password });
