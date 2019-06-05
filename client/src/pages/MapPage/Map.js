@@ -71,6 +71,21 @@ class Map extends React.Component {
 
   }
 
+  renderMidwoodMarkers = event => {
+    event.preventDefault();
+    API.ArtPage.getNeighborhood("Plaza-Midwood")
+      .then(res => {
+        this.setState({
+          markers: res.data.map(item => {
+            return ({ position: [item.latitude, item.longitude], key: item.id, content: <><p className="popup-title">{!item.title ? "Unknown" : item.title}</p><img className="popup-image" src={item.image} /></>})
+          })
+        })
+      })
+      .catch(err => console.log(err));
+
+  }
+
+
   render() {
     const position = [this.state.lat, this.state.lng];
     console.log(this.state.markers)
