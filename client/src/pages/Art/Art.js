@@ -65,7 +65,7 @@ class Art extends React.Component {
             <DropList
               id={neighborhoods.id}
               key={neighborhoods.id}
-              listItem={neighborhoods.neighborhood}
+              listItem={(neighborhoods.neighborhood==="NODA") ? "NoDa" : neighborhoods.neighborhood}
               count={neighborhoods.count}
               handleClick={(event) => {
                 event.preventDefault();
@@ -103,7 +103,7 @@ class Art extends React.Component {
               image={art.image}
               artist={!art.artistName ? "Unknown" : art.artistName}
               description={art.description}
-              location={art.neighborhood}
+              location={(art.neighborhood==="NODA") ? "NoDa" : art.neighborhood}
               latitude={art.latitude}
               longitude={art.longitude}
             />

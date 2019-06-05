@@ -42,7 +42,7 @@ class ArtCard extends Component {
             </div>
           </div>
           <div>
-            <span onClick={this.togglePopup.bind(this)} className="display-map">veiw on map</span>
+            <span onClick={this.togglePopup.bind(this)} className="display-map">view on map</span>
 
             {this.state.showPopup ?
               <Popup

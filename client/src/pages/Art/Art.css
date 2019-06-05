@@ -58,4 +58,5 @@
 .art-row {
     max-height: 12vh;
     max-width: 100vw;
+    padding-left: 5vw;
 }
