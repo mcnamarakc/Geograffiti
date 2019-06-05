@@ -10,11 +10,11 @@ module.exports = {
       },
       latitude: {
         allowNull: false,
-        type: Sequelize.DECIMAL(9, 6)
+        type: Sequelize.DECIMAL(15, 12)
       },
       longitude: {
         allowNull: false,
-        type: Sequelize.DECIMAL(9, 6)
+        type: Sequelize.DECIMAL(15, 12)
       },
       type: {
         allowNull: false,

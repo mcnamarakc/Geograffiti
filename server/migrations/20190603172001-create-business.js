@@ -9,12 +9,12 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       latitude: {
-        type: DataTypes.DECIMAL(9, 6),
+        type: DataTypes.DECIMAL(15, 12),
         allowNull: false,
         validate: { min: -90, max: 90 }
       },
       longitude: {
-        type: DataTypes.DECIMAL(9, 6),
+        type: DataTypes.DECIMAL(15, 12),
         allowNull: false,
         validate: { min: -180, max: 180 }
       },
