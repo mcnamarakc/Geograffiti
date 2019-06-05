@@ -16,6 +16,7 @@ import Bio from "../../pages/Bio/Bio";
 import SignUp from "../../pages/SignUp/SignUp";
 import ApiService from "../../pages/ApiService/ApiService";
 import Artists from "../../pages/Bio/Artists";
+import AddLocation from "../../pages/AddLocation";
 
 import './App.css';
 
@@ -65,6 +66,7 @@ class App extends Component {
               <Route exact path='/' component={Home} />
               <Route exact path="/map" component={MapPage} />
               <Route exact path="/art" component={Art} />
+              <Route exact path="/add" component={AddLocation} />
               <Route path='/apiService' component={ApiService} />
               <Route path="/bio" component={Bio} />
               <Route exact path="/bio/artists" component={Artists} />
