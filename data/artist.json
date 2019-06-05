@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "name": "Matt Hooker",
+        "instagram": "https://www.instagram.com/hookermedia/",
+        "bio": "Artist guy. I also like motorcycles, cars and music made before 1985.",
+        "iage": "http://charlottemagazine-images.dashdigital.com/DentistMuralEliz-11.jpg?ver=1488381046"  
+    },
+    {
+        "id": 2,
+        "name": "Matt Moore",
+        "instagram": "https://www.instagram.com/puckmcgruff/",
+        "bio": "Since 2014, Hooker and Moore have been covering Charlotte with their murals.",
+        "image": "http://charlottemagazine-images.dashdigital.com/DentistMuralEliz-14.jpg?ver=1488381066"
+    },
+    {
+        "id": 3,
+        "name": "William Puckett",
+        "instagram": "https://www.instagram.com/mr_puckett/",
+        "bio": "Whether you're driving under the Matheson Avenue bridge, grabbing a cup of coffee and a pastry from Amelie's or stopping by the venerable Jack Beagle's for a drink the murals by local artist Will Puckett are a familiar site for Charlotte locals",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPvyP4n61fKuFoePavPFUdh0FVp0zn4qXnGn4vRsFg7kCSLdZBkQ"
+    },
+    {
+        "id": 4,
+        "name": "Nick Napoletano",
+        "instagram": "https://www.instagram.com/napoletanoart/",
+        "bio": "A painter, muralist, and designer known for hyperrealist works brimming with allegory and symbolism",
+        "image": "https://static1.squarespace.com/static/5908d9071b631b40f80f774e/t/5908dba586e6c00e33d8df42/1493752764574/?format=500w"
+    }
+]
