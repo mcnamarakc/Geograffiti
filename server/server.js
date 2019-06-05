@@ -36,10 +36,6 @@ if (process.env.NODE_ENV === 'production') {
 //-- Controller Routes -------------------------------------------------------
 app.use(require('./controllers'));
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
-})
-
 var syncOptions = { force: false };
 
 // If running a test, set syncOptions.force to true
