@@ -100,6 +100,8 @@ class Art extends React.Component {
               artist={!art.artistName ? "Unknown" : art.artistName}
               description={art.description}
               location={art.neighborhood}
+              latitude={art.latitude}
+              longitude={art.longitude}
             />
           </div>
         ))}
