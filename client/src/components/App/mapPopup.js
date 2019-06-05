@@ -11,9 +11,7 @@ class Popup extends React.Component {
             <div className='popup'>
                 <div className='popup\_inner'>
                     <h1>{this.props.text}</h1>
-                    <p>{this.props.latitude}</p>
-                    <p>{this.props.longitude}</p>
-                    <button onClick={this.props.closePopup}>close me</button>
+                    <button onClick={this.props.closePopup}>close map</button>
                     <div className="mapPopUp">
                         <PopupMap
                         latitude={this.props.latitude}

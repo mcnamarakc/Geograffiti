@@ -42,13 +42,12 @@ class ArtCard extends Component {
             </div>
           </div>
           <div>
-            <span onClick={this.togglePopup.bind(this)} className="remove">map</span>
+            <span onClick={this.togglePopup.bind(this)} className="display-map">veiw on map</span>
 
             {this.state.showPopup ?
               <Popup
                 latitude={this.props.latitude}
                 longitude={this.props.longitude}
-                text='Click "Close Button" to hide popup'
                 closePopup={this.togglePopup.bind(this)}
               />
               : null
