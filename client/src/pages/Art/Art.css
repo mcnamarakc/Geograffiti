@@ -54,3 +54,7 @@
 .artbtn h3 {
     color: black;
 }
+
+.art-row {
+    max-height: 12vh;
+}
