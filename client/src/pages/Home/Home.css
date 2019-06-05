@@ -74,12 +74,19 @@
 .jumbotron {
 	height: 45vh;
 	background-color: #262B2F;
+	overflow-x: hidden;
+	overflow-y: hidden;
 }
+
+.jumbotron::-webkit-scrollbar { 
+    display: none;
+    z-index: 1;
+} 
 
 
 #page {
     height: 100%;
-    width: 100%;
+	width: 100%;
 }
 
 .cb-slideshow,
@@ -449,4 +456,7 @@
 }
 @media screen and (max-width: 600px) { 
 	.cb-slideshow li div h3 { font-size: 50px }
+	.grayout {
+		filter: grayscale(0%);
+	}
 }
