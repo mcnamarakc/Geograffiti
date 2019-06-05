@@ -25,15 +25,18 @@ class Map extends React.Component {
       lat: 35.2271,
       lng: -80.843124,
       zoom: 13,
-      markers: []
+      markers: [],
+      nbhood: ""
     }
   }
+
 
   renderNodaMarkers = event => {
     event.preventDefault();
     API.ArtPage.getNeighborhood("NODA")
       .then(res => {
         this.setState({
+          nbhood: "NODA",
           markers: res.data.map(item => {
             return ({ position: [item.latitude, item.longitude], key: item.id, content: <><p className="popup-title">Title: {!item.title ? "Unknown" : item.title}</p><img className="popup-image" src={item.image} /></>})
           })
@@ -66,9 +69,9 @@ class Map extends React.Component {
             return ({ position: [item.latitude, item.longitude], key: item.id, content: <><p className="popup-title">Title: {!item.title ? "Unknown" : item.title}</p><img className="popup-image" src={item.image} /></>})
           })
         })
+        console.log(this.state.nbhood)
       })
       .catch(err => console.log(err));
-
   }
 
   renderMidwoodMarkers = event => {
@@ -76,10 +79,12 @@ class Map extends React.Component {
     API.ArtPage.getNeighborhood("Plaza-Midwood")
       .then(res => {
         this.setState({
+          nbhood: "Plaza-Midwood",
           markers: res.data.map(item => {
             return ({ position: [item.latitude, item.longitude], key: item.id, content: <><p className="popup-title">{!item.title ? "Unknown" : item.title}</p><img className="popup-image" src={item.image} /></>})
           })
         })
+        console.log(this.state.nbhood)
       })
       .catch(err => console.log(err));
 
@@ -88,6 +93,7 @@ class Map extends React.Component {
 
   render() {
     const position = [this.state.lat, this.state.lng];
+
     console.log(this.state.markers)
     return (
       <div>
