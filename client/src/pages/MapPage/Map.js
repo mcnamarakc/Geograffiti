@@ -62,6 +62,20 @@ class Map extends React.Component {
 
   }
 
+  renderAllMuralMarkers = event => {
+    event.preventDefault();
+    API.ArtPage.getArt()
+      .then(res => {
+        this.setState({
+          markers: res.data.map(item => {
+            return ({ position: [item.latitude, item.longitude], key: item.id, content: <><p className="popup-title">Title: {!item.title ? "Unknown" : item.title}</p><img className="popup-image" src={item.image} /></>})
+          })
+        })
+        console.log(this.state.nbhood)
+      })
+      .catch(err => console.log(err));
+  }
+
 
   render() {
     const position = [this.state.lat, this.state.lng];
@@ -78,6 +92,7 @@ class Map extends React.Component {
         </LeafletMap>
         <button onClick={this.renderNodaMarkers} type="button" className="btn btn-secondary">Noda</button>
         <button onClick={this.renderMidwoodMarkers} type="button" className="btn btn-secondary">Plaza Midwood</button>
+        <button onClick={this.renderAllMuralMarkers} type="button" id="allMuralMarkersMapBtn" className="btn btn-secondary">Show all</button>
       </div>
 
     );
