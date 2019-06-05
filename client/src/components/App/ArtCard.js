@@ -8,14 +8,21 @@ class ArtCard extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { showPopup: false };
+    this.state = { 
+      showPopup: false,
+      lat: 0,
+      lng: 0
+     };
   }
 
   togglePopup() {
     this.setState({
-      showPopup: !this.state.showPopup
+      showPopup: !this.state.showPopup,
+
     });
   }
+
+  
   render() {
     return (
       <div className="card mb-3">
@@ -39,7 +46,8 @@ class ArtCard extends Component {
 
             {this.state.showPopup ?
               <Popup
-
+                latitude={this.props.latitude}
+                longitude={this.props.longitude}
                 text='Click "Close Button" to hide popup'
                 closePopup={this.togglePopup.bind(this)}
               />
