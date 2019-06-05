@@ -4,6 +4,10 @@ export default {
   ArtPage: {
     getArt: function() {
       return axios.get("/api/art/all");
+    },
+
+    getNeighborhood: function(query) {
+      return axios.get("/api/art/search", {params:{neighborhood: query}});
     }
   },
 
@@ -22,6 +26,37 @@ export default {
 
     register: function (email, password) {
       return axios.post('/api/users/register', { email, password });
+    }
+  },
+
+  ApiKey: {
+    requestKey: function (authToken) {
+      return axios.post('/api/keys/', {}, {
+        headers: {
+          'Authorization': `Bearer ${authToken}`
+        }
+      });
+    },
+    revokeKey: function (authToken) {
+      return axios.delete('/api/keys/', {
+        headers: {
+          'Authorization': `Bearer ${authToken}`
+        }
+      });
+    },
+    getKey: function (authToken) {
+      return axios.get('/api/keys/', {
+        headers: {
+          'Authorization': `Bearer ${authToken}`
+        }
+      });
+    },
+    testKey: function (apiKey) {
+      return axios.get('/api/keys/test', {
+        headers: {
+          'Authorization': `Api-Key ${apiKey}`
+        }
+      });
     }
   },
 

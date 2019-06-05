@@ -1,5 +1,6 @@
 const passport = require('passport');
 const { Strategy: JwtStrategy, ExtractJwt } = require('passport-jwt');
+const { HeaderAPIKeyStrategy } = require('passport-headerapikey');
 
 const db = require('../models');
 
@@ -18,7 +19,35 @@ passport.use(
 
 const JWTVerifier = passport.authenticate('jwt', { session: false });
 
+passport.use(
+  new HeaderAPIKeyStrategy(
+    { header: 'Authorization', prefix: 'Api-Key ' },
+    false,
+    function(apikey, done) {
+      db.User.findOne({ where: { apiKey: apikey } })
+        .then(user => {
+          if (!user) {
+            return done(null, false);
+          }
+          if (user.remainingRequests > 0) {
+            return done('out of requests', null);
+          }
+          return done(null, user);
+        })
+        .catch(err => {
+          return done(err);
+        });
+    }
+  )
+);
+
+const ApiKeyVerifier = passport.authenticate('headerapikey', {
+  session: false //,
+  //failureRedirect: '/api/unauthorized'
+});
+
 module.exports = {
   passport,
-  JWTVerifier
+  JWTVerifier,
+  ApiKeyVerifier
 };

@@ -27,19 +27,21 @@ class Navigation extends Component {
     return (
       <div className='Navigation'>
         <nav className='navbar navbar-expand-lg navbar-dark bg-dark mb-3'>
-          <Link className='navbar-brand' to='#'><i class="fas fa-spray-can"></i></Link>
+          <Link className='navbar-brand nav-link' to='/' onClick={this.toggleCollapse}><i className="fas fa-spray-can"></i></Link>
           <button className={togglerClass} onClick={this.toggleCollapse} data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
             <span className='navbar-toggler-icon'></span>
           </button>
 
           <div className={targetClass} id='navbarSupportedContent'>
-            <ul className='navbar-nav mr-auto'>
-              <li className='nav-item'>
-                <Link className='nav-link' to='/' onClick={this.toggleCollapse}>Home</Link>
-              </li>
+            <ul id="navBarLinksHide" className='navbar-nav mr-auto'>
+              
               {user &&
                 <li className='nav-item'>
                   <Link className='nav-link' to='/secret' onClick={this.toggleCollapse}>Secret</Link>
+                </li>}
+              {user &&
+                <li className='nav-item'>
+                  <Link className='nav-link' to='/apiservice' onClick={this.toggleCollapse}>API</Link>
                 </li>}
             </ul>
             <ul className='navbar-nav'>

@@ -7,12 +7,22 @@ h1 {
     text-align: center;
 }
 
-#map {
+/* #map {
     /* position: absolute; */
-    top: 0;
+    /* top: 0;
     bottom: 0;
     width: 100%;
+} */ */
+
+#container { 
+    height: 180px;
+    width: 75%;
 }
+
+.leaflet-container {
+    height: 400px;
+    width: 100%;
+  }
 
 .info-box {
     /* position: absolute; */
@@ -31,4 +41,13 @@ h1 {
 #info {
     font-size: 16px;
     font-weight: bold;
+}
+
+.popup-image {
+    height: 7vh;
+    width: 7vw;
+}
+
+.popup-title {
+
 }

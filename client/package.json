@@ -6,12 +6,18 @@
   "dependencies": {
     "aos": "^2.3.4",
     "axios": "^0.18.0",
+    "leaflet": "^1.5.1",
+    "leaflet-react": "^3.0.5",
     "react": "^16.8.3",
     "react-bootstrap-carousel": "^3.4.1",
     "react-center": "^1.1.1",
     "react-dom": "^16.8.3",
     "react-gravatar": "^2.6.3",
+<<<<<<< HEAD
     "react-responsive-carousel": "^3.1.49",
+=======
+    "react-leaflet": "^2.3.0",
+>>>>>>> 6b151eac8f53d0773c29cf352b4f15cec807b3d3
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.5"

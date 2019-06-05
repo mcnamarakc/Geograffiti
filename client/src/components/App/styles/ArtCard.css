@@ -7,7 +7,7 @@
     width: 95vw;
     box-shadow: 0 3px 6px #999, 0 3px 6px #999;
     text-align: left;
-    overflow-y: scroll;
+    overflow-y: hidden;
 }
   
 .card .row .img-container {
@@ -48,4 +48,9 @@
 .card > .remove:hover {
     color: #d50000;
 }
-    
+
+@media screen and (max-width: 768px) {
+    .card{
+        overflow-y: scroll;
+    }
+}

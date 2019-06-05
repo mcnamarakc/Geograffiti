@@ -3,6 +3,7 @@
     right: 0;
     top: 20vh;
     width: 3vw;
+    transition: width 0.6s;
     height: 45vh;
     background-color: gray;
     opacity: .5;
@@ -10,9 +11,11 @@
 
 }
 
-/* .nav-tabs {
-    display: none;
-} */
+.nav-tabs {
+    text-align: left;
+    opacity: 0;
+    transition: opacity 0.6s;
+}
 
 /* .navLinks:hover + .navHidden {
     display: block;
@@ -24,5 +27,5 @@
 }
 
 .nav-tabs:hover {
-    display: block;
+    opacity: 1;
 }
