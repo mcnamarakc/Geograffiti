@@ -32,7 +32,8 @@ class Map extends React.Component {
   renderNodaMarkers = event => {
     event.preventDefault();
     API.ArtPage.getNeighborhood("NODA")
-      .then(res => {
+    .then(res => {
+      console.log("HEy++++++++++++++++")
         this.setState({
           markers: res.data.map(item => {
             return ({ position: [item.latitude, item.longitude], key: item.id, content: <><p className="popup-title">{!item.title ? "Unknown" : item.title}</p><img className="popup-image" src={item.image} /></>})
@@ -42,6 +43,22 @@ class Map extends React.Component {
       .catch(err => console.log(err));
 
   }
+
+  renderMidwoodMarkers = event => {
+    event.preventDefault();
+    API.ArtPage.getNeighborhood("Plaza-Midwood")
+    .then(res => {
+      console.log("HEy++++++++++++++++")
+        this.setState({
+          markers: res.data.map(item => {
+            return ({ position: [item.latitude, item.longitude], key: item.id, content: <><p className="popup-title">{!item.title ? "Unknown" : item.title}</p><img className="popup-image" src={item.image} /></>})
+          })
+        })
+      })
+      .catch(err => console.log(err));
+
+  }
+
 
   render() {
     const position = [this.state.lat, this.state.lng];
