@@ -38,7 +38,7 @@ class Map extends React.Component {
         this.setState({
           nbhood: "NODA",
           markers: res.data.map(item => {
-            return ({ position: [item.latitude, item.longitude], key: item.id, content: <><p className="popup-title">{!item.title ? "Unknown" : item.title}</p><img className="popup-image" src={item.image} /></>})
+            return ({ position: [item.latitude, item.longitude], key: item.id, content: <><p className="popup-title">Title: {!item.title ? "Unknown" : item.title}</p><img className="popup-image" src={item.image} /></>})
           })
         })
         console.log(this.state.nbhood)
