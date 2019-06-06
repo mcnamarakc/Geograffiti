@@ -9,11 +9,11 @@ import Center from 'react-center';
 class ArtistsCard extends Component {
     render() {
         return (
-            <div className="artistCarousel">
+            <div className="artistCarousel" id="carousel">
             <Center>
             <Carousel showThumbs={false} width='750px' dynamicHeight> 
                 <div>
-                    <img className="carouselImage" src="http://charlottemagazine-images.dashdigital.com/DentistMuralEliz-11.jpg?ver=1488381046" alt="Matt Hooker" />
+                    <img className="carouselImage" src="http://charlottemagazine-images.dashdigital.com/DentistMuralEliz-11.jpg?ver=1488381046" alt="Matt Hooker"/>
                     <h5 className="legend">Matt Hooker -- Artist guy. I also like motorcycles, cars and music made before 1985.</h5>
                 </div> 
                 <div>
