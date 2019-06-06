@@ -28,13 +28,7 @@ class LoginForm extends Component {
     return (
       <div className='LoginForm'>
         <div className='card'>
-          <div className="card-header">
-            <ul className="nav nav-pills card-header-pills">
-              <li className="nav-item">
-                <a className="nav-link active" href="/register">Register</a>
-              </li>
-            </ul>
-          </div>
+          <div className="card-header"></div>
           <div className='card-body'>
             <form className='LoginForm' onSubmit={this.handleSubmit}>
               <div className='input-group mb-3'>
@@ -67,8 +61,10 @@ class LoginForm extends Component {
                 />
               </div>
 
-              <button className='btn btn-primary' type='submit'>Login</button>
-      
+              <div style={{ display: "flex", flexDirection: "row", justifyContent: "center" }}>
+                <button className='btn btn-primary' type='submit'>Login</button>
+                <button className="btn btn-secondary"><a className="nav-link active" href="/register">Register</a></button>
+              </div>
             </form>
           </div>
         </div>

@@ -65,6 +65,13 @@ h1 {
     margin: 1vh;
 }
 
+button .murals {
+    color: blue;
+}
+
+button .breweries {
+    color: purple;
+}
 
 /* #nodaMapBtn {
 

@@ -1,31 +1,47 @@
 import React from "react";
+import "../ArtForm/style.css";
 
-const BusinessForm = ({ latitude, longitude, address, type, businessName, neighborhood, description, handleInputChange, handleFormSubmit }) => {
+const BusinessForm = ({ latitude, longitude, address, type, businessName, neighborhood, description, handleInputChange, handleFormSubmit, missing }) => {
   return (
     <form className="form">
-      <div>
+      <div className="form-item">
+        <label htmlFor="type" style={{ color: "white" }}>Latitude:</label>
         <input
-          className="form-control"
+          className={missing.latitude ? "form-control is-invalid" : "form-control"}
           value={latitude}
           name="latitude"
           onChange={handleInputChange}
           type="number"
-          placeholder="latitude"
+          placeholder="latitude (required)"
         />
+        {missing.latitude
+          ? <div className="invalid-feedback">
+            Please enter a latitude
+          </div>
+          : ""
+        }
       </div>
 
-      <div>
+      <div className="form-item">
+        <label htmlFor="type" style={{ color: "white" }}>Longitude:</label>
         <input
-          className="form-control"
+          className={missing.longitude ? "form-control is-invalid" : "form-control"}
           value={longitude}
           name="longitude"
           onChange={handleInputChange}
           type="number"
-          placeholder="longitude"
+          placeholder="longitude (required)"
         />
+        {missing.longitude
+          ? <div className="invalid-feedback">
+            Please enter a longitude
+          </div>
+          : ""
+        }
       </div>
 
-      <div>
+      <div className="form-item">
+        <label htmlFor="type" style={{ color: "white" }}>Address:</label>
         <input
           className="form-control"
           value={address}
@@ -36,7 +52,7 @@ const BusinessForm = ({ latitude, longitude, address, type, businessName, neighb
         />
       </div>
 
-      <div>
+      <div className="form-item">
         <label htmlFor="type" style={{ color: "white" }}>Type:</label>
         <input
           value={type}
@@ -44,8 +60,8 @@ const BusinessForm = ({ latitude, longitude, address, type, businessName, neighb
           name="type"
           list="types"
           type="text"
-          className="form-control"
-          placeholder="Type"
+          className={missing.type ? "form-control is-invalid" : "form-control"}
+          placeholder="Type (required)"
           id="type"
         />
         <datalist id="types">
@@ -53,9 +69,15 @@ const BusinessForm = ({ latitude, longitude, address, type, businessName, neighb
             <option value={type} key={type} />
           ))}
         </datalist>
+        {missing.type
+          ? <div className="invalid-feedback">
+            Please enter a type
+          </div>
+          : ""
+        }
       </div>
 
-      <div>
+      <div className="form-item">
         <label htmlFor="type" style={{ color: "white" }}>Neighborhood:</label>
         <input
           value={neighborhood}
@@ -63,8 +85,8 @@ const BusinessForm = ({ latitude, longitude, address, type, businessName, neighb
           name="neighborhood"
           list="neighborhoods"
           type="text"
-          className="form-control"
-          placeholder="neighborhood"
+          className={missing.neighborhood ? "form-control is-invalid" : "form-control"}
+          placeholder="neighborhood (required)"
           id="neighborhood"
         />
         <datalist id="neighborhoods">
@@ -72,9 +94,16 @@ const BusinessForm = ({ latitude, longitude, address, type, businessName, neighb
             <option value={neighborhood} key={neighborhood} />
           ))}
         </datalist>
+        {missing.neighborhood
+          ? <div className="invalid-feedback">
+            Please enter a neighborhood
+          </div>
+          : ""
+        }
       </div>
 
-      <div>
+      <div className="form-item">
+        <label htmlFor="type" style={{ color: "white" }}>Business Name:</label>
         <input
           className="form-control"
           value={businessName}
@@ -85,7 +114,8 @@ const BusinessForm = ({ latitude, longitude, address, type, businessName, neighb
         />
       </div>
 
-      <div>
+      <div className="form-item">
+        <label htmlFor="type" style={{ color: "white" }}>Description:</label>
         <textarea
           className="form-control"
           value={description}
@@ -95,7 +125,7 @@ const BusinessForm = ({ latitude, longitude, address, type, businessName, neighb
         />
       </div>
 
-      <button onClick={handleFormSubmit}>Submit</button>
+      <button onClick={handleFormSubmit} className="btn btn-secondary">Submit</button>
     </form>
   );
 }

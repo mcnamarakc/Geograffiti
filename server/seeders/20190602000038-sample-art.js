@@ -77,8 +77,8 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        latitude: 35.2470243355306,
-        longitude: -80.8055367280506,
+        latitude: 35.24712,
+        longitude: -80.805555,
         type: 'wall-poem',
         neighborhood: 'NODA',
         image:
@@ -91,21 +91,8 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        latitude: 35.2471942372844,
-        longitude: -80.8055931426617,
-        type: 'mural',
-        neighborhood: 'NODA',
-        image:
-          'https://i.pinimg.com/originals/98/da/f8/98daf849a571dcaf75e684ac92b8ea1b.jpg',
-        artistName: 'William Puckett',
-        description: 'Mural depicting President Obama.',
-        stillExists: true,
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        latitude: 35.2471942372844,
-        longitude: -80.8055931426617,
+        latitude: 35.247249,
+        longitude: -80.805341,
         type: 'mural',
         neighborhood: 'NODA',
         image:
