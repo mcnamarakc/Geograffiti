@@ -8,7 +8,7 @@
     position: fixed;  
     width: 100vw;  
     height: 100vh;  
-    top: 10;  
+    top: 0;  
     left: 0;  
     right: 0;  
     bottom: 0;  
@@ -17,7 +17,6 @@
     z-index: 100; 
     display: flex;
     justify-content: center;
-    overflow: hidden
 }
 
 .popImgInner {
@@ -26,14 +25,15 @@
     opacity: 1; */
     position: absolute;  
     left: 10vw;  
-    top: 10vh; 
+    top: 5vh; 
     margin: auto;  
     height: 75vh;
     width: 75vw;  
 }
 
 .popImgPic {
-    height: 100%;
+    max-width: 70vw;
+    max-height: 90vh;
 }
 
 .closeImage {
@@ -41,3 +41,14 @@
     left: 2vw;
     top: 2vh;
 }
+
+.noScroll {
+    overflow: hidden;
+    position: fixed;
+}
+
+/* @media screen and (max-width: 600px) {
+    .popImgPic {
+        width: 2vw;
+    }
+} */
