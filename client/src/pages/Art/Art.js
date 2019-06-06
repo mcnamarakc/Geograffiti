@@ -95,7 +95,7 @@ class Art extends React.Component {
           </div>
         </div>
         {this.state.art.map(art => (
-          <div data-aos="zoom-in-up">
+          <div className="zoomUp">
             <ArtCard
               id={art.id}
               key={art.id}
