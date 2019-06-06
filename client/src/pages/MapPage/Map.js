@@ -170,11 +170,11 @@ class Map extends React.Component {
         </div>
         <div className="row">
           <div className="col-12">
-            <button onClick={this.renderNodaMarkers} type="button" id="nodaMapBtn" className="btn btn-secondary">Noda</button>
-            <button onClick={this.renderMidwoodMarkers} type="button" id="midwoodMapBtn" className="btn btn-secondary">Plaza Midwood</button>
-            <button onClick={this.renderAllMuralMarkers} type="button" id="allMuralMarkersMapBtn" className="btn btn-secondary">Show all</button>
-            <button onClick={this.renderBreweries} type="button" id="allBreweryMarkersMapBtn" className="btn btn-secondary">Add Breweries</button>
-            <button onClick={this.removeBreweries} type="button" id="removeBreweryMarkersMapBtn" className="btn btn-secondary">Remove Breweries</button>
+            <button onClick={this.renderNodaMarkers} type="button" id="nodaMapBtn" className="btn btn-secondary"><div className="murals">Noda</div></button>
+            <button onClick={this.renderMidwoodMarkers} type="button" id="midwoodMapBtn" className="btn btn-secondary"><div className="murals">Plaza Midwood</div></button>
+            <button onClick={this.renderAllMuralMarkers} type="button" id="allMuralMarkersMapBtn" className="btn btn-secondary"><div className="murals">Show all</div></button>
+            <button onClick={this.renderBreweries} type="button" id="allBreweryMarkersMapBtn" className="btn btn-secondary"><div className="breweries">Add Breweries</div></button>
+            <button onClick={this.removeBreweries} type="button" id="removeBreweryMarkersMapBtn" className="btn btn-secondary"><div className="breweries">Remove Breweries</div></button>
 
           </div>
         </div>
