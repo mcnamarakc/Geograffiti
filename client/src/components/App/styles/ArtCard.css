@@ -60,16 +60,31 @@
     color: #d50000;
 }
 
-@media screen and (max-width: 768px) {
-    .card{
-        height: 95vh;
-        width: 75vw;
-        overflow-y: scroll;
-    }
+.zoomImg {
+    height: 10vh;
+    width: 10vw;
+    background-color: whitesmoke;
+    position: absolute;
+    top: 2vh;
+    left: 2vw;
 }
-
 .display-map {
     position: absolute;
     top: 15px;
     right: 30px;
+}
+
+@media screen and (max-width: 768px) {
+    .card{
+        height: 95vh;
+        width: 85vw;
+        overflow-y: scroll;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .card{
+        width: 75vw;
+        margin-bottom: 50px !important;
+    }
 }

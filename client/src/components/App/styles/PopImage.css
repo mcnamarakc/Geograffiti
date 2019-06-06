@@ -1,0 +1,54 @@
+.popImg {
+    /* position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    opacity: .4;
+    z-index: 10; */
+    position: fixed;  
+    width: 100vw;  
+    height: 100vh;  
+    top: 0;  
+    left: 0;  
+    right: 0;  
+    bottom: 0;  
+    margin: auto;  
+    background-color: rgba(0,0,0, 0.8); 
+    z-index: 100; 
+    display: flex;
+    justify-content: center;
+}
+
+.popImgInner {
+    /* height: 50vh;
+    width: 50vw;
+    opacity: 1; */
+    position: absolute;  
+    left: 10vw;  
+    top: 5vh; 
+    margin: auto;  
+    height: 75vh;
+    width: 75vw;  
+}
+
+.popImgPic {
+    max-width: 70vw;
+    max-height: 90vh;
+}
+
+.closeImage {
+    position: absolute;
+    left: 2vw;
+    top: 2vh;
+}
+
+.noScroll {
+    overflow: hidden;
+    position: fixed;
+}
+
+/* @media screen and (max-width: 600px) {
+    .popImgPic {
+        width: 2vw;
+    }
+} */
