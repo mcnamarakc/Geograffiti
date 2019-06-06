@@ -49,5 +49,22 @@ usersController.post('/register', (req, res) => {
 
 // TODO: change password
 // usersController.post('/me', (req, res) => {});
+usersController.post('/me', JWTVerifier, (req, res) => {
+  db.User.update(
+    {
+      email: req.body.email
+    },
+    {
+      where: {
+        id: req.user.id
+      }
+    }
+  )
+    .then(rowsAffected => {
+      console.log(rowsAffected);
+      res.json(rowsAffected);
+    })
+    .catch(err => console.log(err));
+});
 
 module.exports = usersController;
