@@ -1,28 +1,40 @@
 import React from "react";
 
-const BusinessForm = ({ latitude, longitude, address, type, businessName, neighborhood, description, handleInputChange, handleFormSubmit }) => {
+const BusinessForm = ({ latitude, longitude, address, type, businessName, neighborhood, description, handleInputChange, handleFormSubmit, missing }) => {
   return (
     <form className="form">
       <div>
         <input
-          className="form-control"
+          className={missing.latitude ? "form-control is-invalid" : "form-control"}
           value={latitude}
           name="latitude"
           onChange={handleInputChange}
           type="number"
           placeholder="latitude"
         />
+        {missing.latitude
+          ? <div className="invalid-feedback">
+            Please enter a latitude
+          </div>
+          : ""
+        }
       </div>
 
       <div>
         <input
-          className="form-control"
+          className={missing.longitude ? "form-control is-invalid" : "form-control"}
           value={longitude}
           name="longitude"
           onChange={handleInputChange}
           type="number"
           placeholder="longitude"
         />
+        {missing.longitude
+          ? <div className="invalid-feedback">
+            Please enter a longitude
+          </div>
+          : ""
+        }
       </div>
 
       <div>
@@ -44,7 +56,7 @@ const BusinessForm = ({ latitude, longitude, address, type, businessName, neighb
           name="type"
           list="types"
           type="text"
-          className="form-control"
+          className={missing.type ? "form-control is-invalid" : "form-control"}
           placeholder="Type"
           id="type"
         />
@@ -53,6 +65,12 @@ const BusinessForm = ({ latitude, longitude, address, type, businessName, neighb
             <option value={type} key={type} />
           ))}
         </datalist>
+        {missing.type
+          ? <div className="invalid-feedback">
+            Please enter a type
+          </div>
+          : ""
+        }
       </div>
 
       <div>
@@ -63,7 +81,7 @@ const BusinessForm = ({ latitude, longitude, address, type, businessName, neighb
           name="neighborhood"
           list="neighborhoods"
           type="text"
-          className="form-control"
+          className={missing.neighborhood ? "form-control is-invalid" : "form-control"}
           placeholder="neighborhood"
           id="neighborhood"
         />
@@ -72,6 +90,12 @@ const BusinessForm = ({ latitude, longitude, address, type, businessName, neighb
             <option value={neighborhood} key={neighborhood} />
           ))}
         </datalist>
+        {missing.neighborhood
+          ? <div className="invalid-feedback">
+            Please enter a neighborhood
+          </div>
+          : ""
+        }
       </div>
 
       <div>
