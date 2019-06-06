@@ -60,6 +60,15 @@
     color: #d50000;
 }
 
+.zoomImg {
+    height: 10vh;
+    width: 10vw;
+    background-color: whitesmoke;
+    position: absolute;
+    top: 2vh;
+    left: 2vw;
+}
+
 @media screen and (max-width: 768px) {
     .card{
         height: 95vh;
