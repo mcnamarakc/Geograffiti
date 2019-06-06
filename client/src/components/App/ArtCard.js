@@ -2,6 +2,7 @@
 import "./styles/ArtCard.css";
 import Popup from "./mapPopup";
 import React, { Component } from 'react';
+import PopImage from "./PopImage"
 
 
 class ArtCard extends Component {
@@ -9,6 +10,7 @@ class ArtCard extends Component {
   constructor(props) {
     super(props);
     this.state = { 
+      showImage: false,
       showPopup: false,
       lat: 0,
       lng: 0
@@ -19,6 +21,12 @@ class ArtCard extends Component {
     this.setState({
       showPopup: !this.state.showPopup,
 
+    });
+  }
+
+  toggleImage() {
+    this.setState({
+      showImage: !this.state.showImage
     });
   }
 
@@ -42,13 +50,25 @@ class ArtCard extends Component {
             </div>
           </div>
           <div>
-            <span onClick={this.togglePopup.bind(this)} className="display-map">veiw on map</span>
+            <span onClick={this.togglePopup.bind(this)} className="display-map">view on map</span>
 
             {this.state.showPopup ?
               <Popup
                 latitude={this.props.latitude}
                 longitude={this.props.longitude}
                 closePopup={this.togglePopup.bind(this)}
+              />
+              : null
+            }
+          </div>
+          <div>
+            <span onClick={this.toggleImage.bind(this)} className="zoomImg fas fa-search-plus"></span>
+
+            {this.state.showImage ?
+              <PopImage
+                title={this.props.title}
+                image={this.props.image}
+                closeImage={this.toggleImage.bind(this)}
               />
               : null
             }
