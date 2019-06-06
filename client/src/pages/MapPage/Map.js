@@ -1,8 +1,11 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import L from "leaflet";
 import { Map as LeafletMap, Marker, Popup, TileLayer } from 'react-leaflet'
 import "./MapPage.css";
 import API from "../../lib/API";
+import Purple from "./images/marker-icon-violet.png"
+
+const customMarker = L.icon({ iconUrl: Purple })
 
 const MyPopupMarker = ({ content, position }) => (
   <Marker position={position}>
@@ -18,7 +21,7 @@ const MyMarkersList = ({ markers }) => {
 }
 
 const MyPopupMarkerBrew = ({ content, position }) => (
-  <Marker position={position}>
+  <Marker position={position} icon={customMarker}>
     <Popup>{content}</Popup>
   </Marker>
 )
@@ -134,6 +137,7 @@ class Map extends React.Component {
       .then(res => {
         this.setState({
           nbhood: "",
+          brewMarkers: [],
           markers: res.data.map(item => {
             return ({ position: [item.latitude, item.longitude], key: item.id, content: <><p className="popup-title">Title: {!item.title ? "Unknown" : item.title}</p><img className="popup-image" src={item.image} /></> })
           })
@@ -172,7 +176,7 @@ class Map extends React.Component {
           <div className="col-12">
             <button onClick={this.renderNodaMarkers} type="button" id="nodaMapBtn" className="btn btn-secondary">Noda</button>
             <button onClick={this.renderMidwoodMarkers} type="button" id="midwoodMapBtn" className="btn btn-secondary">Plaza Midwood</button>
-            <button onClick={this.renderAllMuralMarkers} type="button" id="allMuralMarkersMapBtn" className="btn btn-secondary">Show all</button>
+            <button onClick={this.renderAllMuralMarkers} type="button" id="allMuralMarkersMapBtn" className="btn btn-secondary">Show All Art</button>
             <button onClick={this.renderBreweries} type="button" id="allBreweryMarkersMapBtn" className="btn btn-secondary">Add Breweries</button>
             <button onClick={this.removeBreweries} type="button" id="removeBreweryMarkersMapBtn" className="btn btn-secondary">Remove Breweries</button>
 
