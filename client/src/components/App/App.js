@@ -16,6 +16,7 @@ import SignUp from "../../pages/SignUp/SignUp";
 import ApiService from "../../pages/ApiService/ApiService";
 import Artists from "../../pages/Bio/Artists";
 import AddLocation from "../../pages/AddLocation";
+import UserAdmin from "../../pages/UserAdmin/UserAdmin";
 
 import './App.css';
 
@@ -68,6 +69,7 @@ class App extends Component {
               <PrivateRoute path='/apiService' component={ApiService} />
               <Route path="/bio" component={Bio} />
               <Route exact path="/bio/artists" component={Artists} />
+              <Route path='/user' component={UserAdmin} />
               <Route component={NotFound} />
             </Switch>
         </div>
