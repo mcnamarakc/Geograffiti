@@ -87,13 +87,7 @@ class SignUp extends Component {
             <div>
                 <h2>Geograffeti</h2>
                 <div className="card h-100 text-center">
-                    <div className="card-header">
-                        <ul className="nav nav-pills card-header-pills">
-                            <li className="nav-item">
-                                <a className="nav-link active" href="/login">login</a>
-                            </li>
-                        </ul>
-                    </div>
+                    <div className="card-header"></div>
                     <div className="card-body">
                         <h5 className="card-title">Register  at Geograffiti</h5>
                         <form>
@@ -152,7 +146,10 @@ class SignUp extends Component {
                                     onChange = {this.handleInputChange}
                                 />
                             </div>
-                            <button type="submit" className="btn btn-primary" onClick={this.handleFormSubmit}>Submit</button>
+                            <div style={{display:"flex", flexDirection: "row", justifyContent: "center"}}>
+                                <button type="submit" className="btn btn-primary" onClick={this.handleFormSubmit}>Submit</button>
+                                <button className="btn btn-secondary"><a className="nav-link active" href="/login">login</a></button>
+                            </div>
                         </form>
                     </div>
                 </div>
