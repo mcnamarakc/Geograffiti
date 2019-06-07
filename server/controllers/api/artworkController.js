@@ -137,7 +137,12 @@ artworkController.get('/all/:column', (req, res) => {
       column,
       [db.sequelize.fn('COUNT', db.sequelize.col(column)), 'count']
     ],
-    group: [column]
+    group: [column],
+    where: {
+      [column]: {
+        [db.Sequelize.Op.ne]: null
+      }
+    }
   })
     .then(results => res.json(results))
     .catch(err => console.log(err));

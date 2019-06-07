@@ -1,17 +1,19 @@
 import React from "react";
+import "./style.css";
 
 const ArtForm = ({latitude, longitude, address, type, title, neighborhood, image, artistName, artistBio, description, handleInputChange, handleFormSubmit, missing}) => {
   console.log(missing)
   return (
     <form className="form">
-      <div>
+      <div className="form-item">
+        <label htmlFor="type" style={{ color: "white" }}>Latitude:</label>
         <input
           className={missing.latitude ? "form-control is-invalid" : "form-control"}
           value={latitude}
           name="latitude"
           onChange={handleInputChange}
           type="number"
-          placeholder="latitude"
+          placeholder="latitude (required)"
         />
         {missing.latitude
           ? <div className="invalid-feedback">
@@ -21,14 +23,15 @@ const ArtForm = ({latitude, longitude, address, type, title, neighborhood, image
         }
       </div>
       
-      <div>
+      <div className="form-item">
+        <label htmlFor="type" style={{ color: "white" }}>Longitude:</label>
         <input
           className={missing.longitude ? "form-control is-invalid" : "form-control"}
           value={longitude}
           name="longitude"
           onChange={handleInputChange}
           type="number"
-          placeholder="longitude"
+          placeholder="longitude (required)"
         />
         {missing.longitude
           ? <div className="invalid-feedback">
@@ -38,7 +41,8 @@ const ArtForm = ({latitude, longitude, address, type, title, neighborhood, image
         }
       </div>
       
-      <div>
+      <div className="form-item">
+        <label htmlFor="type" style={{ color: "white" }}>Address:</label>
         <input
           className="form-control"
           value={address}
@@ -49,7 +53,7 @@ const ArtForm = ({latitude, longitude, address, type, title, neighborhood, image
         />
       </div>
       
-      <div>
+      <div className="form-item">
         <label htmlFor="type" style={{color: "white"}}>Type:</label>
         <input
           value={type}
@@ -58,7 +62,7 @@ const ArtForm = ({latitude, longitude, address, type, title, neighborhood, image
           list="types"
           type="text"
           className={missing.type ? "form-control is-invalid" : "form-control"}
-          placeholder="Type"
+          placeholder="Type (required)"
           id="type"
         />
         <datalist id="types">
@@ -74,7 +78,8 @@ const ArtForm = ({latitude, longitude, address, type, title, neighborhood, image
         }
       </div>
       
-      <div>
+      <div className="form-item">
+        <label htmlFor="type" style={{ color: "white" }}>Title:</label>
         <input
           className="form-control"
           value={title}
@@ -85,7 +90,7 @@ const ArtForm = ({latitude, longitude, address, type, title, neighborhood, image
         />
       </div>
 
-      <div>
+      <div className="form-item">
         <label htmlFor="type" style={{ color: "white" }}>Neighborhood:</label>
         <input
           value={neighborhood}
@@ -94,7 +99,7 @@ const ArtForm = ({latitude, longitude, address, type, title, neighborhood, image
           list="neighborhoods"
           type="text"
           className={missing.neighborhood ? "form-control is-invalid" : "form-control"}
-          placeholder="neighborhood"
+          placeholder="neighborhood (required)"
           id="neighborhood"
         />
         <datalist id="neighborhoods">
@@ -110,7 +115,8 @@ const ArtForm = ({latitude, longitude, address, type, title, neighborhood, image
         }
       </div>
 
-      <div>
+      <div className="form-item">
+        <label htmlFor="type" style={{ color: "white" }}>Image URL:</label>
         <input
           className="form-control"
           value={image}
@@ -121,7 +127,8 @@ const ArtForm = ({latitude, longitude, address, type, title, neighborhood, image
         />
       </div>
 
-      <div>
+      <div className="form-item">
+        <label htmlFor="type" style={{ color: "white" }}>Artist Name:</label>
         <input
           className="form-control"
           value={artistName}
@@ -132,7 +139,8 @@ const ArtForm = ({latitude, longitude, address, type, title, neighborhood, image
         />
       </div>
 
-      <div>
+      <div className="form-item">
+        <label htmlFor="type" style={{ color: "white" }}>Artist Bio:</label>
         <input
           className="form-control"
           value={artistBio}
@@ -143,7 +151,8 @@ const ArtForm = ({latitude, longitude, address, type, title, neighborhood, image
         />
       </div>
 
-      <div>
+      <div className="form-item">
+        <label htmlFor="type" style={{ color: "white" }}>Description:</label>
         <textarea
           className="form-control"
           value={description}
@@ -153,7 +162,7 @@ const ArtForm = ({latitude, longitude, address, type, title, neighborhood, image
         />
       </div>
 
-      <button onClick={handleFormSubmit}>Submit</button>
+      <button onClick={handleFormSubmit} className="btn btn-secondary">Submit</button>
     </form>
   );
 }
