@@ -20,7 +20,7 @@ function Bio(props) {
             <p>Osiris Rain is an international muralist and post contemporary figurative painter. He is the founder of Osiris Rain Studios and the North Carolina Academy of Art. His murals and paintings are featured in numerous private and public collections across the globe.</p>
           </div>
           {/* <a href="https://www.instagram.com/osirisrain/" className="fa fa-instagram" alt="image of osirisRain"></a> */}
-          <a href="https://www.instagram.com/osirisrain/"><button className="instaBtn" onClick="window.location.href='https://www.instagram.com/osirisrain/';"><i class="fab fa-instagram"></i></button></a>
+          <a href="https://www.instagram.com/osirisrain/"><button className="instaBtn" onClick="window.location.href='https://www.instagram.com/osirisrain/';"><i className="fab fa-instagram"></i></button></a>
           
         </div>
       </div>
