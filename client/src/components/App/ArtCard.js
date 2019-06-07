@@ -34,7 +34,7 @@ class ArtCard extends Component {
   render() {
     return (
       <div className="card mb-3">
-        <div className="row no-gutters justify-content-around container-fluid">
+        <div className="row no-gutters container-fluid">
           {/* <div className="col-xs-3 col-sm-4 col-md-4 col-lg-5 img-container"> */}
           <div className="col-xs-12 col-sm-12 col-md-5 col-lg-5 img-container">
             <img src={this.props.image} className="card-img" alt={this.props.title} />

@@ -11,18 +11,12 @@
 }
 
 .home a {
-	color: black;
+	color: #262B2F ;
 }
 
 .home h1:hover {
 	/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#9977b4+1,dd86b9+11,f497aa+21,f9b48a+31,fdcd7b+42,fef79f+53,c0de96+65,95d4c1+76,81d2e3+88,87b8e1+98 */
-	background: #9977b4; /* Old browsers */
-	background: -moz-linear-gradient(left,  #9977b4 1%, #dd86b9 11%, #f497aa 21%, #f9b48a 31%, #fdcd7b 42%, #fef79f 53%, #c0de96 65%, #95d4c1 76%, #81d2e3 88%, #87b8e1 98%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(left,  #9977b4 1%,#dd86b9 11%,#f497aa 21%,#f9b48a 31%,#fdcd7b 42%,#fef79f 53%,#c0de96 65%,#95d4c1 76%,#81d2e3 88%,#87b8e1 98%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to right,  #9977b4 1%,#dd86b9 11%,#f497aa 21%,#f9b48a 31%,#fdcd7b 42%,#fef79f 53%,#c0de96 65%,#95d4c1 76%,#81d2e3 88%,#87b8e1 98%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9977b4', endColorstr='#87b8e1',GradientType=1 ); /* IE6-9 */
-	-webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+	color: #262B2F;	
 }
 
 .home h1 {
@@ -55,6 +49,7 @@
 	background: linear-gradient(to right,  #9977b4 1%,#dd86b9 11%,#f497aa 21%,#f9b48a 31%,#fdcd7b 42%,#fef79f 53%,#c0de96 65%,#95d4c1 76%,#81d2e3 88%,#87b8e1 98%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: grayscale(100%);
 	border-radius: 8vh;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.534), 0 6px 20px 0 rgba(0, 0, 0, 0.534);
 }
 
 
@@ -151,9 +146,9 @@
     line-height: 25px;
     color: rgba(255,255,255,0.8);
 }
-.cb-slideshow li:nth-child(1) span { background-image: url(../Home/images/plaza-midwood-2-c.jpg) }
+.cb-slideshow li:nth-child(1) span { background-image: url(../Home/images/noda7.jpg) }
 .cb-slideshow li:nth-child(2) span {
-    background-image: url(../Home/images/plaza-midwood-5-c.jpg);
+    background-image: url(../Home/images/crop-bi-osiris.png);
     -webkit-animation-delay: 6s;
     -moz-animation-delay: 6s;
     -o-animation-delay: 6s;
@@ -161,7 +156,7 @@
     animation-delay: 6s;
 }
 .cb-slideshow li:nth-child(3) span {
-    background-image: url(../Home/images/plaza-midwood-8-c.jpg);
+    background-image: url(../Home/images/plaza-midwood-8.jpg);
     -webkit-animation-delay: 12s;
     -moz-animation-delay: 12s;
     -o-animation-delay: 12s;
@@ -169,7 +164,7 @@
     animation-delay: 12s;
 }
 .cb-slideshow li:nth-child(4) span {
-    background-image: url(../Home/images/noda-5a.jpg);
+    background-image: url(../Home/images/confetti-hearts-evelynhenson.jfif);
     -webkit-animation-delay: 18s;
     -moz-animation-delay: 18s;
     -o-animation-delay: 18s;
@@ -177,7 +172,7 @@
     animation-delay: 18s;
 }
 .cb-slideshow li:nth-child(5) span {
-    background-image: url(../Home/images/noda7.jpg);
+    background-image: url(../Home/images/noda1.jpg);
     -webkit-animation-delay: 24s;
     -moz-animation-delay: 24s;
     -o-animation-delay: 24s;
@@ -185,7 +180,7 @@
     animation-delay: 24s;
 }
 .cb-slideshow li:nth-child(6) span {
-    background-image: url(../Home/images/plaza-midwood-1a.jpg);
+    background-image: url(../Home/images/equality-nick-napoletano-618NcollegeSt.jpg);
     -webkit-animation-delay: 30s;
     -moz-animation-delay: 30s;
     -o-animation-delay: 30s;

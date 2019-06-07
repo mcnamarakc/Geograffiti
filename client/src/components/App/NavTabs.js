@@ -14,7 +14,7 @@ function NavTabs() {
           <p className="nav-item">
             <Link
               to="/map"
-              className={window.location.pathname === "/about" ? "nav-link active" : "nav-link"}
+              className={window.location.pathname === "/map" ? "nav-link active" : "nav-link"}
             >
               Map
         </Link>
@@ -22,7 +22,7 @@ function NavTabs() {
           <p className="nav-item">
             <Link
               to="/art"
-              className={window.location.pathname === "/blog" ? "nav-link active" : "nav-link"}
+              className={window.location.pathname === "/art" ? "nav-link active" : "nav-link"}
             >
               Art
         </Link>
@@ -30,17 +30,17 @@ function NavTabs() {
           <p className="nav-item">
             <Link
               to="/bio"
-              className={window.location.pathname === "/contact" ? "nav-link active" : "nav-link"}
+              className={window.location.pathname === "/bio" ? "nav-link active" : "nav-link"}
             >
               Bio
         </Link>
           </p>
           <p className="nav-item">
             <Link
-              to="/contact/learn"
-              className={window.location.pathname === "/contact/learn" ? "nav-link active" : "nav-link"}
+              to="/about"
+              className={window.location.pathname === "/about" ? "nav-link active" : "nav-link"}
             >
-              Learn
+              About
         </Link>
           </p>
         </div>

@@ -51,7 +51,16 @@ export default {
 
     register: function (email, password) {
       return axios.post('/api/users/register', { email, password });
-    }
+    },
+
+    updateUser: function (authToken, email) {
+      return axios.post('/api/users/me', {email:email}, {
+        headers: {
+          'Authorization': `Bearer ${authToken}`
+        }
+      });
+      
+    },
   },
 
   ApiKey: {

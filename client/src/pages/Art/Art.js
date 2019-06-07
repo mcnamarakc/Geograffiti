@@ -57,7 +57,7 @@ class Art extends React.Component {
       <div>
         <NavTabs />
         <h1 className="arthead">Art</h1>
-        <button className="btn btn-info artbtn" onClick={this.handleSubmit}><h3>All art</h3></button>
+        <button className="btn btn-info artbtn" onClick={this.handleSubmit}><h3>Display all art</h3></button>
         <div className="row justify-content-around art-row">
           <div className="col-4 dropdowner pt-1">
             <h3>Search by neighborhood</h3>
@@ -95,7 +95,7 @@ class Art extends React.Component {
           </div>
         </div>
         {this.state.art.map(art => (
-          <div data-aos="zoom-in-up">
+          <div className="zoomUp">
             <ArtCard
               id={art.id}
               key={art.id}

@@ -22,6 +22,10 @@ h1 {
 .leaflet-container {
     height: 465px;
     width: 100%;
+    border-radius: 25px;
+  border: 2px solid #343A40;
+  padding: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.534), 0 6px 20px 0 rgba(0, 0, 0, 0.534);
   }
 
 .info-box {
@@ -40,6 +44,7 @@ h1 {
 
 #container {
     margin-top: 2vh;
+    
 }
 
 #info {
@@ -68,10 +73,41 @@ h1 {
 .start-route {
     color: white;
 }
-/* #nodaMapBtn {
 
+button .murals {
+    color: #343A40;
+    text-shadow: 2px 2px 5px #2780CA;
 }
 
-#midwoodMapBtn {
 
-} */
+
+button .breweries {
+    color: #343A40;
+    text-shadow: 2px 2px 5px #9F22CA;
+}
+
+button {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.534), 0 6px 20px 0 rgba(0, 0, 0, 0.534);
+}
+
+.directionsContainer {
+    height: 465px;
+    width: 100%;
+    border-radius: 25px;
+  border: 2px solid #343A40;
+  padding: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.534), 0 6px 20px 0 rgba(0, 0, 0, 0.534);
+}
+
+.artListContainer {
+    height: 465px;
+    width: 100%;
+    border-radius: 25px;
+  border: 2px solid #343A40;
+  padding: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.534), 0 6px 20px 0 rgba(0, 0, 0, 0.534);
+}
+
+#mapPageContent p {
+    color: #A2A5A8;
+} 
