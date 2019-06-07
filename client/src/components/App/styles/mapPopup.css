@@ -26,7 +26,39 @@
     width: 100px;  
   }
 
-.mapPopUp  .leaflet-container {
+/* .mapPopUp  .leaflet-container {
     height: 45vh;
     width: 30vw;
-}  
+}   */
+
+@media screen and (max-width: 576px) {
+  .mapPopUp  .leaflet-container{
+    height: 45vh;
+    width: 30vw;
+  }
+  
+}
+@media (max-width: 768px) { 
+  .mapPopUp  .leaflet-container{
+    height: 45vh;
+    width: 40vw;
+  }   
+}
+@media (max-width: 991.98px) { 
+  .mapPopUp  .leaflet-container{
+    height: 45vh;
+    width: 50vw;
+  }    
+}
+@media (max-width: 1199.98px) {
+  .mapPopUp  .leaflet-container{
+    height: 45vh;
+    width: 60vw;
+  }   
+}
+@media (max-width: 2560px) {
+  .mapPopUp  .leaflet-container{
+    height: 45vh;
+    width: 70vw;
+  }    
+}
