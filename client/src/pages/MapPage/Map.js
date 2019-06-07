@@ -153,10 +153,10 @@ class Map extends React.Component {
 
     return (
       <div>
-        <div className="container">
+        <div id="mapPageContent" className="container">
           <div className="row">
-            <div className="col-1"></div>
-            <div className="col-10">
+            <div className="col-2 directionsContainer"><p>Route:</p></div>
+            <div className="col-8">
               <LeafletMap center={position} zoom={this.state.zoom}>
                 <TileLayer
                   attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -166,7 +166,9 @@ class Map extends React.Component {
                 <MyMarkersListBrew markers={this.state.brewMarkers} />
               </LeafletMap>
             </div>
-            <div className="col-1"></div>
+            <div className="col-2 artListContainer">
+              <p>Art in {this.state.nbhood}:</p>
+            </div>
           </div>
         </div>
         <div className="row">
@@ -179,7 +181,6 @@ class Map extends React.Component {
             <button onClick={this.renderAllMuralMarkers} type="button" id="allMuralMarkersMapBtn" className="btn btn-secondary"><div className="murals">Show all Art</div></button>
             <button onClick={this.renderBreweries} type="button" id="allBreweryMarkersMapBtn" className="btn btn-secondary"><div className="breweries">Add Breweries</div></button>
             <button onClick={this.removeBreweries} type="button" id="removeBreweryMarkersMapBtn" className="btn btn-secondary"><div className="breweries">Remove Breweries</div></button>
-
           </div>
         </div>
       </div>
