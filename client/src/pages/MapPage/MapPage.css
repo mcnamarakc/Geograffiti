@@ -65,7 +65,9 @@ h1 {
     margin: 1vh;
 }
 
-
+.start-route {
+    color: white;
+}
 /* #nodaMapBtn {
 
 }
