@@ -48,5 +48,6 @@ module.exports = function(sequelize, DataTypes) {
       defaultValue: true
     }
   });
+
   return Art;
 };
