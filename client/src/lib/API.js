@@ -116,5 +116,29 @@ export default {
         }
       });
     }
+  },
+
+  Favorites: {
+    get: function (authToken) {
+      return axios.get('/api/favorites/', {
+        headers: {
+          'Authorization': `Bearer ${authToken}`
+        }
+      });
+    },
+    post: function(authToken, ArtId) {
+      return axios.post('/api/favorites/', { ArtId }, {
+        headers: {
+          'Authorization': `Bearer ${authToken}`
+        }
+      });
+    },
+    delete: function (authToken, id) {
+      return axios.delete('/api/favorites/'+id, {
+        headers: {
+          'Authorization': `Bearer ${authToken}`
+        }
+      });
+    }
   }
 }
