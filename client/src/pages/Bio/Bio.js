@@ -10,7 +10,8 @@ function Bio(props) {
   return (
     <div>
       <NavTabs />
-      <div className="jumbotron h-100 main">
+      <div className="jumboBioContainer">
+        <div className="jumbotron main">
           <p class="display-4">Featured Artist</p>
           <p class="lead">Highlighting local artists who are changing the face of Charlotte</p>
           <hr class="my-4" />
@@ -20,6 +21,8 @@ function Bio(props) {
           </div>
           {/* <a href="https://www.instagram.com/osirisrain/" className="fa fa-instagram" alt="image of osirisRain"></a> */}
           <a href="https://www.instagram.com/osirisrain/"><button className="instaBtn" onClick="window.location.href='https://www.instagram.com/osirisrain/';"><i class="fab fa-instagram"></i></button></a>
+          
+        </div>
       </div>
       <Artists />
       <InstaList />
