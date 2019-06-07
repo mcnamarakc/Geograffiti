@@ -1,0 +1,86 @@
+.aboutHolder {
+    background-color: whitesmoke;
+    width: 90vw;
+    border-radius: 5px;
+}
+
+.aboutPic {
+    width: 300px;
+    height: 300px;
+    border-radius: 150px;
+}
+
+.portfolio {
+    color: black;
+}
+
+.github {
+    background-image: url("../../images/GitHub_Logo.png");
+    width: 200px;
+    height: 50px;
+}
+
+.titleFront {
+    z-index: 2;
+    position: absolute;
+    left: 40vw;
+    width: 1vw;
+}
+
+.titleBack {
+    z-index: 1;
+    position: absolute;
+    left: 35vw;
+    width: 1vw;
+    animation: slide 3s infinite alternate;
+}
+
+@keyframes slide {
+    from {
+        left: 37vw;
+        opacity: 0;
+    }
+    to {
+        left: 30vw;
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    @keyframes slide {
+        from {
+            left: 35vw;
+            opacity: 0;
+        }
+        to {
+            left: 28vw;
+            opacity: 1;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    @keyframes slide {
+        from {
+            left: 30vw;
+            opacity: 0;
+        }
+        to {
+            left: 23vw;
+            opacity: 1;
+        }
+    }
+}
+
+@media screen and (max-width: 376px) {
+    @keyframes slide {
+        from {
+            left: 28vw;
+            opacity: 0;
+        }
+        to {
+            left: 21vw;
+            opacity: 1;
+        }
+    }
+}
