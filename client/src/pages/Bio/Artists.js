@@ -15,8 +15,8 @@ import "./Bio.css";
 function Artists() {
     return (
       <div>
-        <h1 className="text-center">More Local Artists</h1>
-        <hr />
+        <h1 className="text-center more">More Local Artists</h1>
+        <hr className="hr" />
         <ArtistsCard />
       </div>
   );
