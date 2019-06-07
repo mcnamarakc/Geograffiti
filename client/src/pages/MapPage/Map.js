@@ -194,6 +194,7 @@ class Map extends React.Component {
     })
     API.Route.getRoute(queryArr)
       .then(res => {
+        console.log(res)
         for (var j = 0; j < res.data.route.legs.length; j++) {
           for (var i = 0; i < res.data.route.legs[j].maneuvers.length; i++) {
             this.setState({
