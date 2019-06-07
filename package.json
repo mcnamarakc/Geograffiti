@@ -17,5 +17,7 @@
     "concurrently": "^4.1.0",
     "nodemon": "^1.18.10"
   },
-  "dependencies": {}
+  "dependencies": {
+    "react-fontawesome": "^1.6.1"
+  }
 }
