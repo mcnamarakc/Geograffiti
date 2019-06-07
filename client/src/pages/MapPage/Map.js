@@ -59,7 +59,6 @@ class Map extends React.Component {
     queryArr = [];
     API.ArtPage.getNeighborhood("NODA")
     .then(res => {
-      console.log("HEy++++++++++++++++")
         this.setState({
           nbhood: "NODA",
           lat: 35.2456,
