@@ -11,6 +11,7 @@ import Home from '../../pages/Home/Home';
 import NotFound from '../../pages/NotFound/NotFound';
 import MapPage from "../../pages/MapPage/MapPage";
 import Art from "../../pages/Art/Art";
+import Favorites from "../../pages/Favorites";
 import Bio from "../../pages/Bio/Bio";
 import About from "../../pages/About/About";
 import SignUp from "../../pages/SignUp/SignUp";
@@ -68,6 +69,7 @@ class App extends Component {
               <Route exact path="/art" component={Art} />
               <PrivateRoute path="/add" component={AddLocation} />
               <PrivateRoute path='/apiService' component={ApiService} />
+              <PrivateRoute path="/favorites" component={Favorites} />
               <Route path="/bio" component={Bio} />
               <Route path="/about" component={About} />
               <Route exact path="/bio/artists" component={Artists} />

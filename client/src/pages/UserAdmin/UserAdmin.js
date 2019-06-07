@@ -110,12 +110,12 @@ class UserAdmin extends Component {
                 <div className='userDash'>
                     <div className='row-justify-content-center'>
                         <div className='col'>
-                            <div class="card">
-                                <div class="card-header">
+                            <div className="card">
+                                <div className="card-header">
                                     Profile for {this.state.email}
                                 </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">Change Email</h5>
+                                <div className="card-body">
+                                    <h5 className="card-title">Change Email</h5>
                                     <form className='LoginForm' onSubmit={this.handleSubmit}>
                                         <div className='input-group mb-3'>
                                             <div className="input-group-prepend">
@@ -130,7 +130,7 @@ class UserAdmin extends Component {
                                                 value={this.state.email}
                                                 onChange={this.handleInputChange}
                                             />
-                                            <button type="submit" class="btn btn-primary" onClick={this.handleFormSubmit}>Update</button>
+                                            <button type="submit" className="btn btn-primary" onClick={this.handleFormSubmit}>Update</button>
                                         </div>
                                     </form>
                                 </div>

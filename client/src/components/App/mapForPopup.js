@@ -26,9 +26,6 @@ class PopupMap extends React.Component {
           url='https://{s}.tile.osm.org/{z}/{x}/{y}.png'
         />
         <Marker position={position}>
-          <Popup>
-            A pretty CSS3 popup. <br/> Easily customizable.
-          </Popup>
         </Marker>
       </Map>
       </div>

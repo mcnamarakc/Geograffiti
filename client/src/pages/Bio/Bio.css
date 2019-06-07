@@ -21,8 +21,9 @@ a .fa {
     color: #A2A5A8;
 }
 
-.jumbotron {
+.jumboBioContainer .jumbotron {
     padding-top: 2px;
+    height: 100%;
     
 }
 
@@ -30,7 +31,7 @@ a .fa {
     background: transparent;
     color: #A2A5A8;
     /* border: none; */
-    border-radius: 25px;
+    border-radius: 30px;
   border: 2px solid #343A40;
   font-size: 4vh;
 }
@@ -43,6 +44,27 @@ a .fa {
 	background: linear-gradient(to right,  #9977b4 1%,#dd86b9 11%,#f497aa 21%,#f9b48a 31%,#fdcd7b 42%,#fef79f 53%,#c0de96 65%,#95d4c1 76%,#81d2e3 88%,#87b8e1 98%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     
 }
+
+.more,
+.hr {
+    color: #A2A5A8;
+}
+
+
+  
+.list-group-item {
+    margin: 15px;
+    margin-bottom: 30px;
+    margin-top: -75px;
+    background-color: #262b2f;
+    border-color: #262b2f;
+}
+
+.instaName {
+    margin-top: 10px;
+    color: #A2A5A8;
+}
+
 /* carousel {
     width:900px;
     height: 500px;

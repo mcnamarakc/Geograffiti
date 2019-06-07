@@ -70,10 +70,16 @@ h1 {
     margin: 1vh;
 }
 
+.start-route {
+    color: white;
+}
+
 button .murals {
     color: #343A40;
     text-shadow: 2px 2px 5px #2780CA;
 }
+
+
 
 button .breweries {
     color: #343A40;
@@ -104,4 +110,4 @@ button {
 
 #mapPageContent p {
     color: #A2A5A8;
-}
+} 
