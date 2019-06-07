@@ -49,5 +49,12 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
+  Art.associate = function(models) {
+    Art.belongsToMany(models.User, {
+      //as: ['artId'],
+      through: 'favorites'
+    });
+  };
+
   return Art;
 };

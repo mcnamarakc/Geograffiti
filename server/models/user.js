@@ -40,7 +40,10 @@ module.exports = (sequelize, DataTypes) => {
   );
 
   User.associate = function(models) {
-    User.hasMany(models.Art);
+    User.belongsToMany(models.Art, {
+      //as: ['userId'],
+      through: 'favorites'
+    });
   };
 
   User.prototype.comparePassword = function(challenge) {
