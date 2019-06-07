@@ -3,6 +3,7 @@ import API from "../../lib/API";
 import NavTabs from "../../components/App/NavTabs";
 import AOS from "aos";
 import "./About.css";
+import PortfolioCard from "../../components/App/PorfolioCard";
 
 class About extends React.Component {
 
@@ -17,17 +18,23 @@ class About extends React.Component {
             <div className="container-fluid aboutHolder pb-5">
                 <div className="row">
                     <div className="col-12 titleFront">
-                        <h2>Geograffiti</h2>
+                        <h1>Geograffiti</h1>
                     </div>
                     <div className="col-12 titleBack">
-                        <h2>Behind</h2>
+                        <h1>Behind</h1>
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-12 p-5">
                         <br></br>
                         <br></br>
-                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+                        <p>Geograffiti was born from five creative minds with a mutual love for art.  Our goal is to bring that love of art to the public in the most public of places.</p>
+                        <br></br>
+                        <p>Based in Charlotte, North Carolina, the Geograffiti team is surrounded by neighborhoods rich with public art and murals done by many local and international artists.  Whether emblazoned across the side of the newest Charlotte brewery or found tucked away down a side street during an evening stroll in NoDa, you may never know when you can run across some an excellent piece of modern street art. </p>
+                        <br></br>
+                        <p>Bridging the gap between the art lover and where to find it comes Geograffiti.  Perfect for the Charlotte tourist who wants to immerse themselves in local street art or the hometown Charlottean looking for an afternoon of enrichment, Geograffiti gathers together the imagery you would love to see and means at which to find it.</p>
+                        <br></br>
+                        <p>Geograffiti is urban art exploration.</p>
                     </div>
                 </div>
                 <div className="row mb-5">
@@ -35,31 +42,42 @@ class About extends React.Component {
                         <h1>Who are we?</h1>
                     </div>
                 </div>
-                <div className="row">
-                    <div className="col-12" data-aos="zoom-out" data-aos-duration="2000">
-                        <img className="aboutPic" src="https://pawhurr.github.io/images/Me.jpg" alt="Paul Whurr"></img>
-                    </div>
-                </div>
-                <div className="row mt-3">
-                    <div className="col-12">
-                        <h1>Paul Whurr</h1>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-12">
-                        <a className="portfolio" href="https://pawhurr.github.io/" target="_blank" rel="noopener noreferrer">Portfolio</a>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-12">
-                        <a href="https://github.com/Pawhurr" target="_blank" rel="noopener noreferrer"><div className="github"></div></a>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-12">
-                        <a className="linkedin" href="https://www.linkedin.com/in/paul-whurr/" target="_blank" rel="noopener noreferrer"><img src="../../images/In-2C-28px-R.png" alt="LinkedIn Link"></img></a>
-                    </div>
-                </div>
+                <PortfolioCard 
+                    name= "Lara Eller"
+                    imgLink="https://media.licdn.com/dms/image/C4E03AQEtuX5KTfxYqQ/profile-displayphoto-shrink_800_800/0?e=1565222400&v=beta&t=kCeDDzdLceKAAad4HBqocuqhBvZXo4LVL1dGFSWH-JE"
+                    portfolio="https://lara-e.github.io/Bootstrap-Portfolio/"
+                    gitLink="https://github.com/Lara-E"
+                    linkedInLink="https://www.linkedin.com/in/lara-eller-298351182/"
+                />
+                <PortfolioCard 
+                    name= "Devin Price"
+                    imgLink="https://devingprice.github.io/assets/images/cat.jpg"
+                    portfolio="https://devingprice.github.io/portfolio.html"
+                    gitLink="https://github.com/devingprice"
+                    linkedInLink="https://www.linkedin.com/in/devin-price-b7a761188/"
+                />
+                <PortfolioCard 
+                    name= "Kathleen McNamara"
+                    imgLink="https://media.licdn.com/dms/image/C4E03AQHwceBH6ZpwHg/profile-displayphoto-shrink_800_800/0?e=1565222400&v=beta&t=NPBA_Wg9vG53xCssXmiZNdE9wQcuhGFdXkgIsSpHm4s"
+                    portfolio="https://mcnamarakc.github.io/Bootstrap-Portfolio/"
+                    gitLink="https://github.com/mcnamarakc"
+                    linkedInLink="https://www.linkedin.com/in/kathleen-c-mcnamara/"
+                />
+                <PortfolioCard 
+                    name= "Justin Summers"
+                    imgLink="https://media.licdn.com/dms/image/C4E03AQHxN_uUMly7nw/profile-displayphoto-shrink_800_800/0?e=1565222400&v=beta&t=eG58-aD1lutrqEI3Uq8dyh1qsRi3P36rHH_4ROI97fM"
+                    portfolio="https://dumpstro.github.io/Basic-Portfolio/index.html"
+                    gitLink="https://github.com/dumpstro"
+                    linkedInLink="https://www.linkedin.com/in/justin-summers-77a390134/"
+                />
+                <PortfolioCard 
+                    name= "Paul Whurr"
+                    imgLink="https://pawhurr.github.io/images/Me.jpg"
+                    portfolio="https://pawhurr.github.io/"
+                    gitLink="https://github.com/Pawhurr"
+                    linkedInLink="https://www.linkedin.com/in/paul-whurr/"
+                />
+                
 
             </div>
         </div>

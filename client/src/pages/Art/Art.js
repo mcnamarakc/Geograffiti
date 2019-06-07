@@ -29,6 +29,10 @@ class Art extends React.Component {
     API.ArtPage.getAllNeighborhoods()
     .then(res => this.setState({neighborhoods:res.data}))
     .catch(err => console.log(err));
+
+    API.ArtPage.getArt()
+    .then(res => this.setState({art:res.data}))
+    .catch(err => console.log(err));
   };
 
   handleSubmit = event => {
@@ -57,10 +61,10 @@ class Art extends React.Component {
       <div>
         <NavTabs />
         <h1 className="arthead">Art</h1>
-        <button className="btn btn-info artbtn" onClick={this.handleSubmit}><h3>Display all art</h3></button>
+        <button className="btn btn-info artbtn" onClick={this.handleSubmit}><h3 className="dropTitle">Display all art</h3></button>
         <div className="row justify-content-around art-row">
           <div className="col-4 dropdowner pt-1">
-            <h3>Search by neighborhood</h3>
+            <h3 className="dropTitle">Search by neighborhood</h3>
             {this.state.neighborhoods.map(neighborhoods => (
             <DropList
               id={neighborhoods.id}
@@ -77,7 +81,7 @@ class Art extends React.Component {
               ))}
           </div>
           <div className="col-4 dropdowner pt-1">
-            <h3>Search by artist</h3>
+            <h3 className="dropTitle">Search by artist</h3>
             {this.state.artists.map(artists => (
               <DropList
                 id={artists.id}

@@ -48,7 +48,8 @@ class Map extends React.Component {
       routePoint: [],
       startRoute: "Click on Markers to Calculate Route",
       calculate: "",
-      delete: ""
+      delete: "",
+      directions: []
     }
   }
 
@@ -184,6 +185,7 @@ class Map extends React.Component {
       calculate: "",
       delete: "",
       startRoute: "Click on Markers to Calculate Route",
+      directions: []
     })
   }
 
@@ -194,12 +196,16 @@ class Map extends React.Component {
     })
     API.Route.getRoute(queryArr)
       .then(res => {
+        console.log(res)
         for (var j = 0; j < res.data.route.legs.length; j++) {
           for (var i = 0; i < res.data.route.legs[j].maneuvers.length; i++) {
             this.setState({
-              routePoint: [...this.state.routePoint, [res.data.route.legs[j].maneuvers[i].startPoint.lat, res.data.route.legs[j].maneuvers[i].startPoint.lng]]
+              routePoint: [...this.state.routePoint, [res.data.route.legs[j].maneuvers[i].startPoint.lat, res.data.route.legs[j].maneuvers[i].startPoint.lng]],
+              directions: [...this.state.directions, "\r\n -" + res.data.route.legs[j].maneuvers[i].narrative + "\r\n"],
+              calculate: "",
+              delete: ""
             })
-            console.log(res.data.route.legs[j].maneuvers[i].narrative)
+            // console.log(res.data.route.legs[j].maneuvers[i].narrative)
           }
         }
       })
@@ -222,10 +228,10 @@ class Map extends React.Component {
         {/* {this.state.narrative.map()} */}
         <div className="container">
           <div className="row">
-            <div className="col-10">
+            <div className="col">
               <div id="mapPageContent" className="container">
                 <div className="row">
-                  <div className="col-2 directionsContainer"><p>Route:</p><h3>{this.state.startRoute}</h3><p onClick={this.getRoute}>{this.state.calculate}</p>,<p onClick={this.deleteRoute}>{this.state.delete}</p></div>
+                  <div className="col-4 directionsContainer"><p>Route:</p><h3>{this.state.startRoute}</h3><p onClick={this.getRoute}>{this.state.calculate}</p>,<p onClick={this.deleteRoute}>{this.state.delete}</p><p>{this.state.directions.map(item => <p>{item}</p>)}</p></div>
                   <div className="col-8">
                     <LeafletMap center={position} zoom={this.state.zoom}>
                       <TileLayer
@@ -237,9 +243,9 @@ class Map extends React.Component {
                       <Polyline color="red" positions={this.state.routePoint} />
                     </LeafletMap>
                   </div>
-                  <div className="col-2 artListContainer">
+                  {/* <div className="col-0 artListContainer">
                     <p>Art in {this.state.nbhood}:</p>
-                  </div>
+                  </div> */}
                 </div>
               </div>
               <div className="row">
