@@ -1,31 +1,40 @@
 import React from "react";
 import { Link, Route } from "react-router-dom";
-import Learn from "./Learn";
+import Artists from "./Artists";
 import NavTabs from "../../components/App/NavTabs";
+import "./Bio.css";
+import InstaList from "../../components/App/InstaList";
+
 
 function Bio(props) {
   return (
     <div>
       <NavTabs />
-      <h1>Bio</h1>
-      <p>
-        Integer cursus bibendum sem non pretium. Vestibulum in aliquet sem, quis molestie urna.
-        Aliquam semper ultrices varius. Aliquam faucibus sit amet magna a ultrices. Aenean
-        pellentesque placerat lacus imperdiet efficitur. In felis nisl, luctus non ante euismod,
-        tincidunt bibendum mi. In a molestie nisl, eu sodales diam. Nam tincidunt lacus quis magna
-        posuere, eget tristique dui dapibus. Maecenas fermentum elementum faucibus. Quisque nec
-        metus vestibulum, egestas massa eu, sollicitudin ipsum. Nulla facilisi. Sed ut erat ligula.
-        Nam tincidunt nunc in nibh dictum ullamcorper. Class aptent taciti sociosqu ad litora
-        torquent per conubia nostra, per inceptos himenaeos. Etiam ornare rutrum felis at rhoncus.
-        Etiam vel condimentum magna, quis tempor nulla.
-      </p>
-      <Link to={`${props.match.url}/learn`} role="button" className="btn btn-link">
-        Learn More
-      </Link>{" "}
-      <Link to="/bio" role="button" className="btn btn-link">
-        Learn Less
-      </Link>
-      <Route exact path={`${props.match.url}/learn`} component={Learn} />
+      <div className="jumboBioContainer">
+        <div className="jumbotron main">
+          <p className="display-4">Featured Artist</p>
+          <p className="lead">Highlighting local artists who are changing the face of Charlotte</p>
+          <hr className="my-4" />
+          <img className="img-fluid" src="https://static1.squarespace.com/static/5be99fd896e76fa751de180a/t/5c29b1b86d2a73e6a9b311f7/1546241649983/osirisweb.jpg" alt="Osiris Rain" />
+          <div className="featured">
+            <p>Osiris Rain is an international muralist and post contemporary figurative painter. He is the founder of Osiris Rain Studios and the North Carolina Academy of Art. His murals and paintings are featured in numerous private and public collections across the globe.</p>
+          </div>
+          {/* <a href="https://www.instagram.com/osirisrain/" className="fa fa-instagram" alt="image of osirisRain"></a> */}
+          <a href="https://www.instagram.com/osirisrain/"><button className="instaBtn" onClick="window.location.href='https://www.instagram.com/osirisrain/';"><i className="fab fa-instagram"></i></button></a>
+          
+        </div>
+      </div>
+      <Artists />
+      <InstaList />
+      {/* <div>
+        <HLink to={`${props.match.url}/artists#carousel`} role="button" className="btn btn-link">
+          Click here to discover artists around Charlotte
+        </HLink>{" "}
+        <Link to="/map" role="button" className="btn btn-link">
+          Find local art!
+        </Link>
+        <Route exact path={`${props.match.url}/artists`} component={Artists} />
+      </div> */}
     </div>
   );
 }

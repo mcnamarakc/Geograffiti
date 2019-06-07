@@ -1,0 +1,136 @@
+.aboutHolder {
+    background-color: none;
+    width: 90vw;
+    border-radius: 5px;
+    color: #A2A5A8;
+}
+
+.aboutPic {
+    width: 300px;
+    height: 300px;
+    border-radius: 150px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.534), 0 6px 20px 0 rgba(0, 0, 0, 0.534);
+
+}
+
+.portfolio {
+    color: #A2A5A8;
+    font-size: 24px;
+}
+
+.github {
+    background-image: url("../../images/GitHub_Logo.png");
+    width: 75px;
+    margin-bottom: 5px;
+}
+
+.titleFront {
+    z-index: 2;
+    position: absolute;
+    left: 42vw;
+    width: 1vw;
+    top: 150px;
+}
+
+.titleBack {
+    z-index: 1;
+    position: absolute;
+    left: 35vw;
+    width: 1vw;
+    top: 150px;
+    animation: slide 3s infinite alternate;
+}
+
+@keyframes slide {
+    from {
+        left: 42vw;
+        opacity: 0;
+    }
+    to {
+        left: 30vw;
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    @keyframes slide {
+        from {
+            left: 42vw;
+            opacity: 0;
+        }
+        to {
+            left: 28vw;
+            opacity: 1;
+        }
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .titleFront {
+        left: 38vw;
+    }
+    @keyframes slide {
+        from {
+            left: 29vw;
+            opacity: 0;
+        }
+        to {
+            left: 19vw;
+            opacity: 1;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .titleFront {
+        left: 35vw;
+    }
+    @keyframes slide {
+        from {
+            left: 21vw;
+            opacity: 0;
+        }
+        to {
+            left: 13vw;
+            opacity: 1;
+        }
+    }
+}
+
+@media screen and (max-width: 635px) {
+    .titleFront {
+        left: 27vw;
+        top: 160px;
+    }
+    .titleBack {
+        left: 27vw;
+        top: 160px;
+    }
+    @keyframes slide {
+        from {
+            top: 160px;
+            opacity: 0;
+        }
+        to {
+            top: 120px;
+            opacity: 1;
+        }
+    }
+}
+
+@media screen and (max-width: 435px) {
+    .titleFront {
+        left: 20vw;
+        top: 200px;
+    }
+    @keyframes slide {
+        from {
+            top: 200px;
+            opacity: 0;
+        }
+        to {
+            top: 160px;
+            opacity: 1;
+        }
+    }
+}

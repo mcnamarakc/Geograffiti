@@ -1,13 +1,28 @@
 .card {
-    background: #fff;
+    background: #343A40;
     border-radius: 2px;
     height: 325px;
     margin: 1rem;
     position: relative;
-    width: 95vw;
-    box-shadow: 0 3px 6px #999, 0 3px 6px #999;
+    width: 90vw;
+    border-radius: 25px;
+    border: 2px solid #343A40;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.534), 0 6px 20px 0 rgba(0, 0, 0, 0.534);
+  
     text-align: left;
     overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.card::-webkit-scrollbar { 
+    display: none;
+    z-index: 1;
+} 
+
+.card-img {
+    width: 100%;
+    height: 100%;
 }
   
 .card .row .img-container {
@@ -19,7 +34,7 @@
 }
 
 .card .img-container img {
-    width: 60%
+    width: 100%
 }
   
 .card .content {
@@ -49,8 +64,50 @@
     color: #d50000;
 }
 
+.zoomImg {
+    height: 10vh;
+    width: 10vw;
+    background-color:#A2A5A8;
+    position: absolute;
+    top: 2vh;
+    left: 2vw;
+}
+.display-map {
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    color: #A2A5A8;
+}
+
+.display-map:hover {
+    background: #9977b4; /* Old browsers */
+	background: -moz-linear-gradient(left,  #9977b4 1%, #dd86b9 11%, #f497aa 21%, #f9b48a 31%, #fdcd7b 42%, #fef79f 53%, #c0de96 65%, #95d4c1 76%, #81d2e3 88%, #87b8e1 98%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(left,  #9977b4 1%,#dd86b9 11%,#f497aa 21%,#f9b48a 31%,#fdcd7b 42%,#fef79f 53%,#c0de96 65%,#95d4c1 76%,#81d2e3 88%,#87b8e1 98%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  #9977b4 1%,#dd86b9 11%,#f497aa 21%,#f9b48a 31%,#fdcd7b 42%,#fef79f 53%,#c0de96 65%,#95d4c1 76%,#81d2e3 88%,#87b8e1 98%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9977b4', endColorstr='#87b8e1',GradientType=1 ); /* IE6-9 */
+	-webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.card-body .card-title {
+    color: #A2A5A8;
+}
+
+.card-body .card-text {
+    color: #A2A5A8;
+}
+
 @media screen and (max-width: 768px) {
     .card{
+        height: 95vh;
+        width: 85vw;
         overflow-y: scroll;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .card{
+        width: 75vw;
+        margin-bottom: 50px !important;
     }
 }

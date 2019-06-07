@@ -30,13 +30,18 @@ app.use(passport.initialize());
 
 //-- Static Server (Production) ----------------------------------------------
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('../client/build'));
+  const clientBuildPath = path.join(__dirname, '..', 'client', 'build');
+  console.log(`Client build path: ${clientBuildPath}\n`);
+  app.use(express.static(clientBuildPath));
 }
 
 //-- Controller Routes -------------------------------------------------------
 app.use(require('./controllers'));
 
 var syncOptions = { force: false };
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build/index.html'));
+});
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`

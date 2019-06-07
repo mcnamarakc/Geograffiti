@@ -16,6 +16,8 @@ usersController.post('/login', (req, res) => {
       return res.status(401).send('Unauthorized');
     }
 
+    delete user.password;
+
     res.json({
       token: jwt.sign({ sub: user.id }, process.env.JWT_SECRET),
       user
@@ -49,5 +51,22 @@ usersController.post('/register', (req, res) => {
 
 // TODO: change password
 // usersController.post('/me', (req, res) => {});
+usersController.post('/me', JWTVerifier, (req, res) => {
+  db.User.update(
+    {
+      email: req.body.email
+    },
+    {
+      where: {
+        id: req.user.id
+      }
+    }
+  )
+    .then(rowsAffected => {
+      console.log(rowsAffected);
+      res.json(rowsAffected);
+    })
+    .catch(err => console.log(err));
+});
 
 module.exports = usersController;

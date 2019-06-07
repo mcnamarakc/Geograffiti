@@ -1,12 +1,12 @@
 module.exports = function(sequelize, DataTypes) {
   var Art = sequelize.define('Art', {
     latitude: {
-      type: DataTypes.DECIMAL(9, 6),
+      type: DataTypes.DECIMAL(12, 6),
       allowNull: false,
       validate: { min: -90, max: 90 }
     },
     longitude: {
-      type: DataTypes.DECIMAL(9, 6),
+      type: DataTypes.DECIMAL(12, 6),
       allowNull: false,
       validate: { min: -180, max: 180 }
     },
@@ -48,5 +48,13 @@ module.exports = function(sequelize, DataTypes) {
       defaultValue: true
     }
   });
+
+  Art.associate = function(models) {
+    Art.belongsToMany(models.User, {
+      //as: ['artId'],
+      through: 'favorites'
+    });
+  };
+
   return Art;
 };

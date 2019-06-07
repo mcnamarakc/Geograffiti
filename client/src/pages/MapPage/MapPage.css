@@ -20,8 +20,12 @@ h1 {
 }
 
 .leaflet-container {
-    height: 400px;
+    height: 465px;
     width: 100%;
+    border-radius: 25px;
+  border: 2px solid #343A40;
+  padding: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.534), 0 6px 20px 0 rgba(0, 0, 0, 0.534);
   }
 
 .info-box {
@@ -38,16 +42,72 @@ h1 {
     line-height: 2em;
 }
 
+#container {
+    margin-top: 2vh;
+    
+}
+
 #info {
     font-size: 16px;
     font-weight: bold;
 }
 
 .popup-image {
-    height: 7vh;
-    width: 7vw;
+    width: 15vh;
 }
 
 .popup-title {
-
+ font-size: 1.2rem
 }
+
+.neighborhoodHeader {
+    color: #A2A5A8;
+    margin-top: 2vh;
+    margin-bottom: 0;
+}
+
+.btn {
+    margin: 1vh;
+}
+
+.start-route {
+    color: white;
+}
+
+button .murals {
+    color: #343A40;
+    text-shadow: 2px 2px 5px #2780CA;
+}
+
+
+
+button .breweries {
+    color: #343A40;
+    text-shadow: 2px 2px 5px #9F22CA;
+}
+
+button {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.534), 0 6px 20px 0 rgba(0, 0, 0, 0.534);
+}
+
+.directionsContainer {
+    height: 465px;
+    width: 100%;
+    border-radius: 25px;
+  border: 2px solid #343A40;
+  padding: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.534), 0 6px 20px 0 rgba(0, 0, 0, 0.534);
+}
+
+.artListContainer {
+    height: 465px;
+    width: 100%;
+    border-radius: 25px;
+  border: 2px solid #343A40;
+  padding: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.534), 0 6px 20px 0 rgba(0, 0, 0, 0.534);
+}
+
+#mapPageContent p {
+    color: #A2A5A8;
+} 
