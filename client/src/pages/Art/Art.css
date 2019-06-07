@@ -16,6 +16,10 @@
     z-index: 1;
 }
 
+.dropTitle {
+    font-size: calc(10px + 2vmin);
+}
+
 .dropdowner:hover {
     height: 50vh;
     overflow-y: scroll;

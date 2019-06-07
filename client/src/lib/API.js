@@ -1,8 +1,5 @@
 import axios from 'axios';
 
-const token = "pNR530qa3pbGJjmqM9A4gGjgv9RNv9v3";
-
-
 export default {
   ArtPage: {
     getArt: function() {
@@ -123,7 +120,7 @@ export default {
 
   Route: {
     getRoute: function (coordinates) {
-      return axios.get("https://www.mapquestapi.com/directions/v2/optimizedRoute?json={'locations':[" + coordinates + "]}&outFormat=json&key=" + token)
+      return axios.post('/api/mapquest/', { coordinates }, {});
     }
   },
 
