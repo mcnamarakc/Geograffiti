@@ -3,6 +3,7 @@ import { Link, Route } from "react-router-dom";
 import Artists from "./Artists";
 import NavTabs from "../../components/App/NavTabs";
 import "./Bio.css";
+import { HashLink as HLink } from 'react-router-hash-link';
 
 function Bio(props) {
   return (
@@ -19,9 +20,9 @@ function Bio(props) {
           <a href="https://www.instagram.com/osirisrain/" className="fa fa-instagram" alt="image of osirisRain"></a>
       </div>
       <div>
-        <Link to={`${props.match.url}/artists`} role="button" className="btn btn-link">
+        <HLink to={`${props.match.url}/artists#carousel`} role="button" className="btn btn-link">
           Click here to discover artists around Charlotte
-        </Link>{" "}
+        </HLink>{" "}
         <Link to="/map" role="button" className="btn btn-link">
           Find local art!
         </Link>
