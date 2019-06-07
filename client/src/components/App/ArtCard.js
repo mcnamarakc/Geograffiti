@@ -42,6 +42,7 @@ class ArtCard extends Component {
           {/* <div className="col-xs-4 col-sm-5 col-md-6 col-lg-7"> */}
           <div className="col-xs-12 col-sm-12 col-md-7 col-lg-7">
             <div className="card-body">
+            <a href="#"><button className="favoriteBtn" onClick="window.location.href='#';"><i className="far fa-heart"></i></button></a>
               <h3 className="card-title">{this.props.title}</h3>
               <hr></hr>
               <h6 className="card-text">Artist: {this.props.artist}</h6>
