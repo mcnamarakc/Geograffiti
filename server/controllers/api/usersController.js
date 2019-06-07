@@ -16,6 +16,8 @@ usersController.post('/login', (req, res) => {
       return res.status(401).send('Unauthorized');
     }
 
+    delete user.password;
+
     res.json({
       token: jwt.sign({ sub: user.id }, process.env.JWT_SECRET),
       user
