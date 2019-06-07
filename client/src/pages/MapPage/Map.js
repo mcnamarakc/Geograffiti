@@ -206,14 +206,9 @@ class Map extends React.Component {
               calculate: "",
               delete: ""
             })
-            // console.log(res.data.route.legs[j].maneuvers[i].narrative)
           }
         }
       })
-      // console.log(res.data)
-
-      // console.log(res.data.route.legs[j].maneuvers[i].startPoint.lat)
-      // console.log(res.data.route.legs[j].maneuvers[i].startPoint.lng)
 
       .catch(err => console.log(err))
   }
