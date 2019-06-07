@@ -36,7 +36,7 @@ class About extends React.Component {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-12" data-aos="zoom-out-up" data-aos-duration="2000">
+                    <div className="col-12" data-aos="zoom-out" data-aos-duration="2000">
                         <img className="aboutPic" src="https://pawhurr.github.io/images/Me.jpg" alt="Paul Whurr"></img>
                     </div>
                 </div>

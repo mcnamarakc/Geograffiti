@@ -1,13 +1,16 @@
 .aboutHolder {
-    background-color: whitesmoke;
+    background-color: none;
     width: 90vw;
     border-radius: 5px;
+    color: #A2A5A8;
 }
 
 .aboutPic {
     width: 300px;
     height: 300px;
     border-radius: 150px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.534), 0 6px 20px 0 rgba(0, 0, 0, 0.534);
+
 }
 
 .portfolio {
