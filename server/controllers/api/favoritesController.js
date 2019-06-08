@@ -22,6 +22,7 @@ favoritesController.post('/', JWTVerifier, (req, res) => {
         return console.log('no art with this id', ArtId);
       }
       user.addArt(art);
+      res.sendStatus(201);
     });
   });
 });
