@@ -61,9 +61,8 @@ class Art extends React.Component {
       <div>
         <NavTabs />
         <h1 className="arthead">Art</h1>
-        <button className="btn btn-info artbtn" onClick={this.handleSubmit}><h3 className="dropTitle">Display all art</h3></button>
         <div className="row justify-content-around art-row">
-          <div className="col-4 dropdowner pt-1">
+          <div className="col-3 dropdowner pt-1">
             <h3 className="dropTitle">Search by neighborhood</h3>
             {this.state.neighborhoods.map(neighborhoods => (
             <DropList
@@ -80,7 +79,10 @@ class Art extends React.Component {
               />
               ))}
           </div>
-          <div className="col-4 dropdowner pt-1">
+          <div className="col-3 artbtn pt-1" onClick={this.handleSubmit}><h3 className="dropTitle">Display all art</h3>
+            {/* <button className="btn btn-info a</button> */}
+          </div>
+          <div className="col-3 dropdowner pt-1">
             <h3 className="dropTitle">Search by artist</h3>
             {this.state.artists.map(artists => (
               <DropList
