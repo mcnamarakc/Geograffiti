@@ -56,6 +56,8 @@
 
 .artbtn {
     border-radius: 5vh;
+    height: 6vh;
+    width: 100%;
     background: #9977b4; /* Old browsers */
 	background: -moz-linear-gradient(left,  #9977b4 1%, #dd86b9 11%, #f497aa 21%, #f9b48a 31%, #fdcd7b 42%, #fef79f 53%, #c0de96 65%, #95d4c1 76%, #81d2e3 88%, #87b8e1 98%); /* FF3.6-15 */
 	background: -webkit-linear-gradient(left,  #9977b4 1%,#dd86b9 11%,#f497aa 21%,#f9b48a 31%,#fdcd7b 42%,#fef79f 53%,#c0de96 65%,#95d4c1 76%,#81d2e3 88%,#87b8e1 98%); /* Chrome10-25,Safari5.1-6 */
@@ -64,10 +66,12 @@
 
 .artbtn h3 {
     color: black;
+    font-size: calc(10px + 2vmin);
+
 }
 
 .art-row {
-    max-height: 12vh;
+    max-height: 6vh;
     max-width: 100vw;
     padding-left: 5vw;
 }

@@ -97,6 +97,12 @@
     color: #A2A5A8;
 }
 
+.favoriteBtn {
+    position: absolute;
+    right: 1.5%;
+    top: 250px;
+}
+
 @media screen and (max-width: 768px) {
     .card{
         height: 95vh;

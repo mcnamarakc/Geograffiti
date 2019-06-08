@@ -248,7 +248,7 @@ class Map extends React.Component {
               </div>
               <div className="row">
                 <div className="col-12">
-                  <button onClick={this.renderNodaMarkers} type="button" id="nodaMapBtn" className="btn btn-secondary"><div className="murals">Noda</div></button>
+                  <button onClick={this.renderNodaMarkers} type="button" id="nodaMapBtn" className="btn btn-secondary"><div className="murals">NoDa</div></button>
                   <button onClick={this.renderMidwoodMarkers} type="button" id="midwoodMapBtn" className="btn btn-secondary"><div className="murals">Plaza Midwood</div></button>
                   <button onClick={this.renderAllMuralMarkers} type="button" id="allMuralMarkersMapBtn" className="btn btn-secondary"><div className="murals">Show all Art</div></button>
                   <button onClick={this.renderBreweries} type="button" id="allBreweryMarkersMapBtn" className="btn btn-secondary"><div className="breweries">Add Breweries</div></button>
