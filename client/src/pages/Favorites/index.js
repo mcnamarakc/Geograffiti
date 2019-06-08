@@ -31,46 +31,11 @@ class Favorites extends Component {
       })
   }
 
-  postFavorite = (id) => {
-    API.Favorites.post(this.context.authToken, id)
-      .then(data => {
-        return console.log(data);
-      })
-      .catch(err => {
-        if (err.response.status === 401) {
-          console.log({ error: "Unauthorized. Please login." });
-        }
-
-        console.log(err);
-      })
-      .finally(() => this.getFavorites());
-  }
-
-  deleteFavorite = (id) => {
-    // API.Favorites.delete(this.context.authToken, id)
-    //   .then(data => {
-    //     console.log(data);
-    //     //return this.setState({ apiKey: data.apiKey })
-    //   })
-    //   .catch(err => {
-    //     if (err.response.status === 401) {
-    //       console.log({ error: "Unauthorized. Please login." });
-    //     }
-
-    //     console.log(err);
-    //   })
-    //   .finally(() => this.getFavorites());
-
-  }
-
   render() {
     return (
       <div>
         <NavTabs />
-        <button onClick={()=> this.postFavorite(1)}>Add 1</button>
-        <button onClick={() => this.postFavorite(2)}>Add 2</button>
-        <button onClick={() => this.postFavorite(3)}>Add 3</button>
-
+        
         <ul>
           {this.state.favorites.map(art =>
             (
