@@ -51,7 +51,7 @@ class About extends React.Component {
                 />
                 <PortfolioCard 
                     name= "Devin Price"
-                    imgLink="https://devingprice.github.io/assets/images/cat.jpg"
+                    imgLink="https://media.licdn.com/dms/image/C4D03AQGKZ7JFfBL7QA/profile-displayphoto-shrink_800_800/0?e=1565222400&v=beta&t=jr2eB0wgPg0zh2fq5zm6iLrplKKNIrB7azMJ3qrlAEM"
                     portfolio="https://devingprice.github.io/portfolio.html"
                     gitLink="https://github.com/devingprice"
                     linkedInLink="https://www.linkedin.com/in/devin-price-b7a761188/"
