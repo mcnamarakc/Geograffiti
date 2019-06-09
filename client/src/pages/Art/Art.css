@@ -17,7 +17,9 @@
 }
 
 .dropTitle {
-    font-size: calc(10px + 2vmin);
+    /* font-size: calc(10px + 2vmin); */
+    font-size: 1rem;
+    padding-top: 5px;
 }
 
 .dropdowner:hover {
@@ -44,13 +46,7 @@
 }
 
 .arthead {
-    background: #9977b4; /* Old browsers */
-	background: -moz-linear-gradient(left,  #9977b4 1%, #dd86b9 11%, #f497aa 21%, #f9b48a 31%, #fdcd7b 42%, #fef79f 53%, #c0de96 65%, #95d4c1 76%, #81d2e3 88%, #87b8e1 98%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(left,  #9977b4 1%,#dd86b9 11%,#f497aa 21%,#f9b48a 31%,#fdcd7b 42%,#fef79f 53%,#c0de96 65%,#95d4c1 76%,#81d2e3 88%,#87b8e1 98%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right,  #9977b4 1%,#dd86b9 11%,#f497aa 21%,#f9b48a 31%,#fdcd7b 42%,#fef79f 53%,#c0de96 65%,#95d4c1 76%,#81d2e3 88%,#87b8e1 98%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9977b4', endColorstr='#87b8e1',GradientType=1 ); /* IE6-9 */
-	-webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #A2A5A8;
     font-size: 5vh;
 }
 
@@ -66,7 +62,7 @@
 
 .artbtn h3 {
     color: black;
-    font-size: calc(10px + 2vmin);
+    font-size: 1rem;
 
 }
 
@@ -80,13 +76,45 @@
     z-index: -1;
 }
 
-@media screen and (max-width: 490px) {
+@media screen and (max-width: 970px) {
     .dropdowner h3 {
         font-size: .8rem;
+    }
+
+    .artbtn h3 {
+        font-size: .8rem;
+    }
+}
+
+@media screen and (max-width: 524px) {
+    .dropTitle {
+        padding-top: 3px;
+    }
+}
+
+@media screen and (max-width: 490px) {
+    .dropdowner h3 {
+        font-size: .6rem;
     
+    }
+    .artbtn h3 {
+        font-size: .6rem;
+    }
+    .artbtn {
+        height: 5vh;
     }
     .dropdowner {
         height: 5vh;
     }
 
+}
+
+@media screen and (max-width: 376px) {
+    .dropdowner h3 {
+        font-size: .5rem;
+    
+    }
+    .artbtn h3 {
+        font-size: .5rem;
+    }
 }

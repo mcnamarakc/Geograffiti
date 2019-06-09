@@ -4,6 +4,7 @@ import { Redirect } from 'react-router-dom';
 import API from '../../lib/API';
 import AuthContext from '../../contexts/AuthContext';
 import LoginForm from '../../components/LoginForm/LoginForm';
+import "./Login.css";
 
 class Login extends Component {
   static contextType = AuthContext;
@@ -50,7 +51,7 @@ class Login extends Component {
       <div className='Login'>
         <div className='row'>
           <div className='col'>
-            <h1>Login</h1>
+            <h1 className='loginHead'>Login</h1>
           </div>
         </div>
         {this.state.error &&
