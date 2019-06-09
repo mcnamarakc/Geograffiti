@@ -101,6 +101,13 @@ button {
   padding: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.534), 0 6px 20px 0 rgba(0, 0, 0, 0.534);
   overflow-y: auto;
+  
+}
+::-webkit-scrollbar {
+	width: 12px;
+    background-color: #343A40;
+    border-radius: 25px;
+    
 }
 
 .artListContainer {

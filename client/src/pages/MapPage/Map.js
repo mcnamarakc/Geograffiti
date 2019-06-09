@@ -173,7 +173,7 @@ class Map extends React.Component {
     this.setState({
       startRoute: "",
       routePoint: [...this.state.routePoint, route],
-      calculate: "Get Route",
+      calculate: "Create route",
       delete: "Delete Route"
     })
   }
