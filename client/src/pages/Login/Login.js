@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
+import "./login.css";
 
 import API from '../../lib/API';
 import AuthContext from '../../contexts/AuthContext';
@@ -49,7 +50,7 @@ class Login extends Component {
     return (
       <div className='Login'>
         <div className='row'>
-          <div className='col'>
+          <div className='col loginHeader'>
             <h1>Login</h1>
           </div>
         </div>
@@ -62,9 +63,11 @@ class Login extends Component {
             </div>
           </div>}
         <div className='row'>
-          <div className='col'>
+          <div className="col-3"></div>
+          <div className='col-6 loginForm'>
             <LoginForm onSubmit={this.handleSubmit} />
           </div>
+          <div className="col-3"></div>
         </div>
       </div>
     );
