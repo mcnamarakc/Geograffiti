@@ -83,7 +83,7 @@ class Map extends React.Component {
         this.setState({
           nbhood: "Plaza-Midwood",
           lat: 35.2239,
-          lng: -80.8018,
+          lng: -80.8118,
           zoom: 15,
           brewMarkers: [],
           routePoint: [],
@@ -226,8 +226,8 @@ class Map extends React.Component {
             <div className="col">
               <div id="mapPageContent" className="container">
                 <div className="row">
-                  <div className="col-4 directionsContainer"><p>Route:</p><h3>{this.state.startRoute}</h3><p onClick={this.getRoute}>{this.state.calculate}</p>,<p onClick={this.deleteRoute}>{this.state.delete}</p><p>{this.state.directions.map(item => <p>{item}</p>)}</p></div>
-                  <div className="col-8">
+                  <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 directionsContainer"><p>Route:</p><h3>{this.state.startRoute}</h3><p onClick={this.getRoute}>{this.state.calculate}</p><p onClick={this.deleteRoute}>{this.state.delete}</p><p>{this.state.directions.map(item => <p>{item}</p>)}</p></div>
+                  <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8">
                     <LeafletMap center={position} zoom={this.state.zoom}>
                       <TileLayer
                         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'

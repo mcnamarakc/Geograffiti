@@ -12,7 +12,7 @@ function Bio(props) {
       <NavTabs />
       <div className="jumboBioContainer">
         <div className="jumbotron main">
-          <p className="display-4">Featured Artist</p>
+          <h1 className="display-4">Featured Artist</h1>
           <p className="lead">Highlighting local artists who are changing the face of Charlotte</p>
           <hr className="my-4" />
           <img className="img-fluid" src="https://static1.squarespace.com/static/5be99fd896e76fa751de180a/t/5c29b1b86d2a73e6a9b311f7/1546241649983/osirisweb.jpg" alt="Osiris Rain" />
