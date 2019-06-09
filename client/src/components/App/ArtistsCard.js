@@ -25,7 +25,7 @@ class ArtistsCard extends Component {
                     <h5 className="legend">William Puckett -- Whether you're driving under the Matheson Avenue bridge, grabbing a cup of coffee and a pastry from Amelie's or stopping by the venerable Jack Beagle's for a drink the murals by local artist Will Puckett are a familiar site for Charlotte locals</h5>
                 </div>
                 <div>
-                    <img className="carouselImage" src="https://static1.squarespace.com/static/5908d9071b631b40f80f774e/t/5908dba586e6c00e33d8df42/1493752764574/?format=500w" alt="Nick Napolentano" />
+                    <img className="carouselImage" src="https://www.charlottefive.com/wp-content/uploads/2018/07/Nick_Napoletano_by_Alex_Cason-1496-768x512.jpg" alt="Nick Napolentano" />
                     <h5 className="legend">Nick Napolentano -- A painter, muralist, and designer known for hyperrealist works brimming with allegory and symbolism.</h5>
                 </div>
                 
