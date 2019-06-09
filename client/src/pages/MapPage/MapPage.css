@@ -94,6 +94,7 @@ button {
     height: 465px;
     width: 100%;
     border-radius: 25px;
+    color: #A2A5A8;
   border: 2px solid #343A40;
   padding: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.534), 0 6px 20px 0 rgba(0, 0, 0, 0.534);
@@ -110,4 +111,4 @@ button {
 
 #mapPageContent p {
     color: #A2A5A8;
-} 
+}
