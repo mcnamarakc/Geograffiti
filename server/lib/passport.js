@@ -19,11 +19,13 @@ passport.use(
 
 const JWTVerifier = passport.authenticate('jwt', { session: false });
 
+const { refreshKeysDaily } = require('./dailyRefresh');
 passport.use(
   new HeaderAPIKeyStrategy(
     { header: 'Authorization', prefix: 'Api-Key ' },
     false,
     function(apikey, done) {
+      refreshKeysDaily(db);
       db.User.findOne({ where: { apiKey: apikey } })
         .then(user => {
           if (!user) {
@@ -32,6 +34,11 @@ passport.use(
           if (user.remainingRequests > 0) {
             return done('out of requests', null);
           }
+
+          db.User.decrement(
+            { requestsRemaining: 1 },
+            { where: { apiKey: apikey } }
+          );
           return done(null, user);
         })
         .catch(err => {
