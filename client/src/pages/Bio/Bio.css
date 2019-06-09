@@ -12,9 +12,9 @@
     margin-top: 15px;
 }
 
-.artistCarousel {
-    margin-bottom: 150px;
-}
+/* .artistCarousel {
+    margin-bottom: 5px;
+} */
 
 
 a .fa {
@@ -64,7 +64,26 @@ a .fa {
     margin-top: 10px;
     color: #A2A5A8;
 }
+.interviewFormatting .q {
+    font-weight: bold;
+    color: #9977b4;
+    text-align: left;
+}
 
+.interviewFormatting .a {
+    font-style: italic;
+    color: #A2A5A8;
+    text-align: left;
+}
+
+hr {
+    background-color: #A2A5A8;
+}
+
+.featured .subtitleImgText {
+    font-size: .75rem;
+    font-style: italic;
+}
 /* carousel {
     width:900px;
     height: 500px;
