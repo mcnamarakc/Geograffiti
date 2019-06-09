@@ -46,7 +46,7 @@ class Map extends React.Component {
       brewMarkers: [],
       nbhood: "",
       routePoint: [],
-      startRoute: "Click on Markers to Calculate Route",
+      startRoute: "Select a neighborhood and click on markers to calculate a route.",
       calculate: "",
       delete: "",
       directions: []
@@ -67,7 +67,8 @@ class Map extends React.Component {
           brewMarkers: [],
           routePoint: [],
           markers: res.data.map(item => {
-            return ({ position: [item.latitude, item.longitude], key: item.id, content: <><p className="popup-title">Title: {!item.title ? "Unknown" : item.title}</p><img className="popup-image" src={item.image} /><p className="route" onClick={(event) => this.addPoints([item.latitude, item.longitude], item.latitude, item.longitude, event)}>Add to route</p></> })
+            return ({ position: [item.latitude, item.longitude], key: item.id, content: <><p className="popup-title">Title: {!item.title ? "Unknown" : item.title}</p><img className="popup-image" src={item.image} /><p className="route cursorChange
+            " onClick={(event) => this.addPoints([item.latitude, item.longitude], item.latitude, item.longitude, event)}>Add to route</p></> })
           })
         })
         console.log(this.state.nbhood)
@@ -88,7 +89,7 @@ class Map extends React.Component {
           brewMarkers: [],
           routePoint: [],
           markers: res.data.map(item => {
-            return ({ position: [item.latitude, item.longitude], key: item.id, content: <><p className="popup-title">Title: {!item.title ? "Unknown" : item.title}</p><img className="popup-image" src={item.image} /><p className="route" onClick={(event) => this.addPoints([item.latitude, item.longitude], item.latitude, item.longitude, event)}>Add to route</p></> })
+            return ({ position: [item.latitude, item.longitude], key: item.id, content: <><p className="popup-title">Title: {!item.title ? "Unknown" : item.title}</p><img className="popup-image" src={item.image} /><p className="route cursorChange" onClick={(event) => this.addPoints([item.latitude, item.longitude], item.latitude, item.longitude, event)}>Add to route</p></> })
           })
         })
         console.log(this.state.nbhood)
@@ -111,7 +112,7 @@ class Map extends React.Component {
           console.log(res.data)
           this.setState({
             brewMarkers: res.data.map(brew => {
-              return ({ position: [brew.latitude, brew.longitude], key: brew.id, content: <><p><b>{brew.businessName}</b></p><p>{brew.description}</p><p className="route" onClick={(event) => this.addPoints([brew.latitude, brew.longitude], brew.latitude, brew.longitude, event)}>Add to route</p></> })
+              return ({ position: [brew.latitude, brew.longitude], key: brew.id, content: <><p><b>{brew.businessName}</b></p><p>{brew.description}</p><p className="route cursorChange" onClick={(event) => this.addPoints([brew.latitude, brew.longitude], brew.latitude, brew.longitude, event)}>Add to route</p></> })
             })
           })
           console.log(this.state.brewMarkers)
@@ -124,7 +125,7 @@ class Map extends React.Component {
           console.log(res.data)
           this.setState({
             brewMarkers: res.data.map(brew => {
-              return ({ position: [brew.latitude, brew.longitude], key: brew.id, content: <><p><b>{brew.businessName}</b></p><p>{brew.description}</p><p className="route" onClick={(event) => this.addPoints([brew.latitude, brew.longitude], brew.latitude, brew.longitude, event)}>Add to route</p></> })
+              return ({ position: [brew.latitude, brew.longitude], key: brew.id, content: <><p><b>{brew.businessName}</b></p><p>{brew.description}</p><p className="route cursorChange" onClick={(event) => this.addPoints([brew.latitude, brew.longitude], brew.latitude, brew.longitude, event)}>Add to route</p></> })
             })
           })
           console.log(this.state.brewMarkers)
@@ -137,7 +138,7 @@ class Map extends React.Component {
           console.log(res.data)
           this.setState({
             brewMarkers: res.data.map(brew => {
-              return ({ position: [brew.latitude, brew.longitude], key: brew.id, content: <><p><b>{brew.businessName}</b></p><p>{brew.description}</p><p className="route" onClick={(event) => this.addPoints([brew.latitude, brew.longitude], brew.latitude, brew.longitude, event)}>Add to route</p></> })
+              return ({ position: [brew.latitude, brew.longitude], key: brew.id, content: <><p><b>{brew.businessName}</b></p><p>{brew.description}</p><p className="route cursorChange" onClick={(event) => this.addPoints([brew.latitude, brew.longitude], brew.latitude, brew.longitude, event)}>Add to route</p></> })
             })
           })
           console.log(this.state.brewMarkers)
@@ -184,7 +185,7 @@ class Map extends React.Component {
       routePoint: [],
       calculate: "",
       delete: "",
-      startRoute: "Click on Markers to Calculate Route",
+      startRoute: "Select a neighborhood and click on markers to calculate a route.",
       directions: []
     })
   }
@@ -226,7 +227,7 @@ class Map extends React.Component {
             <div className="col">
               <div id="mapPageContent" className="container">
                 <div className="row">
-                  <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 directionsContainer"><p>Route:</p><h3>{this.state.startRoute}</h3><p onClick={this.getRoute}>{this.state.calculate}</p><p onClick={this.deleteRoute}>{this.state.delete}</p><p>{this.state.directions.map(item => <p>{item}</p>)}</p></div>
+                  <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 directionsContainer"><p>Route:</p><h3>{this.state.startRoute}</h3><p className="cursorChange" onClick={this.getRoute}>{this.state.calculate}</p><p className="cursorChange" onClick={this.deleteRoute}>{this.state.delete}</p><p>{this.state.directions.map(item => <p>{item}</p>)}</p></div>
                   <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8">
                     <LeafletMap center={position} zoom={this.state.zoom}>
                       <TileLayer
