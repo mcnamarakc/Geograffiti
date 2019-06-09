@@ -30,9 +30,9 @@ class About extends React.Component {
                         <br></br>
                         <p>Geograffiti was born from five creative minds with a mutual love for art.  Our goal is to bring that love of art to the public in the most public of places.</p>
                         <br></br>
-                        <p>Based in Charlotte, North Carolina, the Geograffiti team is surrounded by neighborhoods rich with public art and murals done by many local and international artists.  Whether emblazoned across the side of the newest Charlotte brewery or found tucked away down a side street during an evening stroll in NoDa, you may never know when you can run across some an excellent piece of modern street art. </p>
+                        <p>Based in Charlotte, North Carolina, the Geograffiti team is surrounded by neighborhoods rich with public art and murals done by many local and international artists.  Whether emblazoned across the side of the newest Charlotte brewery or found tucked away down a side street during an evening stroll in NoDa, you may never know when you will run across an excellent piece of modern street art. </p>
                         <br></br>
-                        <p>Bridging the gap between the art lover and where to find it comes Geograffiti.  Perfect for the Charlotte tourist who wants to immerse themselves in local street art or the hometown Charlottean looking for an afternoon of enrichment, Geograffiti gathers together the imagery you would love to see and means at which to find it.</p>
+                        <p>Bridging the gap between the art lover and where to find it comes Geograffiti.  Perfect for the Charlotte tourist who wants to immerse themselves in local street art or the hometown Charlottean looking for an afternoon of enrichment, Geograffiti gathers together the imagery you would love to see and the means in which to find it.</p>
                         <br></br>
                         <p>Geograffiti is urban art exploration.</p>
                     </div>
@@ -51,7 +51,7 @@ class About extends React.Component {
                 />
                 <PortfolioCard 
                     name= "Devin Price"
-                    imgLink="https://devingprice.github.io/assets/images/cat.jpg"
+                    imgLink="https://media.licdn.com/dms/image/C4D03AQGKZ7JFfBL7QA/profile-displayphoto-shrink_800_800/0?e=1565222400&v=beta&t=jr2eB0wgPg0zh2fq5zm6iLrplKKNIrB7azMJ3qrlAEM"
                     portfolio="https://devingprice.github.io/portfolio.html"
                     gitLink="https://github.com/devingprice"
                     linkedInLink="https://www.linkedin.com/in/devin-price-b7a761188/"

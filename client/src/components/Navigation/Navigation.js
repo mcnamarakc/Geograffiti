@@ -38,15 +38,18 @@ class Navigation extends Component {
               {user &&
                 <li className='nav-item'>
                   <Link className='nav-link' to='/apiservice' onClick={this.toggleCollapse}>API</Link>
-                </li>}
+                </li>
+              }
               {user &&
                 <li className='nav-item'>
-                  <Link className='nav-link' to='/add' onClick={this.toggleCollapse}>Add Location</Link>
-                </li>}
+                  <Link className='nav-link' to='/favorites' onClick={this.toggleCollapse}>Favorites</Link>
+                </li>
+              }
               {user && 
                 <li className='nav-item'>
                   <Link className='nav-link' to='/user' onClick={this.toggleCollapse}>Update Profile</Link>
-                </li>}
+                </li>
+              }
             </ul>
             <ul className='navbar-nav'>
               {user

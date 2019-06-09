@@ -46,7 +46,7 @@ class Map extends React.Component {
       brewMarkers: [],
       nbhood: "",
       routePoint: [],
-      startRoute: "Click on Markers to Calculate Route",
+      startRoute: "Select a neighborhood and click on markers to calculate a route.",
       calculate: "",
       delete: "",
       directions: [],
@@ -68,7 +68,8 @@ class Map extends React.Component {
           brewMarkers: [],
           routePoint: [],
           markers: res.data.map(item => {
-            return ({ position: [item.latitude, item.longitude], key: item.id, content: <><p className="popup-title">Title: {!item.title ? "Unknown" : item.title}</p><img className="popup-image" src={item.image} /><p className="route" onClick={(event) => this.addPoints([item.latitude, item.longitude], item.latitude, item.longitude, event)}>Add to route</p></> })
+            return ({ position: [item.latitude, item.longitude], key: item.id, content: <><p className="popup-title">Title: {!item.title ? "Unknown" : item.title}</p><img className="popup-image" src={item.image} /><p className="route cursorChange
+            " onClick={(event) => this.addPoints([item.latitude, item.longitude], item.latitude, item.longitude, event)}>Add to route</p></> })
           })
         })
         console.log(this.state.nbhood)
@@ -89,7 +90,7 @@ class Map extends React.Component {
           brewMarkers: [],
           routePoint: [],
           markers: res.data.map(item => {
-            return ({ position: [item.latitude, item.longitude], key: item.id, content: <><p className="popup-title">Title: {!item.title ? "Unknown" : item.title}</p><img className="popup-image" src={item.image} /><p className="route" onClick={(event) => this.addPoints([item.latitude, item.longitude], item.latitude, item.longitude, event)}>Add to route</p></> })
+            return ({ position: [item.latitude, item.longitude], key: item.id, content: <><p className="popup-title">Title: {!item.title ? "Unknown" : item.title}</p><img className="popup-image" src={item.image} /><p className="route cursorChange" onClick={(event) => this.addPoints([item.latitude, item.longitude], item.latitude, item.longitude, event)}>Add to route</p></> })
           })
         })
         console.log(this.state.nbhood)
@@ -112,7 +113,7 @@ class Map extends React.Component {
           console.log(res.data)
           this.setState({
             brewMarkers: res.data.map(brew => {
-              return ({ position: [brew.latitude, brew.longitude], key: brew.id, content: <><p><b>{brew.businessName}</b></p><p>{brew.description}</p><p className="route" onClick={(event) => this.addPoints([brew.latitude, brew.longitude], brew.latitude, brew.longitude, event)}>Add to route</p></> })
+              return ({ position: [brew.latitude, brew.longitude], key: brew.id, content: <><p><b>{brew.businessName}</b></p><p>{brew.description}</p><p className="route cursorChange" onClick={(event) => this.addPoints([brew.latitude, brew.longitude], brew.latitude, brew.longitude, event)}>Add to route</p></> })
             })
           })
           console.log(this.state.brewMarkers)
@@ -125,7 +126,7 @@ class Map extends React.Component {
           console.log(res.data)
           this.setState({
             brewMarkers: res.data.map(brew => {
-              return ({ position: [brew.latitude, brew.longitude], key: brew.id, content: <><p><b>{brew.businessName}</b></p><p>{brew.description}</p><p className="route" onClick={(event) => this.addPoints([brew.latitude, brew.longitude], brew.latitude, brew.longitude, event)}>Add to route</p></> })
+              return ({ position: [brew.latitude, brew.longitude], key: brew.id, content: <><p><b>{brew.businessName}</b></p><p>{brew.description}</p><p className="route cursorChange" onClick={(event) => this.addPoints([brew.latitude, brew.longitude], brew.latitude, brew.longitude, event)}>Add to route</p></> })
             })
           })
           console.log(this.state.brewMarkers)
@@ -138,7 +139,7 @@ class Map extends React.Component {
           console.log(res.data)
           this.setState({
             brewMarkers: res.data.map(brew => {
-              return ({ position: [brew.latitude, brew.longitude], key: brew.id, content: <><p><b>{brew.businessName}</b></p><p>{brew.description}</p><p className="route" onClick={(event) => this.addPoints([brew.latitude, brew.longitude], brew.latitude, brew.longitude, event)}>Add to route</p></> })
+              return ({ position: [brew.latitude, brew.longitude], key: brew.id, content: <><p><b>{brew.businessName}</b></p><p>{brew.description}</p><p className="route cursorChange" onClick={(event) => this.addPoints([brew.latitude, brew.longitude], brew.latitude, brew.longitude, event)}>Add to route</p></> })
             })
           })
           console.log(this.state.brewMarkers)
@@ -186,7 +187,7 @@ class Map extends React.Component {
       routePoint: [],
       calculate: "",
       delete: "",
-      startRoute: "Click on Markers to Calculate Route",
+      startRoute: "Select a neighborhood and click on markers to calculate a route.",
       directions: [],
       startPoint: ""
     })
@@ -199,7 +200,6 @@ class Map extends React.Component {
     })
     API.Route.getRoute(queryArr)
       .then(res => {
-        console.log(res.data)
         for (var j = 0; j < res.data.route.legs.length; j++) {
           for (var i = 0; i < res.data.route.legs[j].maneuvers.length; i++) {
             this.setState({
@@ -229,8 +229,8 @@ class Map extends React.Component {
             <div className="col">
               <div id="mapPageContent" className="container">
                 <div className="row">
-                  <div className="col-4 directionsContainer"><p>Route:</p><h3>{this.state.startRoute}</h3><p onClick={this.getRoute}>{this.state.calculate}</p>,<p onClick={this.deleteRoute}>{this.state.delete}</p><p>{this.state.startPoint}</p><p>{this.state.directions.map(item => <p>{item}</p>)}</p></div>
-                  <div className="col-8">
+                  <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 directionsContainer"><p>Route:</p><h3>{this.state.startRoute}</h3><p className="cursorChange" onClick={this.getRoute}>{this.state.calculate}</p><p className="cursorChange" onClick={this.deleteRoute}>{this.state.delete}</p><p>{this.state.startPoint}</p><p>{this.state.directions.map(item => <p>{item}</p>)}</p></div>
+                  <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8">
                     <LeafletMap center={position} zoom={this.state.zoom}>
                       <TileLayer
                         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -251,7 +251,7 @@ class Map extends React.Component {
               </div>
               <div className="row">
                 <div className="col-12">
-                  <button onClick={this.renderNodaMarkers} type="button" id="nodaMapBtn" className="btn btn-secondary"><div className="murals">Noda</div></button>
+                  <button onClick={this.renderNodaMarkers} type="button" id="nodaMapBtn" className="btn btn-secondary"><div className="murals">NoDa</div></button>
                   <button onClick={this.renderMidwoodMarkers} type="button" id="midwoodMapBtn" className="btn btn-secondary"><div className="murals">Plaza Midwood</div></button>
                   <button onClick={this.renderAllMuralMarkers} type="button" id="allMuralMarkersMapBtn" className="btn btn-secondary"><div className="murals">Show all Art</div></button>
                   <button onClick={this.renderBreweries} type="button" id="allBreweryMarkersMapBtn" className="btn btn-secondary"><div className="breweries">Add Breweries</div></button>

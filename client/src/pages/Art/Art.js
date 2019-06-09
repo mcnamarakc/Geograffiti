@@ -5,8 +5,11 @@ import NavTabs from "../../components/App/NavTabs";
 import AOS from "aos";
 import DropList from "../../components/App/DropList";
 import "./Art.css";
+import AuthContext from '../../contexts/AuthContext';
 
 class Art extends React.Component {
+  static contextType = AuthContext;
+
   constructor() {
     super();
 
@@ -15,7 +18,8 @@ class Art extends React.Component {
       art: [],
       neighborhoods: [],
       artists: [],
-      search: ""
+      search: "",
+      favorites: []
     };
   }
 
@@ -30,10 +34,44 @@ class Art extends React.Component {
     .then(res => this.setState({neighborhoods:res.data}))
     .catch(err => console.log(err));
 
-    API.ArtPage.getArt()
-    .then(res => this.setState({art:res.data}))
-    .catch(err => console.log(err));
+    this.context.authToken
+      ? this.getArtWithFavorites()
+      : this.returnArt((art) => {
+        this.setState({art})
+      });
   };
+
+  returnArt = (cb) => {
+    API.ArtPage.getArt()
+      .then(res => cb(res.data))
+      .catch(err => console.log(err));
+  }
+
+  getArtWithFavorites = () => {
+    API.Favorites.get(this.context.authToken)
+      .then(favRes => {
+        const favorites = favRes.data.favorites;
+        console.log(favorites)
+        this.returnArt((artArray) => {
+          console.log(artArray)
+          let art = artArray.map(item => {
+            const inFavorites = favorites.find(function(elem){
+              return elem.id === item.id;
+            })
+            return inFavorites ? {...item, favorited: true} : item;
+          })
+          console.log(art)
+          
+          this.setState({favorites, art})
+        })
+      })
+      .catch(err => {
+        console.log(err);
+        this.returnArt((art) => {
+          this.setState({art})
+        })
+      });
+  }
 
   handleSubmit = event => {
     event.preventDefault();
@@ -61,9 +99,8 @@ class Art extends React.Component {
       <div>
         <NavTabs />
         <h1 className="arthead">Art</h1>
-        <button className="btn btn-info artbtn" onClick={this.handleSubmit}><h3 className="dropTitle">Display all art</h3></button>
         <div className="row justify-content-around art-row">
-          <div className="col-4 dropdowner pt-1">
+          <div className="col-3 dropdowner pt-1">
             <h3 className="dropTitle">Search by neighborhood</h3>
             {this.state.neighborhoods.map(neighborhoods => (
             <DropList
@@ -80,7 +117,10 @@ class Art extends React.Component {
               />
               ))}
           </div>
-          <div className="col-4 dropdowner pt-1">
+          <div className="col-3 artbtn pt-1" onClick={this.handleSubmit}><h3 className="dropTitle">Display all art</h3>
+            {/* <button className="btn btn-info a</button> */}
+          </div>
+          <div className="col-3 dropdowner pt-1">
             <h3 className="dropTitle">Search by artist</h3>
             {this.state.artists.map(artists => (
               <DropList
@@ -110,6 +150,7 @@ class Art extends React.Component {
               location={(art.neighborhood==="NODA") ? "NoDa" : art.neighborhood}
               latitude={art.latitude}
               longitude={art.longitude}
+              favorited={art.favorited}
             />
           </div>
         ))}
