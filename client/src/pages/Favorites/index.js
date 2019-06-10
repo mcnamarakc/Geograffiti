@@ -35,7 +35,7 @@ class Favorites extends Component {
     return (
       <div>
         <NavTabs />
-        
+        <h1>Favorites</h1>
         <ul>
           {this.state.favorites.map(art =>
             (
