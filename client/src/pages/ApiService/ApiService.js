@@ -101,6 +101,10 @@ class ApiService extends Component {
                     <div className="row">
                         <div className="col-md-6 offset-md-3">
                             <h3 style={{ color: "white" }}>Geograffiti Api Documentation</h3>
+                            <div>
+                                <h4>Example Request</h4>
+                                <p>$.ajax({'{url:"https://geograffiti.herokuapp.com/publicapi/art/all",method:"get",beforeSend: function(request) {request.setRequestHeader("Authorization", "Api-Key AGJV4VM-RKWMDG9-PZ8YABR-BAPSJ67")} }'}).then(res => console.log(res))</p>
+                            </div>
                         </div>
                     </div>
                 </div>
