@@ -14,9 +14,9 @@
     overflow-x: hidden;
 }
 
-.artCard .card {
+/* .artCard .card {
     width: 90vw;
-}
+} */
 
 .card::-webkit-scrollbar { 
     display: none;

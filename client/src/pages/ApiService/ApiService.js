@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import API from '../../lib/API';
 import AuthContext from '../../contexts/AuthContext';
+import "./ApiService.css";
 
 class ApiService extends Component {
     static contextType = AuthContext;
@@ -71,7 +72,7 @@ class ApiService extends Component {
         return (
             <div>
                 <div className="card">
-                    <h5 className="card-header">Geograffiti Api</h5>
+                    <h5 className="card-header apiTitle">Geograffiti Api</h5>
                     <div className="card-body">
                         <h5 className="card-title">Click below to get your Geograffiti API key!</h5>
                         <p className="card-text">Read our documentation below for information on Endpoints and Responses</p>
@@ -83,7 +84,7 @@ class ApiService extends Component {
                                     : this.state.error
                                         ? <div className='alert alert-danger'>{this.state.error}</div>
                                         : <div>
-                                            <p><em>{this.state.apiKey}</em></p>
+                                            <p className="apiFont"><em>{this.state.apiKey}</em></p>
                                         </div>}
                             </div>
                             <div className="col">
