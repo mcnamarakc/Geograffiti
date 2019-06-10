@@ -68,7 +68,7 @@
 
 .artbtn h3 {
     color: black;
-    font-size: calc(10px + 2vmin);
+    font-size: 1rem;
     /* cursor: pointer; */
 
 }
