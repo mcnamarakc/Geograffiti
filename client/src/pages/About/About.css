@@ -121,6 +121,23 @@
 @media screen and (max-width: 435px) {
     .titleFront {
         left: 20vw;
+        top: 160px;
+    }
+    @keyframes slide {
+        from {
+            top: 160px;
+            opacity: 0;
+        }
+        to {
+            top: 120px;
+            opacity: 1;
+        }
+    }
+}
+
+@media screen and (max-width: 349px) {
+    .titleFront {
+        left: 20vw;
         top: 200px;
     }
     @keyframes slide {
@@ -130,6 +147,23 @@
         }
         to {
             top: 160px;
+            opacity: 1;
+        }
+    }
+}
+
+@media screen and (max-width: 339px) {
+    .titleFront {
+        left: 20vw;
+        top: 240px;
+    }
+    @keyframes slide {
+        from {
+            top: 240px;
+            opacity: 0;
+        }
+        to {
+            top: 200px;
             opacity: 1;
         }
     }
