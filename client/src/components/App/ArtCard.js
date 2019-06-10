@@ -35,6 +35,7 @@ class ArtCard extends Component {
   
   render() {
     return (
+      <div className="artCard">
       <div className="card mb-3">
         <div className="row no-gutters container-fluid">
           {/* <div className="col-xs-3 col-sm-4 col-md-4 col-lg-5 img-container"> */}
@@ -80,6 +81,7 @@ class ArtCard extends Component {
             }
           </div>
         </div>
+      </div>
       </div>
     )
   }

@@ -4,7 +4,6 @@
     height: 325px;
     margin: 1rem;
     position: relative;
-    width: 90vw;
     border-radius: 25px;
     border: 2px solid #343A40;
     padding: 10px;
@@ -13,6 +12,10 @@
     text-align: left;
     overflow-y: hidden;
     overflow-x: hidden;
+}
+
+.artCard .card {
+    width: 90vw;
 }
 
 .card::-webkit-scrollbar { 
@@ -71,7 +74,13 @@
     position: absolute;
     top: 2vh;
     left: 2vw;
+    
 }
+
+.zoomImg:hover{
+    cursor: pointer;
+}
+
 .display-map {
     position: absolute;
     top: 15px;
@@ -87,6 +96,7 @@
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9977b4', endColorstr='#87b8e1',GradientType=1 ); /* IE6-9 */
 	-webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    cursor: pointer;
 }
 
 .card-body .card-title {
@@ -101,7 +111,29 @@
     position: absolute;
     right: 1.5%;
     top: 250px;
+    background: transparent;
+    color: #A2A5A8;
+    border-radius: 30px;
+    border: 2px solid #343A40;
+    font-size: 3vh;
 }
+
+.favoriteBtn:hover {
+    color: #9977b4; /* Old browsers */
+	color: -moz-linear-gradient(left,  #9977b4 1%, #dd86b9 11%, #f497aa 21%, #f9b48a 31%, #fdcd7b 42%, #fef79f 53%, #c0de96 65%, #95d4c1 76%, #81d2e3 88%, #87b8e1 98%); /* FF3.6-15 */
+	color: -webkit-linear-gradient(left,  #9977b4 1%,#dd86b9 11%,#f497aa 21%,#f9b48a 31%,#fdcd7b 42%,#fef79f 53%,#c0de96 65%,#95d4c1 76%,#81d2e3 88%,#87b8e1 98%); /* Chrome10-25,Safari5.1-6 */
+    color: linear-gradient(to right,  #9977b4 1%,#dd86b9 11%,#f497aa 21%,#f9b48a 31%,#fdcd7b 42%,#fef79f 53%,#c0de96 65%,#95d4c1 76%,#81d2e3 88%,#87b8e1 98%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    cursor: pointer;
+}
+
+.favoriteBtn:visited {
+    color: #9977b4; /* Old browsers */
+	color: -moz-linear-gradient(left,  #9977b4 1%, #dd86b9 11%, #f497aa 21%, #f9b48a 31%, #fdcd7b 42%, #fef79f 53%, #c0de96 65%, #95d4c1 76%, #81d2e3 88%, #87b8e1 98%); /* FF3.6-15 */
+	color: -webkit-linear-gradient(left,  #9977b4 1%,#dd86b9 11%,#f497aa 21%,#f9b48a 31%,#fdcd7b 42%,#fef79f 53%,#c0de96 65%,#95d4c1 76%,#81d2e3 88%,#87b8e1 98%); /* Chrome10-25,Safari5.1-6 */
+    color: linear-gradient(to right,  #9977b4 1%,#dd86b9 11%,#f497aa 21%,#f9b48a 31%,#fdcd7b 42%,#fef79f 53%,#c0de96 65%,#95d4c1 76%,#81d2e3 88%,#87b8e1 98%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    cursor: pointer;
+}
+
 
 @media screen and (max-width: 768px) {
     .card{
