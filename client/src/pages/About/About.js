@@ -58,7 +58,7 @@ class About extends React.Component {
                 />
                 <PortfolioCard 
                     name= "Kathleen McNamara"
-                    imgLink="https://media.licdn.com/dms/image/C4E03AQHwceBH6ZpwHg/profile-displayphoto-shrink_800_800/0?e=1565222400&v=beta&t=NPBA_Wg9vG53xCssXmiZNdE9wQcuhGFdXkgIsSpHm4s"
+                    imgLink="https://media.licdn.com/dms/image/C4D03AQETsxh123wCeA/profile-displayphoto-shrink_800_800/0?e=1567641600&v=beta&t=mknu1tcs0DCdj4Kf1-VFToY9HluhIs2tuElWs4he9xE"
                     portfolio="https://mcnamarakc.github.io/Bootstrap-Portfolio/"
                     gitLink="https://github.com/mcnamarakc"
                     linkedInLink="https://www.linkedin.com/in/kathleen-c-mcnamara/"
